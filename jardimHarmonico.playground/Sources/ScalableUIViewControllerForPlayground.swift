@@ -1,6 +1,8 @@
 import UIKit
 import PlaygroundSupport
 
+///@alnp contributions on github to Scalable UIViewController for Playground Books
+
 public enum ScreenType {
     case iphone11ProMax
     case iphone11Pro
@@ -74,3 +76,5 @@ extension UIViewController {
         return rootView
     }
 }
+
+
