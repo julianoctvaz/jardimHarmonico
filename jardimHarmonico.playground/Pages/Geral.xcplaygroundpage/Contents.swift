@@ -69,7 +69,7 @@ class LevelOneViewController: UIViewController {
         buttonToPlay.setImage(UIImage(named: "buttons/proximaFaseButton"), for: .normal)
         
         
-        //Views, UIImage and ImagenViews
+        //Views and ImagenViews
         let view = UIView()
         let background = UIImageView()
         let title = UIImageView()
@@ -96,8 +96,14 @@ class LevelOneViewController: UIViewController {
         let faSharpVitaminote = UIImageView() //8
         let solSharpVitaminote = UIImageView()//9
         
+        
+        //settings ImageViews
         background.image = UIImage(named: "diversos/background")
         background.frame = CGRect(x: 0, y: 0, width: 1440, height: 900)
+        
+        extraVase.image = UIImage(named: "vasos/vasoExtra")
+        extraVase.frame = CGRect(x: 537, y: 769, width: 370, height: 134)
+        
         
         
         
@@ -107,6 +113,15 @@ class LevelOneViewController: UIViewController {
         //butaoToPlay nao funciona nessa parte ainda
         
         
+        view.addSubview(background)
+        //Butons
+        view.addSubview(buttonToReset)
+        view.addSubview(buttonToPlay)
+        view.addSubview(buttonToOnboarding)
+        //Other elements
+        view.addSubview(extraVase)
+        view.addSubview(seedLevelOne)
+        view.addSubview(circleNotes)
         //Subviews
         view.addSubview(title)
         view.addSubview(woodPallet)
@@ -118,10 +133,7 @@ class LevelOneViewController: UIViewController {
         view.addSubview(poupUpOneWoman)
         view.addSubview(poupUpTwoWoman)
         view.addSubview(poupUpThreeWoman)
-        //Other elements
-        view.addSubview(extraVase)
-        view.addSubview(seedLevelOne)
-        view.addSubview(circleNotes)
+
         //VitamiNotes
         view.addSubview(doVitaminote)
         view.addSubview(reVitaminote)
@@ -132,11 +144,6 @@ class LevelOneViewController: UIViewController {
         view.addSubview(siVitaminote)
         view.addSubview(faSharpVitaminote)
         view.addSubview(solSharpVitaminote)
-        
-        view.addSubview(background)
-        view.addSubview(buttonToReset)
-        view.addSubview(buttonToPlay)
-        view.addSubview(buttonToOnboarding)
         
         
         self.view = view
