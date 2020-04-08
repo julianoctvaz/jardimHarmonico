@@ -75,6 +75,7 @@ class LevelOneViewController: UIViewController {
         let title = UIImageView()
         let woodPallet = UIImageView()
         let extraVase = UIImageView()
+        let centerVase = UIImageView()
         let circleNotes = UIImageView()
         //SeedLevelOne
         let seedDo = UIImageView()
@@ -84,10 +85,10 @@ class LevelOneViewController: UIViewController {
         let manBoard = UIImageView()
         let womanBoard = UIImageView()
         //PoupUps
-        let poupUpMan = UIImageView()
-        let poupUpOneWoman = UIImageView()
-        let poupUpTwoWoman = UIImageView()
-        let poupUpThreeWoman = UIImageView()
+//        let poupUpMan = UIImageView()
+//        let poupUpOneWoman = UIImageView()
+//        let poupUpTwoWoman = UIImageView()
+//        let poupUpThreeWoman = UIImageView()
         //Vitaminotes
         let doVitaminote = UIImageView() //1
         let reVitaminote = UIImageView() //2
@@ -158,6 +159,9 @@ class LevelOneViewController: UIViewController {
         solSharpVitaminote.image = UIImage(named: "vitaminas/solSustenidoVitaminota")
         solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
         
+        centerVase.image = UIImage(named: "vasos/vasoComTerra")
+        centerVase.frame = CGRect(x: 861, y: 397, width: 96, height: 87)
+        
    
 
 
@@ -177,6 +181,7 @@ class LevelOneViewController: UIViewController {
         view.addSubview(title)
         view.addSubview(woodPallet)
         view.addSubview(extraVase)
+        view.addSubview(centerVase)
         //Butons
         view.addSubview(buttonToReset)
         view.addSubview(buttonToPlay)
@@ -206,11 +211,11 @@ class LevelOneViewController: UIViewController {
    
         //Ballons
      
-        //Pou
-        view.addSubview(poupUpMan)
-        view.addSubview(poupUpOneWoman)
-        view.addSubview(poupUpTwoWoman)
-        view.addSubview(poupUpThreeWoman)
+        //PoupUps
+//        view.addSubview(poupUpMan)
+//        view.addSubview(poupUpOneWoman)
+//        view.addSubview(poupUpTwoWoman)
+//        view.addSubview(poupUpThreeWoman)
 
         //VitamiNotes
         view.addSubview(doVitaminote)
