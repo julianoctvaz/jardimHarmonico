@@ -12,7 +12,7 @@ class OnboardingViewController: UIViewController {
     
     override func loadView() { ///Carega/Cria a view
         //setting Buttons
-        buttonToPlay.frame = CGRect(x: 1120, y: 820, width: 250, height: 100)
+        buttonToPlay.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
         buttonToPlay.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
         
         
@@ -42,6 +42,7 @@ class OnboardingViewController: UIViewController {
         print("Apertou botão da OnboardingViewController para ir para a LeveOne")
         let novaViewController = LevelOneViewController(screenType: .mac , isPortrait: true)
         navigationController?.pushViewController(novaViewController, animated: true)
+        //coloca em cima da onboard a tela level 1
         navigationController?.navigationBar.isHidden = true
         
     }
@@ -58,19 +59,42 @@ class LevelOneViewController: UIViewController {
     override func loadView() { ///Carega/Cria a view
         
         //setting Buttons
-        buttonToPlay.frame = CGRect(x: 1120, y: 820, width: 250, height: 100)
-        buttonToPlay.setImage(UIImage(named: "buttons/proximaFaseButton"), for: .normal)
-        
-        buttonToReset.frame = CGRect(x: 1120, y: 620, width: 250, height: 100)
+        buttonToReset.frame = CGRect(x: 1265, y: 620, width: 121, height: 121)
         buttonToReset.setImage(UIImage(named: "buttons/resetButton"), for: .normal)
         
-        buttonToOnboarding.frame = CGRect(x: 1120, y: 720, width: 250, height: 100)
+        buttonToOnboarding.frame = CGRect(x: 1200, y: 730, width: 250, height: 100)
         buttonToOnboarding.setImage(UIImage(named: "buttons/onboardingButton"), for: .normal)
         
+        buttonToPlay.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
+        buttonToPlay.setImage(UIImage(named: "buttons/proximaFaseButton"), for: .normal)
+             
         
         //Views, UIImage and ImagenViews
         let view = UIView()
         let background = UIImageView()
+        let title = UIImageView()
+        let woodPallet = UIImageView()
+        let extraVase = UIImageView()
+        let seedLevelOne = UIImageView()
+        let circleNotes = UIImageView()
+        //Boards
+        let manBoard = UIImageView()
+        let womanBoard = UIImageView()
+        //PoupUps
+        let poupUpMan = UIImageView()
+        let poupUpOneWoman = UIImageView()
+        let poupUpTwoWoman = UIImageView()
+        let poupUpThreeWoman = UIImageView()
+        //Vitaminotes
+        let doVitaminote = UIImageView() //1
+        let reVitaminote = UIImageView() //2
+        let miVitaminote = UIImageView() //3
+        let faVitaminote = UIImageView() //4
+        let solVitaminote = UIImageView() //5
+        let laVitaminote = UIImageView() //6
+        let siVitaminote = UIImageView() //7
+        let faSharpVitaminote = UIImageView() //8
+        let solSharpVitaminote = UIImageView()//9
         
         background.image = UIImage(named: "diversos/background")
         background.frame = CGRect(x: 0, y: 0, width: 1440, height: 900)
@@ -84,6 +108,31 @@ class LevelOneViewController: UIViewController {
         
         
         //Subviews
+        view.addSubview(title)
+        view.addSubview(woodPallet)
+        //ballons
+        view.addSubview(manBoard)
+        view.addSubview(womanBoard)
+        //Pou
+        view.addSubview(poupUpMan)
+        view.addSubview(poupUpOneWoman)
+        view.addSubview(poupUpTwoWoman)
+        view.addSubview(poupUpThreeWoman)
+        //Other elements
+        view.addSubview(extraVase)
+        view.addSubview(seedLevelOne)
+        view.addSubview(circleNotes)
+        //VitamiNotes
+        view.addSubview(doVitaminote)
+        view.addSubview(reVitaminote)
+        view.addSubview(miVitaminote)
+        view.addSubview(faVitaminote)
+        view.addSubview(solVitaminote)
+        view.addSubview(laVitaminote)
+        view.addSubview(siVitaminote)
+        view.addSubview(faSharpVitaminote)
+        view.addSubview(solSharpVitaminote)
+    
         view.addSubview(background)
         view.addSubview(buttonToReset)
         view.addSubview(buttonToPlay)
@@ -99,17 +148,20 @@ class LevelOneViewController: UIViewController {
     //IBActions
     @IBAction func touchedButtonReset() {
         print("Apertou botão reset")
-        
-        
-        
+    }
+    
+    //IBActions
+    @IBAction func touchedButtonNextLevel() {
+        //guard if escala do Do nao esta completa nao fica verde
+        //else deixa botao proximaFase verde
+        print("Apertou botão proxima Fase")
     }
     
     @IBAction func touchedButtonToBackToOnboarding() {
         print("Apertou botão para voltar a OnboardingViewController ")
-        let novaViewController = LevelOneViewController(screenType: .mac , isPortrait: true)
         navigationController?.navigationBar.isHidden = true
         navigationController?.popViewController(animated: true)
-        navigationController?.pushViewController(novaViewController, animated: true)
+
         
         
     }
