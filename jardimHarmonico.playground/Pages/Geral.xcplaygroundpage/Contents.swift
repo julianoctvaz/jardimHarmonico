@@ -113,6 +113,10 @@ class LevelOneViewController: UIViewController {
         womanBoard.image = UIImage(named: "quadros/quadroMulher")
         womanBoard.frame = CGRect(x: 2, y: 500, width: 508, height: 400)
         
+        manBoard.image = UIImage(named: "quadros/quadroHomem")
+        manBoard.frame = CGRect(x: 60, y: -40, width: 367, height: 537)
+        
+        
 //        seedLevelOne.image = UIImage(named: "sementes/fase1Sementes")
 //        seedLevelOne.frame = CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
 //
