@@ -85,10 +85,10 @@ class LevelOneViewController: UIViewController {
         let manBoard = UIImageView()
         let womanBoard = UIImageView()
         //PoupUps
-//        let poupUpMan = UIImageView()
-//        let poupUpOneWoman = UIImageView()
-//        let poupUpTwoWoman = UIImageView()
-//        let poupUpThreeWoman = UIImageView()
+        let poupUpMan = UIImageView()
+        let poupUpOneWoman = UIImageView()
+        let poupUpTwoWoman = UIImageView()
+        let poupUpThreeWoman = UIImageView()
         //Vitaminotes
         let doVitaminote = UIImageView() //1
         let reVitaminote = UIImageView() //2
@@ -162,6 +162,9 @@ class LevelOneViewController: UIViewController {
         centerVase.image = UIImage(named: "vasos/vasoComTerra")
         centerVase.frame = CGRect(x: 861, y: 397, width: 96, height: 87)
         
+        poupUpMan.image = UIImage(named: "poupUp/poupUpHomem")
+        poupUpMan.frame = CGRect(x: 235, y: 22, width: 191, height: 203)
+        
    
 
 
@@ -205,17 +208,11 @@ class LevelOneViewController: UIViewController {
         view.addSubview(faSharpVitaminote) //8
         view.addSubview(solSharpVitaminote) //9
         
-
-     
-      
-   
-        //Ballons
-     
         //PoupUps
-//        view.addSubview(poupUpMan)
-//        view.addSubview(poupUpOneWoman)
-//        view.addSubview(poupUpTwoWoman)
-//        view.addSubview(poupUpThreeWoman)
+        view.addSubview(poupUpMan)
+        view.addSubview(poupUpOneWoman)
+        view.addSubview(poupUpTwoWoman)
+        view.addSubview(poupUpThreeWoman)
 
         //VitamiNotes
         view.addSubview(doVitaminote)
@@ -353,8 +350,8 @@ let levelTwoViewController = LevelTwoViewController()
 
 let navigation = UINavigationController(screenType: .mac, isPortrait: true)
 
-//navigation.pushViewController(onboardingViewController, animated: true)
-navigation.pushViewController(levelOneViewController, animated: true)
+navigation.pushViewController(onboardingViewController, animated: true)
+//navigation.pushViewController(levelOneViewController, animated: true)
 
 PlaygroundPage.current.liveView = navigation.scale(to: 0.5)
 
