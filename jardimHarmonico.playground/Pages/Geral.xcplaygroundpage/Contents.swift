@@ -131,6 +131,38 @@ class LevelOneViewController: UIViewController {
         circleNotes.image = UIImage(named: "diversos/auraCircularDeNotas")
         circleNotes.frame = CGRect(x: 87, y: 620, width: 263, height: 263)
         
+        doVitaminote.image = UIImage(named: "vitaminas/doVitaminota")
+        doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
+        
+        reVitaminote.image = UIImage(named: "vitaminas/reVitaminota")
+        reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
+
+        miVitaminote.image = UIImage(named: "vitaminas/miVitaminota")
+        miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
+
+        faVitaminote.image = UIImage(named: "vitaminas/faVitaminota")
+        faVitaminote.frame = CGRect(x: 124, y: 722, width: 62, height: 62)
+
+        solVitaminote.image = UIImage(named: "vitaminas/solVitaminota")
+        solVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
+
+        laVitaminote.image = UIImage(named: "vitaminas/laVitaminota")
+        laVitaminote.frame = CGRect(x: 250, y: 722, width: 62, height: 62)
+
+        siVitaminote.image = UIImage(named: "vitaminas/siVitaminota")
+        siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
+        
+        faSharpVitaminote.image = UIImage(named: "vitaminas/faSustenidoVitaminota")
+        faSharpVitaminote.frame = CGRect(x: 186, y: 774, width: 62, height: 62)
+        
+        solSharpVitaminote.image = UIImage(named: "vitaminas/solSustenidoVitaminota")
+        solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
+        
+   
+
+
+        
+        
     
         
         
@@ -139,25 +171,39 @@ class LevelOneViewController: UIViewController {
         buttonToOnboarding.addTarget(self, action: #selector(touchedButtonToBackToOnboarding), for: .touchUpInside)
         //butaoToPlay nao funciona nessa parte ainda
         
-        
+        ///SUBVIEWS HIERARCHIC
+        //Several
         view.addSubview(background)
-        //Boards
-        view.addSubview(manBoard)
-        view.addSubview(womanBoard)
-        //Other elements
-        view.addSubview(circleNotes)
-        view.addSubview(seedDo)
-        view.addSubview(seedRe)
-        view.addSubview(seedSol)
+        view.addSubview(title)
+        view.addSubview(woodPallet)
         view.addSubview(extraVase)
         //Butons
         view.addSubview(buttonToReset)
         view.addSubview(buttonToPlay)
         view.addSubview(buttonToOnboarding)
+        //Boards
+        view.addSubview(manBoard)
+        view.addSubview(womanBoard)
+        //Internal Man Board
+        view.addSubview(seedDo)
+        view.addSubview(seedRe)
+        view.addSubview(seedSol)
+        //Internal Woman Board and Vitaminotes
+        view.addSubview(circleNotes)
+        view.addSubview(doVitaminote) //1
+        view.addSubview(reVitaminote) //2
+        view.addSubview(miVitaminote) //3
+        view.addSubview(faVitaminote) //4
+        view.addSubview(solVitaminote) //5
+        view.addSubview(laVitaminote) //6
+        view.addSubview(siVitaminote) //7
+        view.addSubview(faSharpVitaminote) //8
+        view.addSubview(solSharpVitaminote) //9
+        
+
+     
       
-        //Subviews
-        view.addSubview(title)
-        view.addSubview(woodPallet)
+   
         //Ballons
      
         //Pou
