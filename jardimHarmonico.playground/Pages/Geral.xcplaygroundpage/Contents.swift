@@ -107,6 +107,11 @@ class LevelOneViewController: UIViewController {
         title.image = UIImage(named: "diversos/titulo")
         title.frame = CGRect(x: 612, y: 46, width: 571, height: 104)
         
+        woodPallet.image = UIImage(named: "diversos/palete")
+        woodPallet.frame = CGRect(x: 612, y: 242, width: 571, height: 418)
+        
+        womanBoard.image = UIImage(named: "quadros/quadroMulher")
+        womanBoard.frame = CGRect(x: 2, y: 500, width: 508, height: 400)
         
 //        seedLevelOne.image = UIImage(named: "sementes/fase1Sementes")
 //        seedLevelOne.frame = CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
@@ -280,7 +285,8 @@ let levelTwoViewController = LevelTwoViewController()
 
 let navigation = UINavigationController(screenType: .mac, isPortrait: true)
 
-navigation.pushViewController(onboardingViewController, animated: true)
+//navigation.pushViewController(onboardingViewController, animated: true)
+navigation.pushViewController(levelOneViewController, animated: true)
 
 PlaygroundPage.current.liveView = navigation.scale(to: 0.5)
 
