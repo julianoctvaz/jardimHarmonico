@@ -102,7 +102,17 @@ class LevelOneViewController: UIViewController {
         background.frame = CGRect(x: 0, y: 0, width: 1440, height: 900)
         
         extraVase.image = UIImage(named: "vasos/vasoExtra")
-        extraVase.frame = CGRect(x: 537, y: 769, width: 370, height: 134)
+        extraVase.frame = CGRect(x: 736, y: 769, width: 370, height: 134)
+        
+        title.image = UIImage(named: "diversos/titulo")
+        title.frame = CGRect(x: 612, y: 46, width: 571, height: 104)
+        
+        
+//        seedLevelOne.image = UIImage(named: "sementes/fase1Sementes")
+//        seedLevelOne.frame = CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
+//
+        
+        
         
         
         
