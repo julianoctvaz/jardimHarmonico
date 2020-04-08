@@ -75,8 +75,11 @@ class LevelOneViewController: UIViewController {
         let title = UIImageView()
         let woodPallet = UIImageView()
         let extraVase = UIImageView()
-        let seedLevelOne = UIImageView()
         let circleNotes = UIImageView()
+        //SeedLevelOne
+        let seedDo = UIImageView()
+        let seedRe = UIImageView()
+        let seedSol = UIImageView()
         //Boards
         let manBoard = UIImageView()
         let womanBoard = UIImageView()
@@ -115,15 +118,17 @@ class LevelOneViewController: UIViewController {
         
         manBoard.image = UIImage(named: "quadros/quadroHomem")
         manBoard.frame = CGRect(x: 60, y: -40, width: 367, height: 537)
+                      
+        seedDo.image = UIImage(named: "sementes/sementeDoVerde")
+        seedDo.frame = CGRect(x: 190, y: 304, width: 57, height: 77)
+
+        seedRe.image = UIImage(named: "sementes/sementeReCinza")
+        seedRe.frame = CGRect(x: 136, y: 390, width: 57, height: 77)
         
+        seedSol.image = UIImage(named: "sementes/sementeSolCinza")
+        seedSol.frame = CGRect(x: 216, y: 390, width: 57, height: 77)
         
-//        seedLevelOne.image = UIImage(named: "sementes/fase1Sementes")
-//        seedLevelOne.frame = CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
-//
-        
-        
-        
-        
+    
         
         
         //Target Button
@@ -133,20 +138,25 @@ class LevelOneViewController: UIViewController {
         
         
         view.addSubview(background)
+        //Boards
+        view.addSubview(manBoard)
+        view.addSubview(womanBoard)
+        //Other elements
+        view.addSubview(circleNotes)
+        view.addSubview(seedDo)
+        view.addSubview(seedRe)
+        view.addSubview(seedSol)
+        view.addSubview(extraVase)
         //Butons
         view.addSubview(buttonToReset)
         view.addSubview(buttonToPlay)
         view.addSubview(buttonToOnboarding)
-        //Other elements
-        view.addSubview(extraVase)
-        view.addSubview(seedLevelOne)
-        view.addSubview(circleNotes)
+      
         //Subviews
         view.addSubview(title)
         view.addSubview(woodPallet)
-        //ballons
-        view.addSubview(manBoard)
-        view.addSubview(womanBoard)
+        //Ballons
+     
         //Pou
         view.addSubview(poupUpMan)
         view.addSubview(poupUpOneWoman)
