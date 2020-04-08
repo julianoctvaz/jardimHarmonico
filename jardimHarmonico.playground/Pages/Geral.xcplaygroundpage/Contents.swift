@@ -67,7 +67,7 @@ class LevelOneViewController: UIViewController {
         
         buttonToPlay.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
         buttonToPlay.setImage(UIImage(named: "buttons/proximaFaseButton"), for: .normal)
-             
+        
         
         //Views, UIImage and ImagenViews
         let view = UIView()
@@ -132,13 +132,11 @@ class LevelOneViewController: UIViewController {
         view.addSubview(siVitaminote)
         view.addSubview(faSharpVitaminote)
         view.addSubview(solSharpVitaminote)
-    
+        
         view.addSubview(background)
         view.addSubview(buttonToReset)
         view.addSubview(buttonToPlay)
         view.addSubview(buttonToOnboarding)
-    
-        
         
         
         self.view = view
@@ -146,6 +144,25 @@ class LevelOneViewController: UIViewController {
     }
     
     //IBActions
+    /*
+     @IBAction func showOrDismissDoupUp(_ String: poupUp, _ string: estadoDaPlanta) {
+        switch (poupUp) {
+        case "plantaSementEscala":
+            <#code#>
+        case "addVitaminotasEvolucaoInicial":
+            <#code#>
+        case "addVitaminotasEvolucaoFinal":
+            <#code#>
+        case "parabensConclusaoEscala":
+            <#code#>
+        default:
+            <#code#>
+        }
+        print("Apertou botão reset")
+    }
+ 
+ */
+    
     @IBAction func touchedButtonReset() {
         print("Apertou botão reset")
     }
@@ -161,7 +178,7 @@ class LevelOneViewController: UIViewController {
         print("Apertou botão para voltar a OnboardingViewController ")
         navigationController?.navigationBar.isHidden = true
         navigationController?.popViewController(animated: true)
-
+        
         
         
     }
