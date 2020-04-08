@@ -114,19 +114,22 @@ class LevelOneViewController: UIViewController {
         woodPallet.frame = CGRect(x: 612, y: 242, width: 571, height: 418)
         
         womanBoard.image = UIImage(named: "quadros/quadroMulher")
-        womanBoard.frame = CGRect(x: 2, y: 500, width: 508, height: 400)
+        womanBoard.frame = CGRect(x: 2, y: 562, width: 508, height: 340)
         
         manBoard.image = UIImage(named: "quadros/quadroHomem")
-        manBoard.frame = CGRect(x: 60, y: -40, width: 367, height: 537)
+        manBoard.frame = CGRect(x: 60, y: 20, width: 367, height: 537)
                       
         seedDo.image = UIImage(named: "sementes/sementeDoVerde")
-        seedDo.frame = CGRect(x: 190, y: 304, width: 57, height: 77)
+        seedDo.frame = CGRect(x: 190, y: 364, width: 57, height: 77)
 
         seedRe.image = UIImage(named: "sementes/sementeReCinza")
-        seedRe.frame = CGRect(x: 136, y: 390, width: 57, height: 77)
+        seedRe.frame = CGRect(x: 136, y: 450, width: 57, height: 77)
         
         seedSol.image = UIImage(named: "sementes/sementeSolCinza")
-        seedSol.frame = CGRect(x: 216, y: 390, width: 57, height: 77)
+        seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
+        
+        circleNotes.image = UIImage(named: "diversos/auraCircularDeNotas")
+        circleNotes.frame = CGRect(x: 87, y: 620, width: 263, height: 263)
         
     
         
