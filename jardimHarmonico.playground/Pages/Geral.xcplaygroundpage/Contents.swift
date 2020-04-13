@@ -124,6 +124,10 @@ class LevelOneViewController: UIViewController {
                       
         seedDo.image = UIImage(named: "sementes/sementeDoVerde")
         seedDo.frame = CGRect(x: 190, y: 364, width: 57, height: 77)
+        //gesto da semente do dó
+        seedDo.isUserInteractionEnabled = true
+        let PanSeedDo = UIPanGestureRecognizer(target: self, action: #selector(handlePanSeedDo))
+        seedDo.addGestureRecognizer(PanSeedDo)
 
         seedRe.image = UIImage(named: "sementes/sementeReCinza")
         seedRe.frame = CGRect(x: 136, y: 450, width: 57, height: 77)
@@ -136,11 +140,7 @@ class LevelOneViewController: UIViewController {
         
         doVitaminote.image = UIImage(named: "vitaminas/doVitaminota")
         doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
-        //gesto vitaminota do dó
-        doVitaminote.isUserInteractionEnabled = true
-        let PanDoVitamine = UIPanGestureRecognizer(target: self, action: #selector(handlePanDoVitamine))
-        doVitaminote.addGestureRecognizer(PanDoVitamine)
-        
+
         reVitaminote.image = UIImage(named: "vitaminas/reVitaminota")
         reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
 
@@ -214,17 +214,7 @@ class LevelOneViewController: UIViewController {
         view.addSubview(seedDo)
         view.addSubview(seedRe)
         view.addSubview(seedSol)
-        //Vitaminotes
-        view.addSubview(circleNotes)
-        view.addSubview(doVitaminote) //1
-        view.addSubview(reVitaminote) //2
-        view.addSubview(miVitaminote) //3
-        view.addSubview(faVitaminote) //4
-        view.addSubview(solVitaminote) //5
-        view.addSubview(laVitaminote) //6
-        view.addSubview(siVitaminote) //7
-        view.addSubview(faSharpVitaminote) //8
-        view.addSubview(solSharpVitaminote) //9
+        
         
         //PoupUps
         view.addSubview(poupUpMan)
@@ -233,6 +223,16 @@ class LevelOneViewController: UIViewController {
         view.addSubview(poupUpCongratsLevelOne)
         view.addSubview(poupUpTryAgain)
 
+        //VitamiNotes
+        view.addSubview(doVitaminote)
+        view.addSubview(reVitaminote)
+        view.addSubview(miVitaminote)
+        view.addSubview(faVitaminote)
+        view.addSubview(solVitaminote)
+        view.addSubview(laVitaminote)
+        view.addSubview(siVitaminote)
+        view.addSubview(faSharpVitaminote)
+        view.addSubview(solSharpVitaminote)
         
         
         self.view = view
@@ -279,7 +279,7 @@ class LevelOneViewController: UIViewController {
     }
     
     //objc functions
-    @objc func handlePanDoVitamine(_ gesture: UIPanGestureRecognizer) {
+    @objc func handlePanSeedDo(_ gesture: UIPanGestureRecognizer) {
         // explicacao sobre 1,2 no GesturePlayground de Ale
         // 1
         let translation = gesture.translation(in: view)
@@ -296,9 +296,22 @@ class LevelOneViewController: UIViewController {
         
         // 3
         gesture.setTranslation(.zero, in: view)
+        
+       // if(isSeedOntheVase(gestureView)){
+            
+        }
 
-      print("Vitaminota do Dó foi tocado!")
+      print("Semente do Dó foi tocada!")
   }
+    
+    //other functions
+    
+//    isSeedOntheVase(view: UIImageView) -> Bool {
+//        if view(esta la) {
+//            return true
+//        }
+//        return false
+//    }
       
     
 }
