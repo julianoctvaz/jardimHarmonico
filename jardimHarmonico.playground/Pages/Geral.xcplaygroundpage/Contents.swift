@@ -8,12 +8,12 @@ import PlaygroundSupport
 class OnboardingViewController: UIViewController {
     
     //Buttons and Labels
-    let buttonToPlay = UIButton()
+    let buttonToNext = UIButton()
     
     override func loadView() { ///Carega/Cria a view
         //setting Buttons
-        buttonToPlay.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
-        buttonToPlay.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
+        buttonToNext.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
+        buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
         
         
         //Views, UIImage and ImagenViews
@@ -26,12 +26,12 @@ class OnboardingViewController: UIViewController {
         
         
         //Target Button
-        buttonToPlay.addTarget(self, action: #selector(touchedButton), for: .touchUpInside)
+        buttonToNext.addTarget(self, action: #selector(touchedButton), for: .touchUpInside)
         
         
         //Subviews
         view.addSubview(background)
-        view.addSubview(buttonToPlay)
+        view.addSubview(buttonToNext)
         
         self.view = view
         
@@ -52,21 +52,21 @@ class OnboardingViewController: UIViewController {
 class LevelOneViewController: UIViewController {
     
     //Buttons and Labels
-    let buttonToPlay = UIButton()
+    let buttonToNext = UIButton()
     let buttonToReset = UIButton()
     let buttonToOnboarding = UIButton()
     
     override func loadView() { ///Carega/Cria a view
         
         //setting Buttons
-        buttonToReset.frame = CGRect(x: 1265, y: 620, width: 121, height: 121)
+        buttonToReset.frame = CGRect(x: 1200, y: 660, width: 250, height: 100)
         buttonToReset.setImage(UIImage(named: "buttons/resetButton"), for: .normal)
         
-        buttonToOnboarding.frame = CGRect(x: 1200, y: 730, width: 250, height: 100)
+        buttonToOnboarding.frame = CGRect(x: 1200, y: 740, width: 250, height: 100)
         buttonToOnboarding.setImage(UIImage(named: "buttons/onboardingButton"), for: .normal)
         
-        buttonToPlay.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
-        buttonToPlay.setImage(UIImage(named: "buttons/proximaFaseButton"), for: .normal)
+        buttonToNext.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
+        buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButton"), for: .normal)
         
         
         //Views and ImagenViews
@@ -164,19 +164,24 @@ class LevelOneViewController: UIViewController {
         
         poupUpMan.image = UIImage(named: "poupUp/poupUpHomem")
         poupUpMan.frame = CGRect(x: 235, y: 22, width: 191, height: 203)
-        
-   
 
+        poupUpOneWoman.image = UIImage(named: "poupUp/poupUp1Mulher")
+        poupUpOneWoman.frame = CGRect(x: 377, y: 599, width: 250, height: 208)
 
-        
-        
-    
+        poupUpTwoWoman.image = UIImage(named: "poupUp/poupUp2Mulher")
+        poupUpTwoWoman.frame = CGRect(x: 592, y: 547, width: 227, height: 200)
+
+//        poupUpThreeWoman.image = UIImage(named: "poupUp/poupUp3Mulher")
+//        poupUpThreeWoman.frame = CGRect(x: 235, y: 22, width: 191, height: 203)
+
+     
+
         
         
         //Target Button
         buttonToReset.addTarget(self, action: #selector(touchedButtonReset), for: .touchUpInside)
         buttonToOnboarding.addTarget(self, action: #selector(touchedButtonToBackToOnboarding), for: .touchUpInside)
-        //butaoToPlay nao funciona nessa parte ainda
+        //butaoToNext nao funciona nessa parte ainda
         
         ///SUBVIEWS HIERARCHIC
         //Several
@@ -187,7 +192,7 @@ class LevelOneViewController: UIViewController {
         view.addSubview(centerVase)
         //Butons
         view.addSubview(buttonToReset)
-        view.addSubview(buttonToPlay)
+        view.addSubview(buttonToNext)
         view.addSubview(buttonToOnboarding)
         //Boards
         view.addSubview(manBoard)
