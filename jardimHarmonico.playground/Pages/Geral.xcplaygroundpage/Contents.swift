@@ -190,7 +190,7 @@ class LevelOneViewController: UIViewController {
         //Target Button
         buttonToReset.addTarget(self, action: #selector(touchedButtonReset), for: .touchUpInside)
         buttonToOnboarding.addTarget(self, action: #selector(touchedButtonToBackToOnboarding), for: .touchUpInside)
-        //butaoToNext nao funciona nessa parte ainda
+        buttonToNext.isEnabled = false   //butaoToNext nao funciona nessa parte ainda
         
         ///SUBVIEWS HIERARCHIC
         //Several
