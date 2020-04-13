@@ -169,19 +169,19 @@ class LevelOneViewController: UIViewController {
         
         poupUpOneWoman.image = UIImage(named: "poupUp/poupUp1Mulher")
         poupUpOneWoman.frame = CGRect(x: 377, y: 599, width: 250, height: 208)
-//        poupUpOneWoman.isHidden = true //comeca inativo
+        poupUpOneWoman.isHidden = true //comeca inativo
 
         poupUpTwoWoman.image = UIImage(named: "poupUp/poupUp2Mulher")
         poupUpTwoWoman.frame = CGRect(x: 592, y: 547, width: 227, height: 200)
-//        poupUpTwoWoman.isHidden = true //comeca inativo
+        poupUpTwoWoman.isHidden = true //comeca inativo
 
         poupUpCongratsLevelOne.image = UIImage(named: "poupUp/parabensFase1")
         poupUpCongratsLevelOne.frame = CGRect(x: 235, y: 22, width: 191, height: 203)
-//        poupUpCongratsLevelOne.isHidden = true //comeca inativo
+        poupUpCongratsLevelOne.isHidden = true //comeca inativo
         
         poupUpTryAgain.image = UIImage(named: "poupUp/falaErroJogada")
         poupUpTryAgain.frame = CGRect(x: 235, y: 22, width: 191, height: 203) //ver aqui as dimensoes e posicao
-//         poupUpTryAgain.isHidden = true
+        poupUpTryAgain.isHidden = true
 
      
 
