@@ -136,6 +136,10 @@ class LevelOneViewController: UIViewController {
         
         doVitaminote.image = UIImage(named: "vitaminas/doVitaminota")
         doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
+        //gesto vitaminota do dó
+        doVitaminote.isUserInteractionEnabled = true
+        let PanDoVitamine = UIPanGestureRecognizer(target: self, action: #selector(handlePanDoVitamine))
+        doVitaminote.addGestureRecognizer(PanDoVitamine)
         
         reVitaminote.image = UIImage(named: "vitaminas/reVitaminota")
         reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
@@ -210,7 +214,7 @@ class LevelOneViewController: UIViewController {
         view.addSubview(seedDo)
         view.addSubview(seedRe)
         view.addSubview(seedSol)
-        //Internal Woman Board and Vitaminotes
+        //Vitaminotes
         view.addSubview(circleNotes)
         view.addSubview(doVitaminote) //1
         view.addSubview(reVitaminote) //2
@@ -283,6 +287,29 @@ class LevelOneViewController: UIViewController {
         
         
     }
+    
+    //objc functions
+    @objc func handlePanDoVitamine(_ gesture: UIPanGestureRecognizer) {
+        // explicacao sobre 1,2 no GesturePlayground de Ale
+        // 1
+        let translation = gesture.translation(in: view)
+        
+        // 2
+        guard let gestureView = gesture.view else {
+            return
+        }
+        
+        gestureView.center = CGPoint(
+            x: gestureView.center.x + translation.x,
+            y: gestureView.center.y + translation.y
+        )
+        
+        // 3
+        gesture.setTranslation(.zero, in: view)
+
+      print("Vitaminota do Dó foi tocado!")
+  }
+      
     
 }
 
