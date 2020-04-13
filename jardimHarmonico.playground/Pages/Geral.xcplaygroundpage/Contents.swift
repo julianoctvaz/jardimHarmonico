@@ -233,16 +233,6 @@ class LevelOneViewController: UIViewController {
         view.addSubview(poupUpCongratsLevelOne)
         view.addSubview(poupUpTryAgain)
 
-        //VitamiNotes
-        view.addSubview(doVitaminote)
-        view.addSubview(reVitaminote)
-        view.addSubview(miVitaminote)
-        view.addSubview(faVitaminote)
-        view.addSubview(solVitaminote)
-        view.addSubview(laVitaminote)
-        view.addSubview(siVitaminote)
-        view.addSubview(faSharpVitaminote)
-        view.addSubview(solSharpVitaminote)
         
         
         self.view = view
