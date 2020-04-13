@@ -67,6 +67,7 @@ class LevelOneViewController: UIViewController {
         
         buttonToNext.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
         buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButton"), for: .normal)
+        buttonToNext.isEnabled = true // comeca inativo
         
         
         //Views and ImagenViews
@@ -88,7 +89,8 @@ class LevelOneViewController: UIViewController {
         let poupUpMan = UIImageView()
         let poupUpOneWoman = UIImageView()
         let poupUpTwoWoman = UIImageView()
-        let poupUpThreeWoman = UIImageView()
+        let poupUpCongratsLevelOne = UIImageView()
+        let poupUpTryAgain = UIImageView()
         //Vitaminotes
         let doVitaminote = UIImageView() //1
         let reVitaminote = UIImageView() //2
@@ -164,15 +166,22 @@ class LevelOneViewController: UIViewController {
         
         poupUpMan.image = UIImage(named: "poupUp/poupUpHomem")
         poupUpMan.frame = CGRect(x: 235, y: 22, width: 191, height: 203)
-
+        
         poupUpOneWoman.image = UIImage(named: "poupUp/poupUp1Mulher")
         poupUpOneWoman.frame = CGRect(x: 377, y: 599, width: 250, height: 208)
+//        poupUpOneWoman.isHidden = true //comeca inativo
 
         poupUpTwoWoman.image = UIImage(named: "poupUp/poupUp2Mulher")
         poupUpTwoWoman.frame = CGRect(x: 592, y: 547, width: 227, height: 200)
+//        poupUpTwoWoman.isHidden = true //comeca inativo
 
-//        poupUpThreeWoman.image = UIImage(named: "poupUp/poupUp3Mulher")
-//        poupUpThreeWoman.frame = CGRect(x: 235, y: 22, width: 191, height: 203)
+        poupUpCongratsLevelOne.image = UIImage(named: "poupUp/parabensFase1")
+        poupUpCongratsLevelOne.frame = CGRect(x: 235, y: 22, width: 191, height: 203)
+//        poupUpCongratsLevelOne.isHidden = true //comeca inativo
+        
+        poupUpTryAgain.image = UIImage(named: "poupUp/falaErroJogada")
+        poupUpTryAgain.frame = CGRect(x: 235, y: 22, width: 191, height: 203) //ver aqui as dimensoes e posicao
+//         poupUpTryAgain.isHidden = true
 
      
 
@@ -217,7 +226,8 @@ class LevelOneViewController: UIViewController {
         view.addSubview(poupUpMan)
         view.addSubview(poupUpOneWoman)
         view.addSubview(poupUpTwoWoman)
-        view.addSubview(poupUpThreeWoman)
+        view.addSubview(poupUpCongratsLevelOne)
+        view.addSubview(poupUpTryAgain)
 
         //VitamiNotes
         view.addSubview(doVitaminote)
@@ -236,11 +246,11 @@ class LevelOneViewController: UIViewController {
     }
     
     //IBActions
-    /*
-     @IBAction func showOrDismissDoupUp(_ String: poupUp, _ string: estadoDaPlanta) {
+    
+  /*   @IBAction func showOrDismissDoupUp(_ String: poupUp, _ string: estadoDaPlanta) {
         switch (poupUp) {
         case "plantaSementEscala":
-            <#code#>
+
         case "addVitaminotasEvolucaoInicial":
             <#code#>
         case "addVitaminotasEvolucaoFinal":
@@ -252,14 +262,13 @@ class LevelOneViewController: UIViewController {
         }
         print("Apertou botão reset")
     }
- 
  */
+ 
     
     @IBAction func touchedButtonReset() {
         print("Apertou botão reset")
     }
     
-    //IBActions
     @IBAction func touchedButtonNextLevel() {
         //guard if escala do Do nao esta completa nao fica verde
         //else deixa botao proximaFase verde
