@@ -52,7 +52,7 @@ class OnboardingViewController: UIViewController {
 }
 
 class LevelOneViewController: UIViewController {
-        //Buttons and Labels
+    //Buttons and Labels
     let buttonToNext = UIButton()
     let buttonToReset = UIButton()
     let buttonToOnboarding = UIButton()
@@ -67,7 +67,7 @@ class LevelOneViewController: UIViewController {
     let vaseCompletedRounds = UIImageView()
     let circleNotes = UIImageView()
     let newCenterVase = UIImageView()
-    
+    let faliedVase = UIImageView()
     let titleGarden = UIImageView()
     //PoupUps
     let poupUpMan = UIImageView()
@@ -104,149 +104,153 @@ class LevelOneViewController: UIViewController {
         let view = UIView()
         
         if(true){
-        //setting Buttons
-        buttonToReset.frame = CGRect(x: 1200, y: 660, width: 250, height: 100)
-        buttonToReset.setImage(UIImage(named: "buttons/resetButton"), for: .normal)
-        
-        buttonToOnboarding.frame = CGRect(x: 1200, y: 740, width: 250, height: 100)
-        buttonToOnboarding.setImage(UIImage(named: "buttons/onboardingButton"), for: .normal)
-        
-        buttonToNext.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
-        buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButton"), for: .normal)
+            //setting Buttons
+            buttonToReset.frame = CGRect(x: 1200, y: 660, width: 250, height: 100)
+            buttonToReset.setImage(UIImage(named: "buttons/resetButton"), for: .normal)
+            
+            buttonToOnboarding.frame = CGRect(x: 1200, y: 740, width: 250, height: 100)
+            buttonToOnboarding.setImage(UIImage(named: "buttons/onboardingButton"), for: .normal)
+            
+            buttonToNext.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
+            buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButton"), for: .normal)
             buttonToNext.isEnabled = true }// buttons
         
         
         if(true){
-        //settings ImageViews
-        background.image = UIImage(named: "diversos/background")
-        background.frame = CGRect(x: 0, y: 0, width: 1440, height: 900)
-        
-        extraVase.image = UIImage(named: "vasos/vasoExtra")
-        extraVase.frame = CGRect(x: 736, y: 769, width: 370, height: 134)
-        
-        titleGarden.image = UIImage(named: "diversos/titulo")
-        titleGarden.frame = CGRect(x: 612, y: 46, width: 571, height: 104)
-        
-        woodPallet.image = UIImage(named: "diversos/palete")
-        woodPallet.frame = CGRect(x: 612, y: 242, width: 571, height: 418)
-        
-        womanBoard.image = UIImage(named: "quadros/quadroMulher")
-        womanBoard.frame = CGRect(x: 2, y: 562, width: 508, height: 340)
-        
-        manBoard.image = UIImage(named: "quadros/quadroHomem")
-        manBoard.frame = CGRect(x: 60, y: 20, width: 367, height: 537)
-        
-        seedDo.image = UIImage(named: "sementes/sementeDoVerde")
-        seedDo.frame = CGRect(x: 190, y: 364, width: 57, height: 77)
+            //settings ImageViews
+            background.image = UIImage(named: "diversos/background")
+            background.frame = CGRect(x: 0, y: 0, width: 1440, height: 900)
             
-        
-        centerVase.image = UIImage(named: "vasos/vasoComTerra")
-        centerVase.frame = CGRect(x: 861, y: 397, width: 96, height: 87)
-        
-        newCenterVase.image = UIImage(named: "crescimentoPlanta/raizAposSemente")
-        newCenterVase.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
-        newCenterVase.isHidden = true
-        
-        vaseWithRound1Vitaminote.image = UIImage(named: "crescimentoPlanta/raizAposSementeEVitaminasPrimeiraParte")
-        vaseWithRound1Vitaminote.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
-        vaseWithRound1Vitaminote.isHidden = true
-        
-        vaseCompletedRounds.image = UIImage(named: "crescimentoPlanta/raizAposSementeEVitaminasDO")
-        vaseCompletedRounds.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
-        vaseCompletedRounds.isHidden = true
-        
-        
-        poupUpMan.image = UIImage(named: "poupUp/poupUpHomem")
-        poupUpMan.frame = CGRect(x: 235, y: 22, width: 191, height: 203)
-        
-        poupUpOneWoman.image = UIImage(named: "poupUp/poupUp1Mulher")
-        poupUpOneWoman.frame = CGRect(x: 377, y: 599, width: 250, height: 208)
-        poupUpOneWoman.isHidden = true //comeca inativo
-        
-        poupUpTwoWoman.image = UIImage(named: "poupUp/poupUp2Mulher")
-        poupUpTwoWoman.frame = CGRect(x: 377, y: 599, width: 227, height: 200)
-        poupUpTwoWoman.isHidden = true //comeca inativo
-        
-        poupUpCongratsLevelOne.image = UIImage(named: "poupUp/parabensFase1")
-        poupUpCongratsLevelOne.frame = CGRect(x: 235, y: 22, width: 191, height: 203)
-        poupUpCongratsLevelOne.isHidden = true //comeca inativo
-        
-        poupUpTryAgain.image = UIImage(named: "poupUp/falaErroJogada")
-        poupUpTryAgain.frame = CGRect(x: 235, y: 22, width: 191, height: 203) //ver aqui as dimensoes e posicao
-        poupUpTryAgain.isHidden = true
+            extraVase.image = UIImage(named: "vasos/vasoExtra")
+            extraVase.frame = CGRect(x: 736, y: 769, width: 370, height: 134)
+            
+            titleGarden.image = UIImage(named: "diversos/titulo")
+            titleGarden.frame = CGRect(x: 612, y: 46, width: 571, height: 104)
+            
+            woodPallet.image = UIImage(named: "diversos/palete")
+            woodPallet.frame = CGRect(x: 612, y: 242, width: 571, height: 418)
+            
+            womanBoard.image = UIImage(named: "quadros/quadroMulher")
+            womanBoard.frame = CGRect(x: 2, y: 562, width: 508, height: 340)
+            
+            manBoard.image = UIImage(named: "quadros/quadroHomem")
+            manBoard.frame = CGRect(x: 60, y: 20, width: 367, height: 537)
+            
+            seedDo.image = UIImage(named: "sementes/sementeDoVerde")
+            seedDo.frame = CGRect(x: 190, y: 364, width: 57, height: 77)
+            
+            
+            centerVase.image = UIImage(named: "vasos/vasoComTerra")
+            centerVase.frame = CGRect(x: 861, y: 397, width: 96, height: 87)
+            
+            newCenterVase.image = UIImage(named: "crescimentoPlanta/raizAposSemente")
+            newCenterVase.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
+            newCenterVase.isHidden = true
+            
+            vaseWithRound1Vitaminote.image = UIImage(named: "crescimentoPlanta/raizAposSementeEVitaminasPrimeiraParte")
+            vaseWithRound1Vitaminote.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
+            vaseWithRound1Vitaminote.isHidden = true
+            
+            vaseCompletedRounds.image = UIImage(named: "crescimentoPlanta/raizAposSementeEVitaminasDO")
+            vaseCompletedRounds.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
+            vaseCompletedRounds.isHidden = true
+            
+            faliedVase.image = UIImage(named: "crescimentoPlanta/plantaMorreu")
+            faliedVase.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
+            faliedVase.isHidden = true
+            
+            
+            poupUpMan.image = UIImage(named: "poupUp/poupUpHomem")
+            poupUpMan.frame = CGRect(x: 235, y: 22, width: 191, height: 203)
+            
+            poupUpOneWoman.image = UIImage(named: "poupUp/poupUp1Mulher")
+            poupUpOneWoman.frame = CGRect(x: 377, y: 599, width: 250, height: 208)
+            poupUpOneWoman.isHidden = true //comeca inativo
+            
+            poupUpTwoWoman.image = UIImage(named: "poupUp/poupUp2Mulher")
+            poupUpTwoWoman.frame = CGRect(x: 377, y: 599, width: 227, height: 200)
+            poupUpTwoWoman.isHidden = true //comeca inativo
+            
+            poupUpCongratsLevelOne.image = UIImage(named: "poupUp/parabensFase1")
+            poupUpCongratsLevelOne.frame = CGRect(x: 235, y: 22, width: 191, height: 203)
+            poupUpCongratsLevelOne.isHidden = true //comeca inativo
+            
+            poupUpTryAgain.image = UIImage(named: "poupUp/falaErroJogada")
+            poupUpTryAgain.frame = CGRect(x: 235, y: 22, width: 191, height: 203) //ver aqui as dimensoes e posicao
+            poupUpTryAgain.isHidden = true
         }//several frames and UIImagensView
         
         
         if(true){
-        seedDo.isUserInteractionEnabled = true
-        let panSeedDo = UIPanGestureRecognizer(target: self, action: #selector(handlePanSeedDo))
-        seedDo.addGestureRecognizer(panSeedDo)
-        
-        seedRe.image = UIImage(named: "sementes/sementeReCinza")
-        seedRe.frame = CGRect(x: 136, y: 450, width: 57, height: 77)
-        seedRe.isUserInteractionEnabled = false
-        
-        seedSol.image = UIImage(named: "sementes/sementeSolCinza")
-        seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
-        seedSol.isUserInteractionEnabled = false
-        
-        circleNotes.image = UIImage(named: "diversos/auraCircularDeNotas")
-        circleNotes.frame = CGRect(x: 87, y: 620, width: 263, height: 263)
-        
-        doVitaminote.image = UIImage(named: "vitaminas/doVitaminota")
-        doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
-        doVitaminote.isUserInteractionEnabled = true
-        let panDoVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanDoVitaminote))
-        doVitaminote.addGestureRecognizer(panDoVitaminote)
-        
-        reVitaminote.image = UIImage(named: "vitaminas/reVitaminota")
-        reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
-        reVitaminote.isUserInteractionEnabled = true
-        let panReVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanReVitaminote))
-        reVitaminote.addGestureRecognizer(panReVitaminote)
-        
-        
-        miVitaminote.image = UIImage(named: "vitaminas/miVitaminota")
-        miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
-        miVitaminote.isUserInteractionEnabled = true
-        let panMiVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanMiVitaminote))
-        miVitaminote.addGestureRecognizer(panMiVitaminote)
-        
-        faVitaminote.image = UIImage(named: "vitaminas/faVitaminota")
-        faVitaminote.frame = CGRect(x: 124, y: 722, width: 62, height: 62)
-        faVitaminote.isUserInteractionEnabled = true
-        let panFaVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanFaVitaminote))
-        faVitaminote.addGestureRecognizer(panFaVitaminote)
-        
-        solVitaminote.image = UIImage(named: "vitaminas/solVitaminota")
-        solVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
-        solVitaminote.isUserInteractionEnabled = true
-        let panSolVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSolVitaminote))
-        solVitaminote.addGestureRecognizer(panSolVitaminote)
-        
-        laVitaminote.image = UIImage(named: "vitaminas/laVitaminota")
-        laVitaminote.frame = CGRect(x: 250, y: 722, width: 62, height: 62)
-        laVitaminote.isUserInteractionEnabled = true
-        let panLaVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanLaVitaminote))
-        laVitaminote.addGestureRecognizer(panLaVitaminote)
-        
-        siVitaminote.image = UIImage(named: "vitaminas/siVitaminota")
-        siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
-        siVitaminote.isUserInteractionEnabled = true
-        let panSiVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSiVitaminote))
-        siVitaminote.addGestureRecognizer(panSiVitaminote)
-        
-        faSharpVitaminote.image = UIImage(named: "vitaminas/faSustenidoVitaminota")
-        faSharpVitaminote.frame = CGRect(x: 186, y: 774, width: 62, height: 62)
-        faSharpVitaminote.isUserInteractionEnabled = true
-        let panFaSharpVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanFaSharpVitaminote))
-        faSharpVitaminote.addGestureRecognizer(panFaSharpVitaminote)
-        
-        solSharpVitaminote.image = UIImage(named: "vitaminas/solSustenidoVitaminota")
-        solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
-        solSharpVitaminote.isUserInteractionEnabled = true
-        let panSolSharpVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSolSharpVitaminote))
-        solSharpVitaminote.addGestureRecognizer(panSolSharpVitaminote)
+            seedDo.isUserInteractionEnabled = true
+            let panSeedDo = UIPanGestureRecognizer(target: self, action: #selector(handlePanSeedDo))
+            seedDo.addGestureRecognizer(panSeedDo)
+            
+            seedRe.image = UIImage(named: "sementes/sementeReCinza")
+            seedRe.frame = CGRect(x: 136, y: 450, width: 57, height: 77)
+            seedRe.isUserInteractionEnabled = false
+            
+            seedSol.image = UIImage(named: "sementes/sementeSolCinza")
+            seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
+            seedSol.isUserInteractionEnabled = false
+            
+            circleNotes.image = UIImage(named: "diversos/auraCircularDeNotas")
+            circleNotes.frame = CGRect(x: 87, y: 620, width: 263, height: 263)
+            
+            doVitaminote.image = UIImage(named: "vitaminas/doVitaminota")
+            doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
+            doVitaminote.isUserInteractionEnabled = true
+            let panDoVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanDoVitaminote))
+            doVitaminote.addGestureRecognizer(panDoVitaminote)
+            
+            reVitaminote.image = UIImage(named: "vitaminas/reVitaminota")
+            reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
+            reVitaminote.isUserInteractionEnabled = true
+            let panReVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanReVitaminote))
+            reVitaminote.addGestureRecognizer(panReVitaminote)
+            
+            
+            miVitaminote.image = UIImage(named: "vitaminas/miVitaminota")
+            miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
+            miVitaminote.isUserInteractionEnabled = true
+            let panMiVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanMiVitaminote))
+            miVitaminote.addGestureRecognizer(panMiVitaminote)
+            
+            faVitaminote.image = UIImage(named: "vitaminas/faVitaminota")
+            faVitaminote.frame = CGRect(x: 124, y: 722, width: 62, height: 62)
+            faVitaminote.isUserInteractionEnabled = true
+            let panFaVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanFaVitaminote))
+            faVitaminote.addGestureRecognizer(panFaVitaminote)
+            
+            solVitaminote.image = UIImage(named: "vitaminas/solVitaminota")
+            solVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
+            solVitaminote.isUserInteractionEnabled = true
+            let panSolVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSolVitaminote))
+            solVitaminote.addGestureRecognizer(panSolVitaminote)
+            
+            laVitaminote.image = UIImage(named: "vitaminas/laVitaminota")
+            laVitaminote.frame = CGRect(x: 250, y: 722, width: 62, height: 62)
+            laVitaminote.isUserInteractionEnabled = true
+            let panLaVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanLaVitaminote))
+            laVitaminote.addGestureRecognizer(panLaVitaminote)
+            
+            siVitaminote.image = UIImage(named: "vitaminas/siVitaminota")
+            siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
+            siVitaminote.isUserInteractionEnabled = true
+            let panSiVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSiVitaminote))
+            siVitaminote.addGestureRecognizer(panSiVitaminote)
+            
+            faSharpVitaminote.image = UIImage(named: "vitaminas/faSustenidoVitaminota")
+            faSharpVitaminote.frame = CGRect(x: 186, y: 774, width: 62, height: 62)
+            faSharpVitaminote.isUserInteractionEnabled = true
+            let panFaSharpVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanFaSharpVitaminote))
+            faSharpVitaminote.addGestureRecognizer(panFaSharpVitaminote)
+            
+            solSharpVitaminote.image = UIImage(named: "vitaminas/solSustenidoVitaminota")
+            solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
+            solSharpVitaminote.isUserInteractionEnabled = true
+            let panSolSharpVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSolSharpVitaminote))
+            solSharpVitaminote.addGestureRecognizer(panSolSharpVitaminote)
         } //gestures
         
         
@@ -254,55 +258,56 @@ class LevelOneViewController: UIViewController {
             buttonToReset.addTarget(self, action: #selector(touchedButtonReset), for: .touchUpInside)
             
             buttonToOnboarding.addTarget(self, action: #selector(touchedButtonToBackToOnboarding), for: .touchUpInside)
-           
+            
             buttonToNext.addTarget(self, action: #selector(touchedButtonNextLevel), for: .touchUpInside)
             buttonToNext.isEnabled = false
-           
+            
         }//targets
         
         
         ///SUBVIEWS HIERARCHIC
         if(true){
-        
-        //Several
-        view.addSubview(background)
-        view.addSubview(titleGarden)
-        view.addSubview(woodPallet)
-        view.addSubview(extraVase)
-        view.addSubview(centerVase)
-        view.addSubview(newCenterVase)
-        view.addSubview(vaseWithRound1Vitaminote)
-        view.addSubview(vaseCompletedRounds)
-        //Butons
-        view.addSubview(buttonToReset)
-        view.addSubview(buttonToNext)
-        view.addSubview(buttonToOnboarding)
-        //Boards
-        view.addSubview(manBoard)
-        view.addSubview(womanBoard)
-        //Internal Man Board
-        view.addSubview(seedDo)
-        view.addSubview(seedRe)
-        view.addSubview(seedSol)
-        //PoupUps
-        view.addSubview(poupUpMan)
-        view.addSubview(poupUpOneWoman)
-        view.addSubview(poupUpTwoWoman)
-        view.addSubview(poupUpCongratsLevelOne)
-        view.addSubview(poupUpTryAgain)
-        //VitamiNotes
-        view.addSubview(doVitaminote)
-        view.addSubview(reVitaminote)
-        view.addSubview(miVitaminote)
-        view.addSubview(faVitaminote)
-        view.addSubview(solVitaminote)
-        view.addSubview(laVitaminote)
-        view.addSubview(siVitaminote)
-        view.addSubview(faSharpVitaminote)
-        view.addSubview(solSharpVitaminote)
-        
+            
+            //Several
+            view.addSubview(background)
+            view.addSubview(titleGarden)
+            view.addSubview(woodPallet)
+            view.addSubview(extraVase)
+            view.addSubview(centerVase)
+            view.addSubview(newCenterVase)
+            view.addSubview(vaseWithRound1Vitaminote)
+            view.addSubview(vaseCompletedRounds)
+            view.addSubview(faliedVase)
+            //Butons
+            view.addSubview(buttonToReset)
+            view.addSubview(buttonToNext)
+            view.addSubview(buttonToOnboarding)
+            //Boards
+            view.addSubview(manBoard)
+            view.addSubview(womanBoard)
+            //Internal Man Board
+            view.addSubview(seedDo)
+            view.addSubview(seedRe)
+            view.addSubview(seedSol)
+            //PoupUps
+            view.addSubview(poupUpMan)
+            view.addSubview(poupUpOneWoman)
+            view.addSubview(poupUpTwoWoman)
+            view.addSubview(poupUpCongratsLevelOne)
+            view.addSubview(poupUpTryAgain)
+            //VitamiNotes
+            view.addSubview(doVitaminote)
+            view.addSubview(reVitaminote)
+            view.addSubview(miVitaminote)
+            view.addSubview(faVitaminote)
+            view.addSubview(solVitaminote)
+            view.addSubview(laVitaminote)
+            view.addSubview(siVitaminote)
+            view.addSubview(faSharpVitaminote)
+            view.addSubview(solSharpVitaminote)
+            
         } //subviews
-       
+        
         self.view = view
         
     }
@@ -311,10 +316,10 @@ class LevelOneViewController: UIViewController {
     @IBAction func touchedButtonReset() {
         //print(navigationController?.viewControllers)
         let novaViewController = LevelOneViewController(screenType: .mac , isPortrait: true)
-          navigationController?.pushViewController(novaViewController, animated: false)
-         // print(navigationController?.viewControllers)
-          //coloca em cima da onboard a tela level 1
-          navigationController?.navigationBar.isHidden = true
+        navigationController?.pushViewController(novaViewController, animated: false)
+        // print(navigationController?.viewControllers)
+        //coloca em cima da onboard a tela level 1
+        navigationController?.navigationBar.isHidden = true
         print("Apertou botão reset")
         
     }
@@ -415,7 +420,15 @@ class LevelOneViewController: UIViewController {
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
                 doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
-                // gestureView.isUserInteractionEnabled = true
+                
+                if(!newCenterVase.isHidden){
+                    newCenterVase.isHidden = true
+                    faliedVase.isHidden = false
+                    // gestureView.isUserInteractionEnabled = true
+                }else{
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                }
             }
         }
     }
@@ -455,6 +468,15 @@ class LevelOneViewController: UIViewController {
                 reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
                 // gestureView.isUserInteractionEnabled = true
+                if(!newCenterVase.isHidden){
+                    newCenterVase.isHidden = true
+                    faliedVase.isHidden = false
+                    // gestureView.isUserInteractionEnabled = true
+                }else{
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                }
+                
             }
         }
     }
@@ -495,6 +517,14 @@ class LevelOneViewController: UIViewController {
                 miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
                 // gestureView.isUserInteractionEnabled = true
+                if(!newCenterVase.isHidden){
+                    newCenterVase.isHidden = true
+                    faliedVase.isHidden = false
+                    // gestureView.isUserInteractionEnabled = true
+                }else{
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                }
             }
         }
     }
@@ -533,7 +563,14 @@ class LevelOneViewController: UIViewController {
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
                 faVitaminote.frame =  CGRect(x: 124, y: 722, width: 62, height: 62)
                 gesture.isEnabled = true
-                // gestureView.isUserInteractionEnabled = true
+                if(!newCenterVase.isHidden){
+                    newCenterVase.isHidden = true
+                    faliedVase.isHidden = false
+                    // gestureView.isUserInteractionEnabled = true
+                }else{
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                }
             }
         }
     }
@@ -573,6 +610,14 @@ class LevelOneViewController: UIViewController {
                 solVitaminote.frame =  CGRect(x: 186, y: 722, width: 62, height: 62)
                 gesture.isEnabled = true
                 // gestureView.isUserInteractionEnabled = true
+                if(!newCenterVase.isHidden){
+                    newCenterVase.isHidden = true
+                    faliedVase.isHidden = false
+                    // gestureView.isUserInteractionEnabled = true
+                }else{
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                }
             }
         }
     }
@@ -609,10 +654,14 @@ class LevelOneViewController: UIViewController {
                 
             }
             else{
-                gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
-                laVitaminote.frame =  CGRect(x: 250, y: 722, width: 62, height: 62)
-                gesture.isEnabled = true
-                // gestureView.isUserInteractionEnabled = true
+                if(!newCenterVase.isHidden){
+                    newCenterVase.isHidden = true
+                    faliedVase.isHidden = false
+                    // gestureView.isUserInteractionEnabled = true
+                }else{
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                }
             }
         }
     }
@@ -706,6 +755,16 @@ class LevelOneViewController: UIViewController {
                     buttonToNext.isEnabled = true
                     buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
                     poupUpCongratsLevelOne.isHidden = false
+                }else{
+                    if(!newCenterVase.isHidden){
+                        newCenterVase.isHidden = true
+                        faliedVase.isHidden = false
+                        // gestureView.isUserInteractionEnabled = true
+                    }else{
+                        vaseWithRound1Vitaminote.isHidden = true
+                        faliedVase.isHidden = false
+                    }
+                    
                 }
             }
         }
@@ -739,6 +798,15 @@ class LevelOneViewController: UIViewController {
             gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
             faSharpVitaminote.frame =  CGRect(x: 186, y: 774, width: 62, height: 62)
             gesture.isEnabled = true
+            if(!newCenterVase.isHidden){
+                newCenterVase.isHidden = true
+                faliedVase.isHidden = false
+                // gestureView.isUserInteractionEnabled = true
+            }else{
+                vaseWithRound1Vitaminote.isHidden = true
+                faliedVase.isHidden = false
+            }
+            
         }
     }
     
@@ -768,6 +836,14 @@ class LevelOneViewController: UIViewController {
             gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
             solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
             gesture.isEnabled = true
+            if(!newCenterVase.isHidden){
+                newCenterVase.isHidden = true
+                faliedVase.isHidden = false
+                // gestureView.isUserInteractionEnabled = true
+            }else{
+                vaseWithRound1Vitaminote.isHidden = true
+                faliedVase.isHidden = false
+            }
         }
     }
 }//end class level 1
