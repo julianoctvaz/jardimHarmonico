@@ -372,8 +372,8 @@ class LevelOneViewController: UIViewController {
         if centerVaseRect.contains(gestureView.frame) {
             print("A vitamina foi colocada no vaso")
             
-            if(vitaminoteSequence[0] == false){//valida a sequencia
-            //if(vitaminoteSequence[0] == true){//valida a sequencia
+           // if(vitaminoteSequence[0] == false){//valida a sequencia
+            if(vitaminoteSequence[0] == true){//valida a sequencia
                 vitaminoteSequence[0] = true
                 print(vitaminoteSequence)
                 //gesture.reset() // ver o que essa funcao faz
@@ -381,8 +381,9 @@ class LevelOneViewController: UIViewController {
                 
             }
             else{
-                gestureView.isUserInteractionEnabled = false
+                gesture.isEnabled = false
                 gestureView.center = .init(x:124,y:669)
+                gesture.isEnabled = true
                // gestureView.isUserInteractionEnabled = true
             }
             
@@ -596,6 +597,8 @@ class LevelOneViewController: UIViewController {
                    print(vitaminoteSequence)
                    //gesture.reset() // ver o que essa funcao faz
                    siVitaminote.isHidden = true
+       
+                
                 
                    
                }
