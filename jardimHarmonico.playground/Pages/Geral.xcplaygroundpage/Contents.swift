@@ -39,13 +39,15 @@ class OnboardingViewController: UIViewController {
     
     //IBActions
     @IBAction func touchedButton() {
-        //print("Apertou botão da OnboardingViewController para ir para a LeveOne")
+        print("Apertou botão da OnboardingViewController para ir para a LeveOne")
         let novaViewController = LevelOneViewController(screenType: .mac , isPortrait: true)
+        navigationController?.popViewController(animated: true)
         navigationController?.pushViewController(novaViewController, animated: true)
         //coloca em cima da onboard a tela level 1
         navigationController?.navigationBar.isHidden = true
         
     }
+    //aqui pode ter outros buttons(IBActions) para validar se passou do lvl1 e quiser voltar ja ir para o lvl 2 ao inves de ter de voltar pro comeco
     
 }
 
@@ -62,6 +64,8 @@ class LevelOneViewController: UIViewController {
     let woodPallet = UIImageView()
     let extraVase = UIImageView()
     let centerVase = UIImageView()
+    let vaseWithRound1Vitaminote = UIImageView()
+    let vaseCompletedRounds = UIImageView()
     let circleNotes = UIImageView()
     let newCenterVase = UIImageView()
     let titleGarden = UIImageView()
@@ -90,7 +94,8 @@ class LevelOneViewController: UIViewController {
     let solSharpVitaminote = UIImageView()//9
     
     var vitaminoteSequence = Array(repeating: false, count:7)//array bool de validacao
-    
+    var round1VitamineSequence = true
+    var round2VitamineSequence = true
     
     /// <#Description#>
     override func loadView() { ///Carega/Cria a view
@@ -140,9 +145,11 @@ class LevelOneViewController: UIViewController {
         
         seedRe.image = UIImage(named: "sementes/sementeReCinza")
         seedRe.frame = CGRect(x: 136, y: 450, width: 57, height: 77)
+        seedRe.isUserInteractionEnabled = false
         
         seedSol.image = UIImage(named: "sementes/sementeSolCinza")
         seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
+        seedSol.isUserInteractionEnabled = false
         
         circleNotes.image = UIImage(named: "diversos/auraCircularDeNotas")
         circleNotes.frame = CGRect(x: 87, y: 620, width: 263, height: 263)
@@ -210,6 +217,15 @@ class LevelOneViewController: UIViewController {
         newCenterVase.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
         newCenterVase.isHidden = true
         
+        vaseWithRound1Vitaminote.image = UIImage(named: "crescimentoPlanta/raizAposSementeEVitaminasPrimeiraParte")
+        vaseWithRound1Vitaminote.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
+        vaseWithRound1Vitaminote.isHidden = true
+         
+       vaseCompletedRounds.image = UIImage(named: "crescimentoPlanta/raizAposSementeEVitaminasDO")
+       vaseCompletedRounds.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
+       vaseCompletedRounds.isHidden = true
+       
+        
         poupUpMan.image = UIImage(named: "poupUp/poupUpHomem")
         poupUpMan.frame = CGRect(x: 235, y: 22, width: 191, height: 203)
         
@@ -218,7 +234,7 @@ class LevelOneViewController: UIViewController {
         poupUpOneWoman.isHidden = true //comeca inativo
         
         poupUpTwoWoman.image = UIImage(named: "poupUp/poupUp2Mulher")
-        poupUpTwoWoman.frame = CGRect(x: 592, y: 547, width: 227, height: 200)
+        poupUpTwoWoman.frame = CGRect(x: 377, y: 599, width: 227, height: 200)
         poupUpTwoWoman.isHidden = true //comeca inativo
         
         poupUpCongratsLevelOne.image = UIImage(named: "poupUp/parabensFase1")
@@ -233,7 +249,9 @@ class LevelOneViewController: UIViewController {
         ///Target Button
         buttonToReset.addTarget(self, action: #selector(touchedButtonReset), for: .touchUpInside)
         buttonToOnboarding.addTarget(self, action: #selector(touchedButtonToBackToOnboarding), for: .touchUpInside)
-        buttonToNext.isEnabled = false   //butaoToNext nao funciona nessa parte ainda
+        buttonToNext.addTarget(self, action: #selector(touchedButtonNextLevel), for: .touchUpInside)
+        buttonToNext.isEnabled = false
+        
         
         
         ///SUBVIEWS HIERARCHIC
@@ -245,6 +263,8 @@ class LevelOneViewController: UIViewController {
         view.addSubview(extraVase)
         view.addSubview(centerVase)
         view.addSubview(newCenterVase)
+        view.addSubview(vaseWithRound1Vitaminote)
+        view.addSubview(vaseCompletedRounds)
         //Butons
         view.addSubview(buttonToReset)
         view.addSubview(buttonToNext)
@@ -278,29 +298,23 @@ class LevelOneViewController: UIViewController {
     }
     
     ///IBActions fuctions
-    /*@IBAction func showOrDismissDoupUp(_ String: poupUp, _ string: estadoDaPlanta) {
-     switch (poupUp) {
-     case "plantaSementEscala":
-     <#code#>
-     case "addVitaminotasEvolucaoInicial":
-     <#code#>
-     case "addVitaminotasEvolucaoFinal":
-     <#code#>
-     case "parabensConclusaoEscala":
-     <#code#>
-     default:
-     <#code#>
-     }
-     }
-     */
+
+ 
     
     @IBAction func touchedButtonReset() {
         print("Apertou botão reset")
     }
     
     @IBAction func touchedButtonNextLevel() {
-        //guard if escala do Do nao esta completa nao fica verde
-        //else deixa botao proximaFase verde
+        print("Apertou botão da LVL1 para ir para a lvl2")
+          
+        let novaViewController = LevelTwoViewController(screenType: .mac , isPortrait: true)
+        //  navigationController?.popViewController( animated: true)
+        navigationController?.pushViewController(novaViewController, animated: true)
+        //print(navigationController?.viewControllers)
+        //coloca em cima da onboard a tela level 1
+        navigationController?.navigationBar.isHidden = true
+        
         print("Apertou botão proxima Fase")
     }
     
@@ -342,6 +356,10 @@ class LevelOneViewController: UIViewController {
             poupUpOneWoman.isHidden = false
             //faça x coisa se estiver dentro do vaso
             
+            print(newCenterVase.isHidden)
+          print(vaseCompletedRounds.isHidden)
+          print(vaseWithRound1Vitaminote.isHidden)
+            
         }
         
         //print("Semente do Dó foi tocada!")
@@ -372,8 +390,8 @@ class LevelOneViewController: UIViewController {
         if centerVaseRect.contains(gestureView.frame) {
             print("A vitamina foi colocada no vaso")
             
-           // if(vitaminoteSequence[0] == false){//valida a sequencia
-            if(vitaminoteSequence[0] == true){//valida a sequencia
+            if(vitaminoteSequence[0] == false){//valida a sequencia
+          //  if(vitaminoteSequence[0] == true){//valida a sequencia
                 vitaminoteSequence[0] = true
                 print(vitaminoteSequence)
                 //gesture.reset() // ver o que essa funcao faz
@@ -381,8 +399,8 @@ class LevelOneViewController: UIViewController {
                 
             }
             else{
-                gesture.isEnabled = false
-                gestureView.center = .init(x:124,y:669)
+                gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+                doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
                // gestureView.isUserInteractionEnabled = true
             }
@@ -420,10 +438,16 @@ class LevelOneViewController: UIViewController {
                 //gesture.reset() // ver o que essa funcao faz
                 reVitaminote.isHidden = true
                 
+            }else{
+                    gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+                    reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
+                    gesture.isEnabled = true
+                   // gestureView.isUserInteractionEnabled = true
+                }
             }
             
         }
-    }
+    
     
     @objc func handlePanMiVitaminote(_ gesture: UIPanGestureRecognizer) {
            // explicacao sobre 1,2 no GesturePlayground de Ale
@@ -456,6 +480,12 @@ class LevelOneViewController: UIViewController {
                    miVitaminote.isHidden = true
                    
                }
+            else{
+                gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+                miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
+                gesture.isEnabled = true
+               // gestureView.isUserInteractionEnabled = true
+            }
                
            }
     }
@@ -490,8 +520,13 @@ class LevelOneViewController: UIViewController {
                    //gesture.reset() // ver o que essa funcao faz
                    faVitaminote.isHidden = true
                    
+               }else{
+                   gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+                   faVitaminote.frame =  CGRect(x: 124, y: 722, width: 62, height: 62)
+                   gesture.isEnabled = true
+                  // gestureView.isUserInteractionEnabled = true
                }
-               
+        
            }
         
     }
@@ -526,7 +561,13 @@ class LevelOneViewController: UIViewController {
                    //gesture.reset() // ver o que essa funcao faz
                    solVitaminote.isHidden = true
                    
+               } else{
+                   gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+                   solVitaminote.frame =  CGRect(x: 186, y: 722, width: 62, height: 62)
+                   gesture.isEnabled = true
+                  // gestureView.isUserInteractionEnabled = true
                }
+            
                
            }
         
@@ -563,6 +604,13 @@ class LevelOneViewController: UIViewController {
                    laVitaminote.isHidden = true
                    
                }
+            else{
+                   gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+                   laVitaminote.frame =  CGRect(x: 250, y: 722, width: 62, height: 62)
+                   gesture.isEnabled = true
+                  // gestureView.isUserInteractionEnabled = true
+               }
+            
                
            }
         
@@ -596,9 +644,71 @@ class LevelOneViewController: UIViewController {
                    vitaminoteSequence[6] = true
                    print(vitaminoteSequence)
                    //gesture.reset() // ver o que essa funcao faz
-                   siVitaminote.isHidden = true
-       
+                  
+                  
+                   poupUpOneWoman.isHidden = true
+                   poupUpTwoWoman.isHidden = false
+                   newCenterVase.isHidden = true
                 
+                   vaseWithRound1Vitaminote.isHidden = false
+                
+                    doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
+                    doVitaminote.isHidden = false
+                    reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
+                    reVitaminote.isHidden = false
+                    miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
+                    miVitaminote.isHidden = false
+                    faVitaminote.frame = CGRect(x: 124, y: 722, width: 62, height: 62)
+                    faVitaminote.isHidden = false
+                    solVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
+                    solVitaminote.isHidden = false
+                    laVitaminote.frame = CGRect(x: 250, y: 722, width: 62, height: 62)
+                    laVitaminote.isHidden = false
+                    gesture.isEnabled = false
+                    siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
+                    gesture.isEnabled = true
+                   
+                
+               print(newCenterVase.isHidden)
+            print(vaseCompletedRounds.isHidden)
+                print(vaseWithRound1Vitaminote.isHidden)
+                  print(round1VitamineSequence)
+                
+                if(newCenterVase.isHidden && (vaseCompletedRounds.isHidden && !vaseWithRound1Vitaminote.isHidden) && round1VitamineSequence){
+                    vitaminoteSequence = Array(repeating: false, count:7)
+                    newCenterVase.isHidden = true
+                    vaseWithRound1Vitaminote.isHidden = false
+                    round1VitamineSequence = false
+                    
+                    
+                    print("entrou no if 1")
+                    
+                    print(newCenterVase.isHidden)
+                    print(vaseCompletedRounds.isHidden)
+                    print(vaseWithRound1Vitaminote.isHidden)
+                    print(round1VitamineSequence)
+                }
+                 
+               else if((newCenterVase.isHidden && vaseCompletedRounds.isHidden) && !vaseWithRound1Vitaminote.isHidden && round2VitamineSequence){
+                    print("entoru no if 2")
+                print(newCenterVase.isHidden)
+                 print("Vaso completo round \(vaseCompletedRounds.isHidden)")
+                 print(vaseWithRound1Vitaminote.isHidden)
+                    vaseWithRound1Vitaminote.isHidden = true
+                    vaseCompletedRounds.isHidden = false
+                       print("Vaso completo round \(vaseCompletedRounds.isHidden)")
+                    round2VitamineSequence = false
+
+                    poupUpTwoWoman.isHidden = true
+                    poupUpOneWoman.isHidden = true // pode criar outro pop falando q recomecou, ver colocar som para cada vitaminota, e quando rodar o round, errar.. etc..
+               
+                    buttonToNext.isEnabled = true
+                    buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
+                    poupUpCongratsLevelOne.isHidden = false
+                    
+    
+
+                }
                 
                    
                }
@@ -633,7 +743,11 @@ class LevelOneViewController: UIViewController {
            if centerVaseRect.contains(gestureView.frame) {
               // print("A vitamina foi colocada no vaso")
                
-                      print("EERRRRROUUUU")
+        
+               gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+               faSharpVitaminote.frame =  CGRect(x: 186, y: 774, width: 62, height: 62)
+               gesture.isEnabled = true
+                            
                }
                
            }
@@ -661,12 +775,13 @@ class LevelOneViewController: UIViewController {
              
              if centerVaseRect.contains(gestureView.frame) {
                 // print("A vitamina foi colocada no vaso")
-               print("EERRRROOOOU")
+               gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+                solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
+                gesture.isEnabled = true
                      
                  }
                  
              }
-
 
     
     
