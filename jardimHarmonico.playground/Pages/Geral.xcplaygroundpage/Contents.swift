@@ -92,6 +92,7 @@ class LevelOneViewController: UIViewController {
     var vitaminoteSequence = Array(repeating: false, count:7)//array bool de validacao
     
     
+    /// <#Description#>
     override func loadView() { ///Carega/Cria a view
         
         //Main View and title
@@ -132,7 +133,7 @@ class LevelOneViewController: UIViewController {
         
         seedDo.image = UIImage(named: "sementes/sementeDoVerde")
         seedDo.frame = CGRect(x: 190, y: 364, width: 57, height: 77)
-        //gesto da semente do dó
+
         seedDo.isUserInteractionEnabled = true
         let panSeedDo = UIPanGestureRecognizer(target: self, action: #selector(handlePanSeedDo))
         seedDo.addGestureRecognizer(panSeedDo)
@@ -154,53 +155,53 @@ class LevelOneViewController: UIViewController {
         
         reVitaminote.image = UIImage(named: "vitaminas/reVitaminota")
         reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
-        //        reVitaminote.isUserInteractionEnabled = true
-        //        let panReVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanReVitaminote))
-        //        reVitaminote.addGestureRecognizer(panReVitaminote)
+        reVitaminote.isUserInteractionEnabled = true
+        let panReVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanReVitaminote))
+        reVitaminote.addGestureRecognizer(panReVitaminote)
         
         
         miVitaminote.image = UIImage(named: "vitaminas/miVitaminota")
         miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
-        //        miVitaminote.isUserInteractionEnabled = true
-        //        let panMiVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanMiVitaminote))
-        //        miVitaminote.addGestureRecognizer(panMiVitaminote)
+        miVitaminote.isUserInteractionEnabled = true
+        let panMiVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanMiVitaminote))
+        miVitaminote.addGestureRecognizer(panMiVitaminote)
         
         faVitaminote.image = UIImage(named: "vitaminas/faVitaminota")
         faVitaminote.frame = CGRect(x: 124, y: 722, width: 62, height: 62)
-        //        faVitaminote.isUserInteractionEnabled = true
-        //        let panFaVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanFaVitaminote))
-        //        faVitaminote.addGestureRecognizer(panFaVitaminote)
+        faVitaminote.isUserInteractionEnabled = true
+        let panFaVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanFaVitaminote))
+        faVitaminote.addGestureRecognizer(panFaVitaminote)
         
         
         solVitaminote.image = UIImage(named: "vitaminas/solVitaminota")
         solVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
         solVitaminote.isUserInteractionEnabled = true
-        //        let panSolVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSolVitaminote))
-        //        solVitaminote.addGestureRecognizer(panSolVitaminote)
+        let panSolVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSolVitaminote))
+        solVitaminote.addGestureRecognizer(panSolVitaminote)
         
         laVitaminote.image = UIImage(named: "vitaminas/laVitaminota")
         laVitaminote.frame = CGRect(x: 250, y: 722, width: 62, height: 62)
-        //        laVitaminote.isUserInteractionEnabled = true
-        //        let panLaVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanLaVitaminote))
-        //        laVitaminote.addGestureRecognizer(panLaVitaminote)
+        laVitaminote.isUserInteractionEnabled = true
+        let panLaVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanLaVitaminote))
+        laVitaminote.addGestureRecognizer(panLaVitaminote)
         
         siVitaminote.image = UIImage(named: "vitaminas/siVitaminota")
         siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
-        //        siVitaminote.isUserInteractionEnabled = true
-        //        let panSiVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSiVitaminote))
-        //        siVitaminote.addGestureRecognizer(panSiVitaminote)
+        siVitaminote.isUserInteractionEnabled = true
+        let panSiVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSiVitaminote))
+        siVitaminote.addGestureRecognizer(panSiVitaminote)
         
         faSharpVitaminote.image = UIImage(named: "vitaminas/faSustenidoVitaminota")
         faSharpVitaminote.frame = CGRect(x: 186, y: 774, width: 62, height: 62)
         faSharpVitaminote.isUserInteractionEnabled = true
-        //        let panFaSharpVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanFaSharpVitaminote))
-        //        faSharpVitaminote.addGestureRecognizer(panFaSharpVitaminote)
+        let panFaSharpVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanFaSharpVitaminote))
+        faSharpVitaminote.addGestureRecognizer(panFaSharpVitaminote)
         
         solSharpVitaminote.image = UIImage(named: "vitaminas/solSustenidoVitaminota")
         solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
         solSharpVitaminote.isUserInteractionEnabled = true
-        //        let panSolSharpVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSolSharpVitaminote))
-        //        solSharpVitaminote.addGestureRecognizer(panSolSharpVitaminote)
+        let panSolSharpVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSolSharpVitaminote))
+        solSharpVitaminote.addGestureRecognizer(panSolSharpVitaminote)
         
         centerVase.image = UIImage(named: "vasos/vasoComTerra")
         centerVase.frame = CGRect(x: 861, y: 397, width: 96, height: 87)
@@ -347,6 +348,7 @@ class LevelOneViewController: UIViewController {
     }
     
     @objc func handlePanDoVitaminote(_ gesture: UIPanGestureRecognizer) {
+    
         // explicacao sobre 1,2 no GesturePlayground de Ale
         // 1
         let translation = gesture.translation(in: view)
@@ -371,16 +373,297 @@ class LevelOneViewController: UIViewController {
             print("A vitamina foi colocada no vaso")
             
             if(vitaminoteSequence[0] == false){//valida a sequencia
+            //if(vitaminoteSequence[0] == true){//valida a sequencia
                 vitaminoteSequence[0] = true
                 print(vitaminoteSequence)
                 //gesture.reset() // ver o que essa funcao faz
                 doVitaminote.isHidden = true
                 
             }
+            else{
+                gestureView.isUserInteractionEnabled = false
+                gestureView.center = .init(x:124,y:669)
+               // gestureView.isUserInteractionEnabled = true
+            }
             
         }
     }
     
+    @objc func handlePanReVitaminote(_ gesture: UIPanGestureRecognizer) {
+        // explicacao sobre 1,2 no GesturePlayground de Ale
+        // 1
+        let translation = gesture.translation(in: view)
+        
+        // 2
+        guard let gestureView = gesture.view else {
+            return
+        }
+        
+        gestureView.center = CGPoint(
+            x: gestureView.center.x + translation.x,
+            y: gestureView.center.y + translation.y
+        )
+        
+        // 3
+        gesture.setTranslation(.zero, in: view)
+        
+        // if(isSeedOntheVase(gestureView))
+        let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
+        
+        if centerVaseRect.contains(gestureView.frame) {
+           // print("A vitamina foi colocada no vaso")
+            
+            if(vitaminoteSequence[0] == true && vitaminoteSequence[1] == false){//valida a sequencia
+                vitaminoteSequence[1] = true
+                print(vitaminoteSequence)
+                //gesture.reset() // ver o que essa funcao faz
+                reVitaminote.isHidden = true
+                
+            }
+            
+        }
+    }
+    
+    @objc func handlePanMiVitaminote(_ gesture: UIPanGestureRecognizer) {
+           // explicacao sobre 1,2 no GesturePlayground de Ale
+           // 1
+           let translation = gesture.translation(in: view)
+           
+           // 2
+           guard let gestureView = gesture.view else {
+               return
+           }
+           
+           gestureView.center = CGPoint(
+               x: gestureView.center.x + translation.x,
+               y: gestureView.center.y + translation.y
+           )
+           
+           // 3
+           gesture.setTranslation(.zero, in: view)
+           
+           // if(isSeedOntheVase(gestureView))
+           let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
+           
+           if centerVaseRect.contains(gestureView.frame) {
+              // print("A vitamina foi colocada no vaso")
+               
+               if(vitaminoteSequence[1] == true && vitaminoteSequence[2] == false){//valida a sequencia
+                   vitaminoteSequence[2] = true
+                   print(vitaminoteSequence)
+                   //gesture.reset() // ver o que essa funcao faz
+                   miVitaminote.isHidden = true
+                   
+               }
+               
+           }
+    }
+        
+    @objc func handlePanFaVitaminote(_ gesture: UIPanGestureRecognizer) {
+           // explicacao sobre 1,2 no GesturePlayground de Ale
+           // 1
+           let translation = gesture.translation(in: view)
+           
+           // 2
+           guard let gestureView = gesture.view else {
+               return
+           }
+           
+           gestureView.center = CGPoint(
+               x: gestureView.center.x + translation.x,
+               y: gestureView.center.y + translation.y
+           )
+           
+           // 3
+           gesture.setTranslation(.zero, in: view)
+           
+           // if(isSeedOntheVase(gestureView))
+           let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
+           
+           if centerVaseRect.contains(gestureView.frame) {
+              // print("A vitamina foi colocada no vaso")
+               
+               if(vitaminoteSequence[2] == true && vitaminoteSequence[3] == false){//valida a sequencia
+                   vitaminoteSequence[3] = true
+                   print(vitaminoteSequence)
+                   //gesture.reset() // ver o que essa funcao faz
+                   faVitaminote.isHidden = true
+                   
+               }
+               
+           }
+        
+    }
+    
+    @objc func handlePanSolVitaminote(_ gesture: UIPanGestureRecognizer) {
+           // explicacao sobre 1,2 no GesturePlayground de Ale
+           // 1
+           let translation = gesture.translation(in: view)
+           
+           // 2
+           guard let gestureView = gesture.view else {
+               return
+           }
+           
+           gestureView.center = CGPoint(
+               x: gestureView.center.x + translation.x,
+               y: gestureView.center.y + translation.y
+           )
+           
+           // 3
+           gesture.setTranslation(.zero, in: view)
+           
+           // if(isSeedOntheVase(gestureView))
+           let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
+           
+           if centerVaseRect.contains(gestureView.frame) {
+              // print("A vitamina foi colocada no vaso")
+               
+               if(vitaminoteSequence[3] == true && vitaminoteSequence[4] == false){//valida a sequencia
+                   vitaminoteSequence[4] = true
+                   print(vitaminoteSequence)
+                   //gesture.reset() // ver o que essa funcao faz
+                   solVitaminote.isHidden = true
+                   
+               }
+               
+           }
+        
+    }
+
+    @objc func handlePanLaVitaminote(_ gesture: UIPanGestureRecognizer) {
+           // explicacao sobre 1,2 no GesturePlayground de Ale
+           // 1
+           let translation = gesture.translation(in: view)
+           
+           // 2
+           guard let gestureView = gesture.view else {
+               return
+           }
+           
+           gestureView.center = CGPoint(
+               x: gestureView.center.x + translation.x,
+               y: gestureView.center.y + translation.y
+           )
+           
+           // 3
+           gesture.setTranslation(.zero, in: view)
+           
+           // if(isSeedOntheVase(gestureView))
+           let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
+           
+           if centerVaseRect.contains(gestureView.frame) {
+              // print("A vitamina foi colocada no vaso")
+               
+               if(vitaminoteSequence[4] == true && vitaminoteSequence[5] == false){//valida a sequencia
+                   vitaminoteSequence[5] = true
+                   print(vitaminoteSequence)
+                   //gesture.reset() // ver o que essa funcao faz
+                   laVitaminote.isHidden = true
+                   
+               }
+               
+           }
+        
+    }
+    
+    @objc func handlePanSiVitaminote(_ gesture: UIPanGestureRecognizer) {
+           // explicacao sobre 1,2 no GesturePlayground de Ale
+           // 1
+           let translation = gesture.translation(in: view)
+           
+           // 2
+           guard let gestureView = gesture.view else {
+               return
+           }
+           
+           gestureView.center = CGPoint(
+               x: gestureView.center.x + translation.x,
+               y: gestureView.center.y + translation.y
+           )
+           
+           // 3
+           gesture.setTranslation(.zero, in: view)
+           
+           // if(isSeedOntheVase(gestureView))
+           let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
+           
+           if centerVaseRect.contains(gestureView.frame) {
+              // print("A vitamina foi colocada no vaso")
+               
+               if(vitaminoteSequence[5] == true && vitaminoteSequence[6] == false){//valida a sequencia
+                   vitaminoteSequence[6] = true
+                   print(vitaminoteSequence)
+                   //gesture.reset() // ver o que essa funcao faz
+                   siVitaminote.isHidden = true
+                
+                   
+               }
+//            else
+//            gesture.
+               
+           }
+        
+    }
+    
+    @objc func handlePanFaSharpVitaminote(_ gesture: UIPanGestureRecognizer) {
+           // explicacao sobre 1,2 no GesturePlayground de Ale
+           // 1
+           let translation = gesture.translation(in: view)
+           
+           // 2
+           guard let gestureView = gesture.view else {
+               return
+           }
+           
+           gestureView.center = CGPoint(
+               x: gestureView.center.x + translation.x,
+               y: gestureView.center.y + translation.y
+           )
+           
+           // 3
+           gesture.setTranslation(.zero, in: view)
+           
+           // if(isSeedOntheVase(gestureView))
+           let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
+           
+           if centerVaseRect.contains(gestureView.frame) {
+              // print("A vitamina foi colocada no vaso")
+               
+                      print("EERRRRROUUUU")
+               }
+               
+           }
+        
+    @objc func handlePanSolSharpVitaminote(_ gesture: UIPanGestureRecognizer) {
+             // explicacao sobre 1,2 no GesturePlayground de Ale
+             // 1
+             let translation = gesture.translation(in: view)
+             
+             // 2
+             guard let gestureView = gesture.view else {
+                 return
+             }
+             
+             gestureView.center = CGPoint(
+                 x: gestureView.center.x + translation.x,
+                 y: gestureView.center.y + translation.y
+             )
+             
+             // 3
+             gesture.setTranslation(.zero, in: view)
+             
+             // if(isSeedOntheVase(gestureView))
+             let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
+             
+             if centerVaseRect.contains(gestureView.frame) {
+                // print("A vitamina foi colocada no vaso")
+               print("EERRRROOOOU")
+                     
+                 }
+                 
+             }
+
 
     
     
