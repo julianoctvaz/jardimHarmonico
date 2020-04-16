@@ -13,7 +13,7 @@ public class OnboardingViewController: UIViewController {
         //setting Buttons
         buttonToNext.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
         buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
-        
+    //ciar botoes aqui pra ver se a imagem do completeEscala ta validado se tive poderia pular de fase
         
         //Views, UIImage and ImagenViews
         let view = UIView()
@@ -382,6 +382,12 @@ public class LevelOneViewController: UIViewController {
             print(vaseCompletedRounds.isHidden)
             print(vaseWithRound1Vitaminote.isHidden)
             
+        }
+       
+        else if(gesture.state == .ended){
+            if (!centerVaseRect.contains(gestureView.frame)){
+                seedDo.frame = CGRect(x: 190, y: 364, width: 57, height: 77)
+            }
         }
         
         //print("Semente do Dó foi tocada!")
