@@ -48,7 +48,7 @@ public class LevelOneViewController: UIViewController {
     var round2VitamineSequence = true
     
     
-   public override func loadView() { ///Carega/Cria a view
+    public override func loadView() { ///Carega/Cria a view
         
         //Main View
         let view = UIView()
@@ -371,14 +371,14 @@ public class LevelOneViewController: UIViewController {
                 doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
                 
-/*                if(!newCenterVase.isHidden){
-                    newCenterVase.isHidden = true
-                    faliedVase.isHidden = false
-                    // gestureView.isUserInteractionEnabled = true
-                }else{
-                    vaseWithRound1Vitaminote.isHidden = true
-                    faliedVase.isHidden = false
-                }*/
+                /*                if(!newCenterVase.isHidden){
+                 newCenterVase.isHidden = true
+                 faliedVase.isHidden = false
+                 // gestureView.isUserInteractionEnabled = true
+                 }else{
+                 vaseWithRound1Vitaminote.isHidden = true
+                 faliedVase.isHidden = false
+                 }*/
             }
         }
     }
@@ -418,14 +418,14 @@ public class LevelOneViewController: UIViewController {
                 reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
                 // gestureView.isUserInteractionEnabled = true
-/*                if(!newCenterVase.isHidden){
-                    newCenterVase.isHidden = true
-                    faliedVase.isHidden = false
-                    // gestureView.isUserInteractionEnabled = true
-                }else{
-                    vaseWithRound1Vitaminote.isHidden = true
-                    faliedVase.isHidden = false
-                }*/
+                /*                if(!newCenterVase.isHidden){
+                 newCenterVase.isHidden = true
+                 faliedVase.isHidden = false
+                 // gestureView.isUserInteractionEnabled = true
+                 }else{
+                 vaseWithRound1Vitaminote.isHidden = true
+                 faliedVase.isHidden = false
+                 }*/
                 
             }
         }
@@ -467,14 +467,14 @@ public class LevelOneViewController: UIViewController {
                 miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
                 // gestureView.isUserInteractionEnabled = true
-/*                if(!newCenterVase.isHidden){
-                    newCenterVase.isHidden = true
-                    faliedVase.isHidden = false
-                    // gestureView.isUserInteractionEnabled = true
-                }else{
-                    vaseWithRound1Vitaminote.isHidden = true
-                    faliedVase.isHidden = false
-                }*/
+                /*                if(!newCenterVase.isHidden){
+                 newCenterVase.isHidden = true
+                 faliedVase.isHidden = false
+                 // gestureView.isUserInteractionEnabled = true
+                 }else{
+                 vaseWithRound1Vitaminote.isHidden = true
+                 faliedVase.isHidden = false
+                 }*/
             }
         }
     }
@@ -513,14 +513,14 @@ public class LevelOneViewController: UIViewController {
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
                 faVitaminote.frame =  CGRect(x: 124, y: 722, width: 62, height: 62)
                 gesture.isEnabled = true
-/*                if(!newCenterVase.isHidden){
-                    newCenterVase.isHidden = true
-                    faliedVase.isHidden = false
-                    // gestureView.isUserInteractionEnabled = true
-                }else{
-                    vaseWithRound1Vitaminote.isHidden = true
-                    faliedVase.isHidden = false
-                }*/
+                /*                if(!newCenterVase.isHidden){
+                 newCenterVase.isHidden = true
+                 faliedVase.isHidden = false
+                 // gestureView.isUserInteractionEnabled = true
+                 }else{
+                 vaseWithRound1Vitaminote.isHidden = true
+                 faliedVase.isHidden = false
+                 }*/
             }
         }
     }
@@ -560,14 +560,14 @@ public class LevelOneViewController: UIViewController {
                 solVitaminote.frame =  CGRect(x: 186, y: 722, width: 62, height: 62)
                 gesture.isEnabled = true
                 // gestureView.isUserInteractionEnabled = true
-/*                if(!newCenterVase.isHidden){
-                    newCenterVase.isHidden = true
-                    faliedVase.isHidden = false
-                    // gestureView.isUserInteractionEnabled = true
-                }else{
-                    vaseWithRound1Vitaminote.isHidden = true
-                    faliedVase.isHidden = false
-                }*/
+                /*                if(!newCenterVase.isHidden){
+                 newCenterVase.isHidden = true
+                 faliedVase.isHidden = false
+                 // gestureView.isUserInteractionEnabled = true
+                 }else{
+                 vaseWithRound1Vitaminote.isHidden = true
+                 faliedVase.isHidden = false
+                 }*/
             }
         }
     }
@@ -607,14 +607,14 @@ public class LevelOneViewController: UIViewController {
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
                 laVitaminote.frame =  CGRect(x: 250, y: 722, width: 62, height: 62)
                 gesture.isEnabled = true
-/*                if(!newCenterVase.isHidden){
-                    newCenterVase.isHidden = true
-                    faliedVase.isHidden = false
-                    // gestureView.isUserInteractionEnabled = true
-                }else{
-                    vaseWithRound1Vitaminote.isHidden = true
-                    faliedVase.isHidden = false
-                }*/
+                /*                if(!newCenterVase.isHidden){
+                 newCenterVase.isHidden = true
+                 faliedVase.isHidden = false
+                 // gestureView.isUserInteractionEnabled = true
+                 }else{
+                 vaseWithRound1Vitaminote.isHidden = true
+                 faliedVase.isHidden = false
+                 }*/
             }
         }
     }
@@ -709,14 +709,14 @@ public class LevelOneViewController: UIViewController {
                     buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
                     poupUpCongratsLevelOne.isHidden = false
                 }else{
-//                    if(!newCenterVase.isHidden){
-//                        newCenterVase.isHidden = true
-//                        faliedVase.isHidden = false
-//                        // gestureView.isUserInteractionEnabled = true
-//                    }else{
-//                        vaseWithRound1Vitaminote.isHidden = true
-//                        faliedVase.isHidden = false
-//                    }
+                    //                    if(!newCenterVase.isHidden){
+                    //                        newCenterVase.isHidden = true
+                    //                        faliedVase.isHidden = false
+                    //                        // gestureView.isUserInteractionEnabled = true
+                    //                    }else{
+                    //                        vaseWithRound1Vitaminote.isHidden = true
+                    //                        faliedVase.isHidden = false
+                    //                    }
                     
                 }
             }
