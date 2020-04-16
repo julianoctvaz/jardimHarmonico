@@ -16,5 +16,3 @@ var str = "Hello, playground"
 //: * isto é tao [fun](https://en.wikipedia.org/wiki/fun)!
 
 
-
-
