@@ -139,7 +139,14 @@ public class LevelOneViewController: UIViewController {
             seedDo.image = UIImage(named: "sementes/sementeDoVerde")
             seedDo.frame = CGRect(x: 190, y: 364, width: 57, height: 77)
             
-            
+            seedRe.image = UIImage(named: "sementes/sementeReCinza")
+            seedRe.frame = CGRect(x: 136, y: 450, width: 57, height: 77)
+            seedRe.isUserInteractionEnabled = false
+
+            seedSol.image = UIImage(named: "sementes/sementeSolCinza")
+            seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
+            seedSol.isUserInteractionEnabled = false
+              
             centerVase.image = UIImage(named: "vasos/vasoComTerra")
             centerVase.frame = CGRect(x: 861, y: 397, width: 96, height: 87)
             
@@ -183,16 +190,17 @@ public class LevelOneViewController: UIViewController {
         
         if(true){
             seedDo.isUserInteractionEnabled = true
-            let panSeedDo = UIPanGestureRecognizer(target: self, action: #selector(handlePanSeedDo))
+            let panSeedDo = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanSeedDo))
             seedDo.addGestureRecognizer(panSeedDo)
             
-            seedRe.image = UIImage(named: "sementes/sementeReCinza")
-            seedRe.frame = CGRect(x: 136, y: 450, width: 57, height: 77)
-            seedRe.isUserInteractionEnabled = false
-            
-            seedSol.image = UIImage(named: "sementes/sementeSolCinza")
-            seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
-            seedSol.isUserInteractionEnabled = false
+//            seedRe.isUserInteractionEnabled = true
+//            let panSeedRe = UITapGestureRecognizer(target: self, action: #selector(self.handlePanSeedRe))
+//            seedRe.addGestureRecognizer(panSeedRe)
+//
+//            seedSol.isUserInteractionEnabled = true
+//            let panSeedSol = UITapGestureRecognizer(target: self, action: #selector(self.handlePanSeedSol))
+//            seedSol.addGestureRecognizer(panSeedSol)
+           
             
             circleNotes.image = UIImage(named: "diversos/auraCircularDeNotas")
             circleNotes.frame = CGRect(x: 87, y: 620, width: 263, height: 263)
@@ -253,6 +261,7 @@ public class LevelOneViewController: UIViewController {
             solSharpVitaminote.addGestureRecognizer(panSolSharpVitaminote)
         } //gestures
         
+      
         
         if(true){
             buttonToReset.addTarget(self, action: #selector(touchedButtonReset), for: .touchUpInside)
@@ -349,6 +358,69 @@ public class LevelOneViewController: UIViewController {
     
     
     ///objc functions
+    /* erro cabuloso aqui, penso em fazer um dispatch_async com um balao falando que nao pode ate passar de lvl
+    @objc func handlePanSeedRe(_ gesture: UIPanGestureRecognizer){
+        print("Tapped on Image Seed Re")
+        // explicacao sobre 1,2 no GesturePlayground de Ale
+         // 1
+         let translation = gesture.translation(in: view)
+         
+         // 2
+         guard let gestureView = gesture.view else {
+             return
+         }
+         
+         gestureView.center = CGPoint(
+             x: gestureView.center.x + translation.x,
+             y: gestureView.center.y + translation.y
+         )
+         
+         // 3
+         gesture.setTranslation(.zero, in: view)
+         
+         // if(isSeedOntheVase(gestureView))
+        //let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
+            if(gesture.state == .ended){
+
+                seedRe.frame = CGRect(x: 190, y: 364, width: 57, height: 77)
+
+         }
+         
+    }
+    
+    @objc func handlePanSeedSol(_ gesture: UIPanGestureRecognizer){
+                  print("Tapped on Image Seed sol")
+               // explicacao sobre 1,2 no GesturePlayground de Ale
+                // 1
+   
+        let translation = gesture.translation(in: view)
+                
+                // 2
+                guard let gestureView = gesture.view else {
+                    return
+                }
+                
+                gestureView.center = CGPoint(
+                    x: gestureView.center.x + translation.x,
+                    y: gestureView.center.y + translation.y
+                )
+                
+                // 3
+                gesture.setTranslation(.zero, in: view)
+                
+                // if(isSeedOntheVase(gestureView))
+               //let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
+                   if(gesture.state == .ended){
+                
+                    seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
+                    
+                }
+ 
+        
+                
+           }
+    */
+    
     @objc func handlePanSeedDo(_ gesture: UIPanGestureRecognizer) {
         // explicacao sobre 1,2 no GesturePlayground de Ale
         // 1
