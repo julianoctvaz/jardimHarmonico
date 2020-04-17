@@ -13,7 +13,7 @@ public class OnboardingViewController: UIViewController {
         //setting Buttons
         buttonToNext.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
         buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
-    //ciar botoes aqui pra ver se a imagem do completeEscala ta validado se tive poderia pular de fase
+        //ciar botoes aqui pra ver se a imagem do completeEscala ta validado se tive poderia pular de fase
         
         //Views, UIImage and ImagenViews
         let view = UIView()
@@ -143,11 +143,11 @@ public class LevelOneViewController: UIViewController {
             seedRe.image = UIImage(named: "sementes/sementeReCinza")
             seedRe.frame = CGRect(x: 136, y: 450, width: 57, height: 77)
             seedRe.isUserInteractionEnabled = false
-
+            
             seedSol.image = UIImage(named: "sementes/sementeSolCinza")
             seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
             seedSol.isUserInteractionEnabled = false
-              
+            
             centerVase.image = UIImage(named: "vasos/vasoComTerra")
             centerVase.frame = CGRect(x: 860, y: 397, width: 100, height: 95)
             
@@ -198,14 +198,13 @@ public class LevelOneViewController: UIViewController {
             let panSeedDo = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanSeedDo))
             seedDo.addGestureRecognizer(panSeedDo)
             
-//            seedRe.isUserInteractionEnabled = true
-//            let panSeedRe = UITapGestureRecognizer(target: self, action: #selector(self.handlePanSeedRe))
-//            seedRe.addGestureRecognizer(panSeedRe)
-//
-//            seedSol.isUserInteractionEnabled = true
-//            let panSeedSol = UITapGestureRecognizer(target: self, action: #selector(self.handlePanSeedSol))
-//            seedSol.addGestureRecognizer(panSeedSol)
-           
+            //            seedRe.isUserInteractionEnabled = true
+            //            let panSeedRe = UITapGestureRecognizer(target: self, action: #selector(self.handlePanSeedRe))
+            //            seedRe.addGestureRecognizer(panSeedRe)
+            //
+            //            seedSol.isUserInteractionEnabled = true
+            //            let panSeedSol = UITapGestureRecognizer(target: self, action: #selector(self.handlePanSeedSol))
+            //            seedSol.addGestureRecognizer(panSeedSol)
             
             circleNotes.image = UIImage(named: "diversos/auraCircularDeNotas")
             circleNotes.frame = CGRect(x: 87, y: 620, width: 263, height: 263)
@@ -222,7 +221,6 @@ public class LevelOneViewController: UIViewController {
             reVitaminote.isUserInteractionEnabled = true
             let panReVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanReVitaminote))
             reVitaminote.addGestureRecognizer(panReVitaminote)
-            
             
             miVitaminote.image = UIImage(named: "vitaminas/miVitaminota")
             miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
@@ -267,7 +265,7 @@ public class LevelOneViewController: UIViewController {
             solSharpVitaminote.addGestureRecognizer(panSolSharpVitaminote)
         } //gestures
         
-      
+        
         
         if(true){
             buttonToReset.addTarget(self, action: #selector(touchedButtonReset), for: .touchUpInside)
@@ -276,7 +274,6 @@ public class LevelOneViewController: UIViewController {
             
             buttonToNext.addTarget(self, action: #selector(touchedButtonNextLevel), for: .touchUpInside)
             buttonToNext.isEnabled = false
-            
         }//targets
         
         
@@ -293,8 +290,6 @@ public class LevelOneViewController: UIViewController {
             view.addSubview(vaseWithRound1Vitaminote)
             view.addSubview(vaseCompletedRounds)
             view.addSubview(faliedVase)
-          
-            
             //Butons
             view.addSubview(buttonToReset)
             view.addSubview(buttonToNext)
@@ -358,78 +353,81 @@ public class LevelOneViewController: UIViewController {
     
     @IBAction func touchedButtonToBackToOnboarding() {
         print("Apertou botão para voltar a OnboardingViewController ")
-         let novaViewController = OnboardingViewController(screenType: .mac , isPortrait: true)
-             //  navigationController?.popViewController( animated: true)
-             navigationController?.pushViewController(novaViewController, animated: true)
-             //print(navigationController?.viewControllers)
-             //coloca em cima da onboard a tela level 1
-             navigationController?.navigationBar.isHidden = true
+        let novaViewController = OnboardingViewController(screenType: .mac , isPortrait: true)
+        //  navigationController?.popViewController( animated: true)
+        navigationController?.pushViewController(novaViewController, animated: true)
+        //print(navigationController?.viewControllers)
+        //coloca em cima da onboard a tela level 1
+        navigationController?.navigationBar.isHidden = true
     }
     
     
     ///objc functions
-    /* erro cabuloso aqui, penso em fazer um dispatch_async com um balao falando que nao pode ate passar de lvl
-    @objc func handlePanSeedRe(_ gesture: UIPanGestureRecognizer){
-        print("Tapped on Image Seed Re")
-        // explicacao sobre 1,2 no GesturePlayground de Ale
-         // 1
-         let translation = gesture.translation(in: view)
-         
-         // 2
-         guard let gestureView = gesture.view else {
-             return
-         }
-         
-         gestureView.center = CGPoint(
-             x: gestureView.center.x + translation.x,
-             y: gestureView.center.y + translation.y
-         )
-         
-         // 3
-         gesture.setTranslation(.zero, in: view)
-         
-         // if(isSeedOntheVase(gestureView))
-        //let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
-            if(gesture.state == .ended){
-
-                seedRe.frame = CGRect(x: 190, y: 364, width: 57, height: 77)
-
-         }
-         
-    }
     
-    @objc func handlePanSeedSol(_ gesture: UIPanGestureRecognizer){
-                  print("Tapped on Image Seed sol")
-               // explicacao sobre 1,2 no GesturePlayground de Ale
-                // 1
-   
-        let translation = gesture.translation(in: view)
-                
-                // 2
-                guard let gestureView = gesture.view else {
-                    return
-                }
-                
-                gestureView.center = CGPoint(
-                    x: gestureView.center.x + translation.x,
-                    y: gestureView.center.y + translation.y
-                )
-                
-                // 3
-                gesture.setTranslation(.zero, in: view)
-                
-                // if(isSeedOntheVase(gestureView))
-               //let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
-                   if(gesture.state == .ended){
-                
-                    seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
-                    
-                }
- 
-        
-                
-           }
-    */
+    //erro cabuloso aqui nessas duas funcoes, penso em fazer um dispatch_async com um balao falando que nao pode ate passar de lvl
+    
+    /*  @objc func handlePanSeedRe(_ gesture: UIPanGestureRecognizer){
+     print("Tapped on Image Seed Re")
+     // explicacao sobre 1,2 no GesturePlayground de Ale
+     // 1
+     let translation = gesture.translation(in: view)
+     
+     // 2
+     guard let gestureView = gesture.view else {
+     return
+     }
+     
+     gestureView.center = CGPoint(
+     x: gestureView.center.x + translation.x,
+     y: gestureView.center.y + translation.y
+     )
+     
+     // 3
+     gesture.setTranslation(.zero, in: view)
+     
+     // if(isSeedOntheVase(gestureView))
+     //let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
+     if(gesture.state == .ended){
+     
+     seedRe.frame = CGRect(x: 190, y: 364, width: 57, height: 77)
+     
+     }
+     
+     }
+     */
+    
+    /*  @objc func handlePanSeedSol(_ gesture: UIPanGestureRecognizer){
+     print("Tapped on Image Seed sol")
+     // explicacao sobre 1,2 no GesturePlayground de Ale
+     // 1
+     
+     let translation = gesture.translation(in: view)
+     
+     // 2
+     guard let gestureView = gesture.view else {
+     return
+     }
+     
+     gestureView.center = CGPoint(
+     x: gestureView.center.x + translation.x,
+     y: gestureView.center.y + translation.y
+     )
+     
+     // 3
+     gesture.setTranslation(.zero, in: view)
+     
+     // if(isSeedOntheVase(gestureView))
+     //let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
+     if(gesture.state == .ended){
+     
+     seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
+     
+     }
+     
+     
+     
+     }
+     */
     
     @objc func handlePanSeedDo(_ gesture: UIPanGestureRecognizer) {
         // explicacao sobre 1,2 no GesturePlayground de Ale
@@ -465,7 +463,7 @@ public class LevelOneViewController: UIViewController {
             print(vaseWithRound1Vitaminote.isHidden)
             
         }
-       
+            
         else if(gesture.state == .ended){
             if (!centerVaseRect.contains(gestureView.frame)){
                 seedDo.frame = CGRect(x: 190, y: 364, width: 57, height: 77)
@@ -503,7 +501,7 @@ public class LevelOneViewController: UIViewController {
             if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
                 doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
             }
-            
+                
             else if(!vitaminoteSequence[0] ){//valida a sequencia
                 //  if(vitaminoteSequence[0] == true){//valida a sequencia
                 vitaminoteSequence[0] = true
@@ -513,22 +511,40 @@ public class LevelOneViewController: UIViewController {
                 
             }
             else{
+                //acho que nunca vai entrar nesse else aqui na vitaminota do do
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
                 doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
                 
-                /*      if(!newCenterVase.isHidden){
-                 newCenterVase.isHidden = true
-                 faliedVase.isHidden = false
-                 // gestureView.isUserInteractionEnabled = true
-                 }else{
-                 vaseWithRound1Vitaminote.isHidden = true
-                 faliedVase.isHidden = false
-                 }*/
+           if(centerVase.isHidden){
+                    
+                    newCenterVase.isHidden = true
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                    
+                    poupUpMan.isHidden = true
+                    poupUpOneWoman.isHidden = true
+                    poupUpTwoWoman.isHidden = true
+                    poupUpCongratsLevelOne.isHidden = true
+                    
+                    poupUpTryAgain.isHidden = false
+                    
+                    doVitaminote.isUserInteractionEnabled = false
+                    reVitaminote.isUserInteractionEnabled = false
+                    miVitaminote.isUserInteractionEnabled = false
+                    faVitaminote.isUserInteractionEnabled = false
+                    solVitaminote.isUserInteractionEnabled = false
+                    laVitaminote.isUserInteractionEnabled = false
+                    siVitaminote.isUserInteractionEnabled = false
+                    faSharpVitaminote.isUserInteractionEnabled = false
+                    solSharpVitaminote.isUserInteractionEnabled = false
+                }
+                
+                
             }
         }else if(gesture.state == .ended){
-        if (!centerVaseRect.contains(gestureView.frame)){
-             doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
+            if (!centerVaseRect.contains(gestureView.frame)){
+                doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
             }
             
         }
@@ -568,21 +584,36 @@ public class LevelOneViewController: UIViewController {
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
                 reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
-                // gestureView.isUserInteractionEnabled = true
-                /*                if(!newCenterVase.isHidden){
-                 newCenterVase.isHidden = true
-                 faliedVase.isHidden = false
-                 // gestureView.isUserInteractionEnabled = true
-                 }else{
-                 vaseWithRound1Vitaminote.isHidden = true
-                 faliedVase.isHidden = false
-                 }*/
+                
+                if(centerVase.isHidden){
+                    
+                    newCenterVase.isHidden = true
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                    
+                    poupUpMan.isHidden = true
+                    poupUpOneWoman.isHidden = true
+                    poupUpTwoWoman.isHidden = true
+                    poupUpCongratsLevelOne.isHidden = true
+                    
+                    poupUpTryAgain.isHidden = false
+                    
+                    doVitaminote.isUserInteractionEnabled = false
+                    reVitaminote.isUserInteractionEnabled = false
+                    miVitaminote.isUserInteractionEnabled = false
+                    faVitaminote.isUserInteractionEnabled = false
+                    solVitaminote.isUserInteractionEnabled = false
+                    laVitaminote.isUserInteractionEnabled = false
+                    siVitaminote.isUserInteractionEnabled = false
+                    faSharpVitaminote.isUserInteractionEnabled = false
+                    solSharpVitaminote.isUserInteractionEnabled = false
+                }
                 
             }
         }
         else if(gesture.state == .ended){
-        if (!centerVaseRect.contains(gestureView.frame)){
-            reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
+            if (!centerVaseRect.contains(gestureView.frame)){
+                reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
             }
             
         }
@@ -623,23 +654,39 @@ public class LevelOneViewController: UIViewController {
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
                 miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
-                // gestureView.isUserInteractionEnabled = true
-                /*                if(!newCenterVase.isHidden){
-                 newCenterVase.isHidden = true
-                 faliedVase.isHidden = false
-                 // gestureView.isUserInteractionEnabled = true
-                 }else{
-                 vaseWithRound1Vitaminote.isHidden = true
-                 faliedVase.isHidden = false
-                 }*/
+                
+                if(centerVase.isHidden){
+                    
+                    newCenterVase.isHidden = true
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                    
+                    poupUpMan.isHidden = true
+                    poupUpOneWoman.isHidden = true
+                    poupUpTwoWoman.isHidden = true
+                    poupUpCongratsLevelOne.isHidden = true
+                    
+                    poupUpTryAgain.isHidden = false
+                    
+                    doVitaminote.isUserInteractionEnabled = false
+                    reVitaminote.isUserInteractionEnabled = false
+                    miVitaminote.isUserInteractionEnabled = false
+                    faVitaminote.isUserInteractionEnabled = false
+                    solVitaminote.isUserInteractionEnabled = false
+                    laVitaminote.isUserInteractionEnabled = false
+                    siVitaminote.isUserInteractionEnabled = false
+                    faSharpVitaminote.isUserInteractionEnabled = false
+                    solSharpVitaminote.isUserInteractionEnabled = false
+                }
+                
             }
         }
         else if(gesture.state == .ended){
-         if (!centerVaseRect.contains(gestureView.frame)){
-             miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
-             }
-             
-         }
+            if (!centerVaseRect.contains(gestureView.frame)){
+                miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
+            }
+            
+        }
     }
     
     @objc func handlePanFaVitaminote(_ gesture: UIPanGestureRecognizer) {
@@ -676,22 +723,39 @@ public class LevelOneViewController: UIViewController {
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
                 faVitaminote.frame =  CGRect(x: 124, y: 722, width: 62, height: 62)
                 gesture.isEnabled = true
-                /*                if(!newCenterVase.isHidden){
-                 newCenterVase.isHidden = true
-                 faliedVase.isHidden = false
-                 // gestureView.isUserInteractionEnabled = true
-                 }else{
-                 vaseWithRound1Vitaminote.isHidden = true
-                 faliedVase.isHidden = false
-                 }*/
+                
+                if(centerVase.isHidden){
+                    
+                    newCenterVase.isHidden = true
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                    
+                    poupUpMan.isHidden = true
+                    poupUpOneWoman.isHidden = true
+                    poupUpTwoWoman.isHidden = true
+                    poupUpCongratsLevelOne.isHidden = true
+                    
+                    poupUpTryAgain.isHidden = false
+                    
+                    doVitaminote.isUserInteractionEnabled = false
+                    reVitaminote.isUserInteractionEnabled = false
+                    miVitaminote.isUserInteractionEnabled = false
+                    faVitaminote.isUserInteractionEnabled = false
+                    solVitaminote.isUserInteractionEnabled = false
+                    laVitaminote.isUserInteractionEnabled = false
+                    siVitaminote.isUserInteractionEnabled = false
+                    faSharpVitaminote.isUserInteractionEnabled = false
+                    solSharpVitaminote.isUserInteractionEnabled = false
+                }
+                
             }
         }
         else if(gesture.state == .ended){
-         if (!centerVaseRect.contains(gestureView.frame)){
-              faVitaminote.frame = CGRect(x: 124, y: 722, width: 62, height: 62)
-             }
-             
-         }
+            if (!centerVaseRect.contains(gestureView.frame)){
+                faVitaminote.frame = CGRect(x: 124, y: 722, width: 62, height: 62)
+            }
+            
+        }
     }
     
     @objc func handlePanSolVitaminote(_ gesture: UIPanGestureRecognizer) {
@@ -728,23 +792,38 @@ public class LevelOneViewController: UIViewController {
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
                 solVitaminote.frame =  CGRect(x: 186, y: 722, width: 62, height: 62)
                 gesture.isEnabled = true
-                // gestureView.isUserInteractionEnabled = true
-                /*                if(!newCenterVase.isHidden){
-                 newCenterVase.isHidden = true
-                 faliedVase.isHidden = false
-                 // gestureView.isUserInteractionEnabled = true
-                 }else{
-                 vaseWithRound1Vitaminote.isHidden = true
-                 faliedVase.isHidden = false
-                 }*/
+                
+                if(centerVase.isHidden){
+                    
+                    newCenterVase.isHidden = true
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                    
+                    poupUpMan.isHidden = true
+                    poupUpOneWoman.isHidden = true
+                    poupUpTwoWoman.isHidden = true
+                    poupUpCongratsLevelOne.isHidden = true
+                    
+                    poupUpTryAgain.isHidden = false
+                    
+                    doVitaminote.isUserInteractionEnabled = false
+                    reVitaminote.isUserInteractionEnabled = false
+                    miVitaminote.isUserInteractionEnabled = false
+                    faVitaminote.isUserInteractionEnabled = false
+                    solVitaminote.isUserInteractionEnabled = false
+                    laVitaminote.isUserInteractionEnabled = false
+                    siVitaminote.isUserInteractionEnabled = false
+                    faSharpVitaminote.isUserInteractionEnabled = false
+                    solSharpVitaminote.isUserInteractionEnabled = false
+                }
             }
         }
         else if(gesture.state == .ended){
-           if (!centerVaseRect.contains(gestureView.frame)){
+            if (!centerVaseRect.contains(gestureView.frame)){
                 solVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
-               }
-               
-           }
+            }
+            
+        }
     }
     
     @objc func handlePanLaVitaminote(_ gesture: UIPanGestureRecognizer) {
@@ -782,22 +861,38 @@ public class LevelOneViewController: UIViewController {
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
                 laVitaminote.frame =  CGRect(x: 250, y: 722, width: 62, height: 62)
                 gesture.isEnabled = true
-                /*                if(!newCenterVase.isHidden){
-                 newCenterVase.isHidden = true
-                 faliedVase.isHidden = false
-                 // gestureView.isUserInteractionEnabled = true
-                 }else{
-                 vaseWithRound1Vitaminote.isHidden = true
-                 faliedVase.isHidden = false
-                 }*/
+                
+                if(centerVase.isHidden){
+                    
+                    newCenterVase.isHidden = true
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                    
+                    poupUpMan.isHidden = true
+                    poupUpOneWoman.isHidden = true
+                    poupUpTwoWoman.isHidden = true
+                    poupUpCongratsLevelOne.isHidden = true
+                    
+                    poupUpTryAgain.isHidden = false
+                    
+                    doVitaminote.isUserInteractionEnabled = false
+                    reVitaminote.isUserInteractionEnabled = false
+                    miVitaminote.isUserInteractionEnabled = false
+                    faVitaminote.isUserInteractionEnabled = false
+                    solVitaminote.isUserInteractionEnabled = false
+                    laVitaminote.isUserInteractionEnabled = false
+                    siVitaminote.isUserInteractionEnabled = false
+                    faSharpVitaminote.isUserInteractionEnabled = false
+                    solSharpVitaminote.isUserInteractionEnabled = false
+                }
             }
         }
         else if(gesture.state == .ended){
-              if (!centerVaseRect.contains(gestureView.frame)){
+            if (!centerVaseRect.contains(gestureView.frame)){
                 laVitaminote.frame = CGRect(x: 250, y: 722, width: 62, height: 62)
-                  }
-                  
-              }
+            }
+            
+        }
     }
     
     @objc func handlePanSiVitaminote(_ gesture: UIPanGestureRecognizer) {
@@ -820,16 +915,16 @@ public class LevelOneViewController: UIViewController {
         
         // if(isSeedOntheVase(gestureView))
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
-
-     
+        
+        
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
             // print("A vitamina foi colocada no vaso")
             
             if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
-                         siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
-                         }
-                 
-            
+                siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
+            }
+                
+                
             else if(vitaminoteSequence[5] == true && vitaminoteSequence[6] == false){//valida a sequencia
                 vitaminoteSequence[6] = true
                 print(vitaminoteSequence)
@@ -858,21 +953,21 @@ public class LevelOneViewController: UIViewController {
                     round1VitamineSequence = false
                     
                     
-                     doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
-                     doVitaminote.isHidden = false
-                     reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
-                     reVitaminote.isHidden = false
-                     miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
-                     miVitaminote.isHidden = false
-                     faVitaminote.frame = CGRect(x: 124, y: 722, width: 62, height: 62)
-                     faVitaminote.isHidden = false
-                     solVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
-                     solVitaminote.isHidden = false
-                     laVitaminote.frame = CGRect(x: 250, y: 722, width: 62, height: 62)
-                     laVitaminote.isHidden = false
-                     gesture.isEnabled = false
-                     siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
-                     gesture.isEnabled = true
+                    doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
+                    doVitaminote.isHidden = false
+                    reVitaminote.frame = CGRect(x: 186, y: 669, width: 62, height: 62)
+                    reVitaminote.isHidden = false
+                    miVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
+                    miVitaminote.isHidden = false
+                    faVitaminote.frame = CGRect(x: 124, y: 722, width: 62, height: 62)
+                    faVitaminote.isHidden = false
+                    solVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
+                    solVitaminote.isHidden = false
+                    laVitaminote.frame = CGRect(x: 250, y: 722, width: 62, height: 62)
+                    laVitaminote.isHidden = false
+                    gesture.isEnabled = false
+                    siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
+                    gesture.isEnabled = true
                     
                     
                     print(newCenterVase.isHidden)
@@ -894,7 +989,7 @@ public class LevelOneViewController: UIViewController {
                     siVitaminote.isHidden = true
                     faSharpVitaminote.isHidden = true
                     solSharpVitaminote.isHidden = true
-                   
+                    
                     circleNotes.isHidden = false
                     
                     poupUpNextLevel.isHidden = false
@@ -904,31 +999,61 @@ public class LevelOneViewController: UIViewController {
                     buttonToNext.isEnabled = true
                     buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
                     poupUpCongratsLevelOne.isHidden = false
-                }else{
-                    //                    if(!newCenterVase.isHidden){
-                    //                        newCenterVase.isHidden = true
-                    //                        faliedVase.isHidden = false
-                    //                        // gestureView.isUserInteractionEnabled = true
-                    //                    }else{
-                    //                        vaseWithRound1Vitaminote.isHidden = true
-                    //                        faliedVase.isHidden = false
-                    //                    }
-                    
-                }
+                } //
+                //else{
+                //                    if(!newCenterVase.isHidden){
+                //                        newCenterVase.isHidden = true
+                //                        faliedVase.isHidden = false
+                //                        // gestureView.isUserInteractionEnabled = true
+                //                    }else{
+                //                        vaseWithRound1Vitaminote.isHidden = true
+                //                        faliedVase.isHidden = false
+                //                    }
+                
+                //}
             }
             else{
+                
+                
+                gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
                 siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
-                     
+                gesture.isEnabled = true
+                
+                if(centerVase.isHidden){
+                    
+                    newCenterVase.isHidden = true
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                    
+                    poupUpMan.isHidden = true
+                    poupUpOneWoman.isHidden = true
+                    poupUpTwoWoman.isHidden = true
+                    poupUpCongratsLevelOne.isHidden = true
+                    
+                    poupUpTryAgain.isHidden = false
+                    
+                    doVitaminote.isUserInteractionEnabled = false
+                    reVitaminote.isUserInteractionEnabled = false
+                    miVitaminote.isUserInteractionEnabled = false
+                    faVitaminote.isUserInteractionEnabled = false
+                    solVitaminote.isUserInteractionEnabled = false
+                    laVitaminote.isUserInteractionEnabled = false
+                    siVitaminote.isUserInteractionEnabled = false
+                    faSharpVitaminote.isUserInteractionEnabled = false
+                    solSharpVitaminote.isUserInteractionEnabled = false
+                }
+                
+                
             }
         }
         else if(gesture.state == .ended){
             print("entrou aqui na condicional que eu qeuria")
-               if (!centerVaseRect.contains(gestureView.frame)){
+            if (!centerVaseRect.contains(gestureView.frame)){
                 print("entrou aqui na condicional que eu qeuria 2")
-                  siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
-                   }
-                   
-               }
+                siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
+            }
+            
+        }
     }
     
     @objc func handlePanFaSharpVitaminote(_ gesture: UIPanGestureRecognizer) {
@@ -952,19 +1077,19 @@ public class LevelOneViewController: UIViewController {
         // if(isSeedOntheVase(gestureView))
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
         
-//     gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
-//         faSharpVitaminote.frame =  CGRect(x: 186, y: 774, width: 62, height: 62)
-//         gesture.isEnabled = true
+        //     gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+        //         faSharpVitaminote.frame =  CGRect(x: 186, y: 774, width: 62, height: 62)
+        //         gesture.isEnabled = true
         
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
             // print("A vitamina foi colocada no vaso")
             
             if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
-            faSharpVitaminote.frame =  CGRect(x: 186, y: 774, width: 62, height: 62)
-                         }
-            
-    
-           else if(!newCenterVase.isHidden){
+                faSharpVitaminote.frame =  CGRect(x: 186, y: 774, width: 62, height: 62)
+            }
+                
+                
+            else if(!newCenterVase.isHidden){
                 newCenterVase.isHidden = true
                 faliedVase.isHidden = false
                 
@@ -982,7 +1107,7 @@ public class LevelOneViewController: UIViewController {
                 poupUpOneWoman.isHidden = true
                 poupUpTwoWoman.isHidden = true
                 poupUpCongratsLevelOne.isHidden = true
-
+                
                 poupUpTryAgain.isHidden = false
                 
                 // gestureView.isUserInteractionEnabled = true
@@ -996,27 +1121,27 @@ public class LevelOneViewController: UIViewController {
                 poupUpCongratsLevelOne.isHidden = true
                 
                 poupUpTryAgain.isHidden = false
-
-              doVitaminote.isUserInteractionEnabled = false
-              reVitaminote.isUserInteractionEnabled = false
-              miVitaminote.isUserInteractionEnabled = false
-              faVitaminote.isUserInteractionEnabled = false
-              solVitaminote.isUserInteractionEnabled = false
-              laVitaminote.isUserInteractionEnabled = false
-              siVitaminote.isUserInteractionEnabled = false
-              faSharpVitaminote.isUserInteractionEnabled = false
-              solSharpVitaminote.isUserInteractionEnabled = false
+                
+                doVitaminote.isUserInteractionEnabled = false
+                reVitaminote.isUserInteractionEnabled = false
+                miVitaminote.isUserInteractionEnabled = false
+                faVitaminote.isUserInteractionEnabled = false
+                solVitaminote.isUserInteractionEnabled = false
+                laVitaminote.isUserInteractionEnabled = false
+                siVitaminote.isUserInteractionEnabled = false
+                faSharpVitaminote.isUserInteractionEnabled = false
+                solSharpVitaminote.isUserInteractionEnabled = false
             }
             
-             faSharpVitaminote.frame =  CGRect(x: 186, y: 774, width: 62, height: 62)
+            faSharpVitaminote.frame =  CGRect(x: 186, y: 774, width: 62, height: 62)
             
         }
         else if(gesture.state == .ended){
-               if (!centerVaseRect.contains(gestureView.frame)){
-                    faSharpVitaminote.frame = CGRect(x: 186, y: 774, width: 62, height: 62)
-                   }
-                   
-               }
+            if (!centerVaseRect.contains(gestureView.frame)){
+                faSharpVitaminote.frame = CGRect(x: 186, y: 774, width: 62, height: 62)
+            }
+            
+        }
         
     }
     
@@ -1041,78 +1166,78 @@ public class LevelOneViewController: UIViewController {
         // if(isSeedOntheVase(gestureView))
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
         
-//         gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
-//        solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
-//        gesture.isEnabled = true
+        //         gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+        //        solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
+        //        gesture.isEnabled = true
         
-         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
+        if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
             // print("A vitamina foi colocada no vaso")
-  
-            if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
-                     solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
-                 }
             
-
+            if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
+                solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
+            }
                 
                 
-           else if(!newCenterVase.isHidden){
-                    newCenterVase.isHidden = true
-                    faliedVase.isHidden = false
-                    
-                    doVitaminote.isUserInteractionEnabled = false
-                    reVitaminote.isUserInteractionEnabled = false
-                    miVitaminote.isUserInteractionEnabled = false
-                    faVitaminote.isUserInteractionEnabled = false
-                    solVitaminote.isUserInteractionEnabled = false
-                    laVitaminote.isUserInteractionEnabled = false
-                    siVitaminote.isUserInteractionEnabled = false
-                    faSharpVitaminote.isUserInteractionEnabled = false
-                    solSharpVitaminote.isUserInteractionEnabled = false
-                    
-                    poupUpMan.isHidden = true
-                    poupUpOneWoman.isHidden = true
-                    poupUpTwoWoman.isHidden = true
-                    poupUpCongratsLevelOne.isHidden = true
-
-                    poupUpTryAgain.isHidden = false
                 
-                    
-                    // gestureView.isUserInteractionEnabled = true
-                }
+                
+            else if(!newCenterVase.isHidden){
+                newCenterVase.isHidden = true
+                faliedVase.isHidden = false
+                
+                doVitaminote.isUserInteractionEnabled = false
+                reVitaminote.isUserInteractionEnabled = false
+                miVitaminote.isUserInteractionEnabled = false
+                faVitaminote.isUserInteractionEnabled = false
+                solVitaminote.isUserInteractionEnabled = false
+                laVitaminote.isUserInteractionEnabled = false
+                siVitaminote.isUserInteractionEnabled = false
+                faSharpVitaminote.isUserInteractionEnabled = false
+                solSharpVitaminote.isUserInteractionEnabled = false
+                
+                poupUpMan.isHidden = true
+                poupUpOneWoman.isHidden = true
+                poupUpTwoWoman.isHidden = true
+                poupUpCongratsLevelOne.isHidden = true
+                
+                poupUpTryAgain.isHidden = false
+                
+                
+                // gestureView.isUserInteractionEnabled = true
+            }
             else{
-                    vaseWithRound1Vitaminote.isHidden = true
-                    faliedVase.isHidden = false
-                    
-                    poupUpMan.isHidden = true
-                    poupUpOneWoman.isHidden = true
-                    poupUpTwoWoman.isHidden = true
-                    poupUpCongratsLevelOne.isHidden = true
-                    
-                    poupUpTryAgain.isHidden = false
-
-                  doVitaminote.isUserInteractionEnabled = false
-                  reVitaminote.isUserInteractionEnabled = false
-                  miVitaminote.isUserInteractionEnabled = false
-                  faVitaminote.isUserInteractionEnabled = false
-                  solVitaminote.isUserInteractionEnabled = false
-                  laVitaminote.isUserInteractionEnabled = false
-                  siVitaminote.isUserInteractionEnabled = false
-                  faSharpVitaminote.isUserInteractionEnabled = false
-                  solSharpVitaminote.isUserInteractionEnabled = false
+                vaseWithRound1Vitaminote.isHidden = true
+                faliedVase.isHidden = false
                 
-     
-                }
+                poupUpMan.isHidden = true
+                poupUpOneWoman.isHidden = true
+                poupUpTwoWoman.isHidden = true
+                poupUpCongratsLevelOne.isHidden = true
+                
+                poupUpTryAgain.isHidden = false
+                
+                doVitaminote.isUserInteractionEnabled = false
+                reVitaminote.isUserInteractionEnabled = false
+                miVitaminote.isUserInteractionEnabled = false
+                faVitaminote.isUserInteractionEnabled = false
+                solVitaminote.isUserInteractionEnabled = false
+                laVitaminote.isUserInteractionEnabled = false
+                siVitaminote.isUserInteractionEnabled = false
+                faSharpVitaminote.isUserInteractionEnabled = false
+                solSharpVitaminote.isUserInteractionEnabled = false
+                
+                
+            }
             
             solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
             
-                
-            }
+            
+        }
         else if(gesture.state == .ended){
-               if (!centerVaseRect.contains(gestureView.frame)){
-                     solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
-                   }
-                   
-               }
+            if (!centerVaseRect.contains(gestureView.frame)){
+                solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
+            }
+            
+        }
     }
 }//end class level 1
 
