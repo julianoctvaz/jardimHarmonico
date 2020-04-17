@@ -71,6 +71,7 @@ public class LevelOneViewController: UIViewController {
     let titleGarden = UIImageView()
     //PoupUps
     let poupUpMan = UIImageView()
+    let poupUpNextLevel = UIImageView()
     let poupUpOneWoman = UIImageView()
     let poupUpTwoWoman = UIImageView()
     let poupUpCongratsLevelOne = UIImageView()
@@ -148,7 +149,7 @@ public class LevelOneViewController: UIViewController {
             seedSol.isUserInteractionEnabled = false
               
             centerVase.image = UIImage(named: "vasos/vasoComTerra")
-            centerVase.frame = CGRect(x: 861, y: 397, width: 96, height: 87)
+            centerVase.frame = CGRect(x: 860, y: 397, width: 100, height: 95)
             
             newCenterVase.image = UIImage(named: "crescimentoPlanta/raizAposSemente")
             newCenterVase.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
@@ -159,11 +160,11 @@ public class LevelOneViewController: UIViewController {
             vaseWithRound1Vitaminote.isHidden = true
             
             vaseCompletedRounds.image = UIImage(named: "crescimentoPlanta/raizAposSementeEVitaminasDO")
-            vaseCompletedRounds.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
+            vaseCompletedRounds.frame = CGRect(x: 841, y: 306, width: 135, height: 185)
             vaseCompletedRounds.isHidden = true
             
             faliedVase.image = UIImage(named: "crescimentoPlanta/plantaMorreu")
-            faliedVase.frame = CGRect(x: 841, y: 306, width: 139, height: 185)
+            faliedVase.frame = CGRect(x: 839, y: 306, width: 139, height: 185)
             faliedVase.isHidden = true
             
             
@@ -175,7 +176,7 @@ public class LevelOneViewController: UIViewController {
             poupUpOneWoman.isHidden = true //comeca inativo
             
             poupUpTwoWoman.image = UIImage(named: "poupUp/poupUp2Mulher")
-            poupUpTwoWoman.frame = CGRect(x: 377, y: 599, width: 227, height: 200)
+            poupUpTwoWoman.frame = CGRect(x: 235, y: 22, width: 227, height: 200)
             poupUpTwoWoman.isHidden = true //comeca inativo
             
             poupUpCongratsLevelOne.image = UIImage(named: "poupUp/parabensFase1")
@@ -185,6 +186,10 @@ public class LevelOneViewController: UIViewController {
             poupUpTryAgain.image = UIImage(named: "poupUp/falaErroJogada")
             poupUpTryAgain.frame = CGRect(x: 235, y: 22, width: 191, height: 203) //ver aqui as dimensoes e posicao
             poupUpTryAgain.isHidden = true
+            
+            poupUpNextLevel.image = UIImage(named: "poupUp/falaProximaFase")
+            poupUpNextLevel.frame = CGRect(x: 377, y: 599, width: 197, height: 155) //ver aqui as dimensoes e posicao
+            poupUpNextLevel.isHidden = true
         }//several frames and UIImagensView
         
         
@@ -204,6 +209,7 @@ public class LevelOneViewController: UIViewController {
             
             circleNotes.image = UIImage(named: "diversos/auraCircularDeNotas")
             circleNotes.frame = CGRect(x: 87, y: 620, width: 263, height: 263)
+            //circleNotes.alpha = 0.9
             
             doVitaminote.image = UIImage(named: "vitaminas/doVitaminota")
             doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
@@ -287,6 +293,8 @@ public class LevelOneViewController: UIViewController {
             view.addSubview(vaseWithRound1Vitaminote)
             view.addSubview(vaseCompletedRounds)
             view.addSubview(faliedVase)
+          
+            
             //Butons
             view.addSubview(buttonToReset)
             view.addSubview(buttonToNext)
@@ -294,6 +302,7 @@ public class LevelOneViewController: UIViewController {
             //Boards
             view.addSubview(manBoard)
             view.addSubview(womanBoard)
+            view.addSubview(circleNotes)
             //Internal Man Board
             view.addSubview(seedDo)
             view.addSubview(seedRe)
@@ -304,6 +313,7 @@ public class LevelOneViewController: UIViewController {
             view.addSubview(poupUpTwoWoman)
             view.addSubview(poupUpCongratsLevelOne)
             view.addSubview(poupUpTryAgain)
+            view.addSubview(poupUpNextLevel)
             //VitamiNotes
             view.addSubview(doVitaminote)
             view.addSubview(reVitaminote)
@@ -490,7 +500,11 @@ public class LevelOneViewController: UIViewController {
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
             print("A vitamina foi colocada no vaso")
             
-            if(!vitaminoteSequence[0] ){//valida a sequencia
+            if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
+                doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
+            }
+            
+            else if(!vitaminoteSequence[0] ){//valida a sequencia
                 //  if(vitaminoteSequence[0] == true){//valida a sequencia
                 vitaminoteSequence[0] = true
                 print(vitaminoteSequence)
@@ -503,7 +517,7 @@ public class LevelOneViewController: UIViewController {
                 doVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
                 
-                /*                if(!newCenterVase.isHidden){
+                /*      if(!newCenterVase.isHidden){
                  newCenterVase.isHidden = true
                  faliedVase.isHidden = false
                  // gestureView.isUserInteractionEnabled = true
@@ -806,11 +820,17 @@ public class LevelOneViewController: UIViewController {
         
         // if(isSeedOntheVase(gestureView))
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
-        
+
+     
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
             // print("A vitamina foi colocada no vaso")
             
-            if(vitaminoteSequence[5] == true && vitaminoteSequence[6] == false){//valida a sequencia
+            if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
+                         siVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
+                         }
+                 
+            
+            else if(vitaminoteSequence[5] == true && vitaminoteSequence[6] == false){//valida a sequencia
                 vitaminoteSequence[6] = true
                 print(vitaminoteSequence)
                 //gesture.reset() // ver o que essa funcao faz
@@ -874,7 +894,10 @@ public class LevelOneViewController: UIViewController {
                     siVitaminote.isHidden = true
                     faSharpVitaminote.isHidden = true
                     solSharpVitaminote.isHidden = true
+                   
+                    circleNotes.isHidden = false
                     
+                    poupUpNextLevel.isHidden = false
                     poupUpTwoWoman.isHidden = true
                     poupUpOneWoman.isHidden = true // pode criar outro pop falando q recomecou, ver colocar som para cada vitaminota, e quando rodar o round, errar.. etc..
                     
@@ -929,21 +952,63 @@ public class LevelOneViewController: UIViewController {
         // if(isSeedOntheVase(gestureView))
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
         
+//     gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+//         faSharpVitaminote.frame =  CGRect(x: 186, y: 774, width: 62, height: 62)
+//         gesture.isEnabled = true
+        
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
             // print("A vitamina foi colocada no vaso")
             
-            
-            gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+            if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
             faSharpVitaminote.frame =  CGRect(x: 186, y: 774, width: 62, height: 62)
-            gesture.isEnabled = true
-            if(!newCenterVase.isHidden){
+                         }
+            
+    
+           else if(!newCenterVase.isHidden){
                 newCenterVase.isHidden = true
                 faliedVase.isHidden = false
+                
+                doVitaminote.isUserInteractionEnabled = false
+                reVitaminote.isUserInteractionEnabled = false
+                miVitaminote.isUserInteractionEnabled = false
+                faVitaminote.isUserInteractionEnabled = false
+                solVitaminote.isUserInteractionEnabled = false
+                laVitaminote.isUserInteractionEnabled = false
+                siVitaminote.isUserInteractionEnabled = false
+                faSharpVitaminote.isUserInteractionEnabled = false
+                solSharpVitaminote.isUserInteractionEnabled = false
+                
+                poupUpMan.isHidden = true
+                poupUpOneWoman.isHidden = true
+                poupUpTwoWoman.isHidden = true
+                poupUpCongratsLevelOne.isHidden = true
+
+                poupUpTryAgain.isHidden = false
+                
                 // gestureView.isUserInteractionEnabled = true
             }else{
                 vaseWithRound1Vitaminote.isHidden = true
                 faliedVase.isHidden = false
+                
+                poupUpMan.isHidden = true
+                poupUpOneWoman.isHidden = true
+                poupUpTwoWoman.isHidden = true
+                poupUpCongratsLevelOne.isHidden = true
+                
+                poupUpTryAgain.isHidden = false
+
+              doVitaminote.isUserInteractionEnabled = false
+              reVitaminote.isUserInteractionEnabled = false
+              miVitaminote.isUserInteractionEnabled = false
+              faVitaminote.isUserInteractionEnabled = false
+              solVitaminote.isUserInteractionEnabled = false
+              laVitaminote.isUserInteractionEnabled = false
+              siVitaminote.isUserInteractionEnabled = false
+              faSharpVitaminote.isUserInteractionEnabled = false
+              solSharpVitaminote.isUserInteractionEnabled = false
             }
+            
+             faSharpVitaminote.frame =  CGRect(x: 186, y: 774, width: 62, height: 62)
             
         }
         else if(gesture.state == .ended){
@@ -976,20 +1041,72 @@ public class LevelOneViewController: UIViewController {
         // if(isSeedOntheVase(gestureView))
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
         
-        if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
+//         gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+//        solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
+//        gesture.isEnabled = true
+        
+         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
             // print("A vitamina foi colocada no vaso")
-            gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
+  
+            if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
+                     solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
+                 }
+            
+
+                
+                
+           else if(!newCenterVase.isHidden){
+                    newCenterVase.isHidden = true
+                    faliedVase.isHidden = false
+                    
+                    doVitaminote.isUserInteractionEnabled = false
+                    reVitaminote.isUserInteractionEnabled = false
+                    miVitaminote.isUserInteractionEnabled = false
+                    faVitaminote.isUserInteractionEnabled = false
+                    solVitaminote.isUserInteractionEnabled = false
+                    laVitaminote.isUserInteractionEnabled = false
+                    siVitaminote.isUserInteractionEnabled = false
+                    faSharpVitaminote.isUserInteractionEnabled = false
+                    solSharpVitaminote.isUserInteractionEnabled = false
+                    
+                    poupUpMan.isHidden = true
+                    poupUpOneWoman.isHidden = true
+                    poupUpTwoWoman.isHidden = true
+                    poupUpCongratsLevelOne.isHidden = true
+
+                    poupUpTryAgain.isHidden = false
+                
+                    
+                    // gestureView.isUserInteractionEnabled = true
+                }
+            else{
+                    vaseWithRound1Vitaminote.isHidden = true
+                    faliedVase.isHidden = false
+                    
+                    poupUpMan.isHidden = true
+                    poupUpOneWoman.isHidden = true
+                    poupUpTwoWoman.isHidden = true
+                    poupUpCongratsLevelOne.isHidden = true
+                    
+                    poupUpTryAgain.isHidden = false
+
+                  doVitaminote.isUserInteractionEnabled = false
+                  reVitaminote.isUserInteractionEnabled = false
+                  miVitaminote.isUserInteractionEnabled = false
+                  faVitaminote.isUserInteractionEnabled = false
+                  solVitaminote.isUserInteractionEnabled = false
+                  laVitaminote.isUserInteractionEnabled = false
+                  siVitaminote.isUserInteractionEnabled = false
+                  faSharpVitaminote.isUserInteractionEnabled = false
+                  solSharpVitaminote.isUserInteractionEnabled = false
+                
+     
+                }
+            
             solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
-            gesture.isEnabled = true
-            if(!newCenterVase.isHidden){
-                newCenterVase.isHidden = true
-                faliedVase.isHidden = false
-                // gestureView.isUserInteractionEnabled = true
-            }else{
-                vaseWithRound1Vitaminote.isHidden = true
-                faliedVase.isHidden = false
+            
+                
             }
-        }
         else if(gesture.state == .ended){
                if (!centerVaseRect.contains(gestureView.frame)){
                      solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
