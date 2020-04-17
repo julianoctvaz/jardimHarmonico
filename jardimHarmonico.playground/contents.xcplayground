@@ -3,6 +3,5 @@
     <pages>
         <page name='Geral'/>
         <page name='Poema'/>
-        <page name='PaginaInicialSeraEssa'/>
     </pages>
 </playground>
