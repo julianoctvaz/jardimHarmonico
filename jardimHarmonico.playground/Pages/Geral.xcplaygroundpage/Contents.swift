@@ -12,7 +12,7 @@ let levelTwoViewController = LevelTwoViewController()
 let navigation = UINavigationController(screenType: .mac, isPortrait: true)
 navigation.pushViewController(onboardingViewController, animated: true)
 
-PlaygroundPage.current.liveView = navigation.scale(to: 0.5)
+PlaygroundPage.current.liveView = navigation.scaleToFit()
 //: [Ler poema](Poema)
 
 
