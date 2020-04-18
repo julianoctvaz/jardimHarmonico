@@ -69,7 +69,7 @@ extension UIViewController {
         }
         self.view.transform = CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale))
         self.preferredContentSize = self.view.frame.size
-        let rootView = UIView(frame: CGRect(x: 0, y: 0, width: 770, height: 456))//aqui tava 956, usar 656 para apresentacao
+        let rootView = UIView(frame: CGRect(x: 0, y: 0, width: 770, height: 656))//aqui tava 956, usar 656 para apresentacao
         rootView.backgroundColor = .black
         rootView.addSubview(self.view)
         self.view.center = rootView.center
