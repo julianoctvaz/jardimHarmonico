@@ -1,10 +1,13 @@
 import UIKit
 import PlaygroundSupport
+import AVFoundation
 
 public class OnboardingViewController: UIViewController {
 
     //Buttons and Labels
     let buttonToNext = UIButton()
+    //audio
+    private var audioPlayer: AVAudioPlayer?
 
     public override func loadView() { ///Carega/Cria a view
         //setting Buttons
@@ -15,8 +18,20 @@ public class OnboardingViewController: UIViewController {
         //Views, UIImage and ImagenViews
         let view = UIView()
         let background = UIImageView()
+        
+        //audio
+        do {
+            audioPlayer = AVAudioPlayer()
+            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/button", ofType: "mp3")!))
+            audioPlayer?.prepareToPlay()
+        }
+        catch {
+            
+            print(error)
+        }
 
-
+        
+        
         background.image = UIImage(named: "diversos/onboarding")
         background.frame = CGRect(x: 0, y: 0, width: 1440, height: 900)
 
@@ -36,6 +51,9 @@ public class OnboardingViewController: UIViewController {
     //IBActions
     @IBAction func touchedButton() {
         print("Apertou botão da OnboardingViewController para ir para a LeveOne")
+        
+        self.audioPlayer?.play()
+            
         let novaViewController = LevelOneViewController(screenType: .mac , isPortrait: true)
         // navigationController?.popViewController(animated: true)
         navigationController?.pushViewController(novaViewController, animated: true)
