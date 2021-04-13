@@ -1,7 +1,14 @@
 import UIKit
 import PlaygroundSupport
+import AVFoundation
 
 public class LevelTwoViewController: UIViewController {
+    
+    //audio
+    private var buttonAudioPlayer: AVAudioPlayer?
+    private var correctAudioPlayer: AVAudioPlayer?
+    private var incorrectAudioPlayer: AVAudioPlayer?
+    private var clappingAudioPlayer: AVAudioPlayer?
     
     //Buttons and Labels
     let buttonToNext = UIButton()
@@ -60,6 +67,29 @@ public class LevelTwoViewController: UIViewController {
         
         //Main View
         let view = UIView()
+        
+        //audios
+        do {
+            buttonAudioPlayer = AVAudioPlayer()
+            buttonAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/button", ofType: "mp3")!))
+            buttonAudioPlayer?.prepareToPlay()
+            
+            correctAudioPlayer = AVAudioPlayer()
+            correctAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/correct", ofType: "wav")!))
+            correctAudioPlayer?.prepareToPlay()
+            
+            incorrectAudioPlayer = AVAudioPlayer()
+            incorrectAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/incorrect", ofType: "wav")!))
+            incorrectAudioPlayer?.prepareToPlay()
+            
+            clappingAudioPlayer = AVAudioPlayer()
+            clappingAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/clapping", ofType: "wav")!))
+            clappingAudioPlayer?.prepareToPlay()
+        }
+        catch {
+            print("erro ao importar as musicas")
+            print(error)
+        }
         
         if(true){
             //setting Buttons
@@ -306,6 +336,7 @@ public class LevelTwoViewController: UIViewController {
     ///IBActions fuctions
     @IBAction func touchedButtonReset() {
         //print(navigationController?.viewControllers)
+        self.buttonAudioPlayer?.play()
         let novaViewController = LevelTwoViewController(screenType: .mac , isPortrait: true)
         navigationController?.pushViewController(novaViewController, animated: false)
         // print(navigationController?.viewControllers)
@@ -316,6 +347,7 @@ public class LevelTwoViewController: UIViewController {
     }
     
     @IBAction func touchedButtonNextLevel() {
+        self.buttonAudioPlayer?.play()
         print("Apertou botão da LVL2 para ir para a lv3")
         
         let novaViewController = LevelThreeViewController(screenType: .mac , isPortrait: true)
@@ -329,6 +361,7 @@ public class LevelTwoViewController: UIViewController {
     }
     
     @IBAction func touchedButtonToBackToOnboarding() {
+        self.buttonAudioPlayer?.play()
         print("Apertou botão para voltar a OnboardingViewController ")
         let novaViewController = OnboardingViewController(screenType: .mac , isPortrait: true)
         navigationController?.popViewController( animated: true)
@@ -398,10 +431,11 @@ public class LevelTwoViewController: UIViewController {
             
             self.newCenterVase.alpha = 0.0
             
-            UIImageView.animate(withDuration: 1, animations: {
+            UIImageView.animate(withDuration: 0.5, animations: {
                 self.newCenterVase.isHidden = false
                 self.newCenterVase.alpha = 1.0
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
+                    self.correctAudioPlayer?.play()
                     self.centerVase.isHidden = true
                 })
                 
@@ -464,10 +498,11 @@ public class LevelTwoViewController: UIViewController {
                 
                 self.vaseWithG.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 1, animations: {
+                UIImageView.animate(withDuration: 0.5, animations: {
                     self.vaseWithG.isHidden = false
                     self.vaseWithG.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
+                        self.correctAudioPlayer?.play()
                         self.newCenterVase.isHidden = true
                         self.centerVase.isHidden = true
                     })
@@ -486,6 +521,8 @@ public class LevelTwoViewController: UIViewController {
                 
                 if(centerVase.isHidden){
                     
+                    self.incorrectAudioPlayer?.play()
+                    
                     newCenterVase.isHidden = true
                     vaseWithG.isHidden = true
                     vaseWithGA.isHidden = true
@@ -496,7 +533,6 @@ public class LevelTwoViewController: UIViewController {
                     vaseWithGABCDEFSharp.isHidden = true
                     faliedVase.isHidden = false
                     
-                    faliedVase.isHidden = false
                     
                     poupUpMan.isHidden = true
                     poupUpOneWoman.isHidden = true
@@ -555,10 +591,11 @@ public class LevelTwoViewController: UIViewController {
                 vitaminoteSequence[1] = true
                 self.vaseWithGA.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 1, animations: {
+                UIImageView.animate(withDuration: 0.5, animations: {
                     self.vaseWithGA.isHidden = false
                     self.vaseWithGA.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
+                        self.correctAudioPlayer?.play()
                         self.vaseWithG.isHidden = true
                         self.centerVase.isHidden = true
                     })
@@ -576,6 +613,8 @@ public class LevelTwoViewController: UIViewController {
                 gesture.isEnabled = true
                 
                 if(centerVase.isHidden){
+                    
+                    self.incorrectAudioPlayer?.play()
                     
                     newCenterVase.isHidden = true
                     vaseWithG.isHidden = true
@@ -644,10 +683,11 @@ public class LevelTwoViewController: UIViewController {
                 
                 self.vaseWithGAB.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 1, animations: {
+                UIImageView.animate(withDuration: 0.5, animations: {
                     self.vaseWithGAB.isHidden = false
                     self.vaseWithGAB.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
+                        self.correctAudioPlayer?.play()
                         self.vaseWithGA.isHidden = true
                         self.centerVase.isHidden = true
                     })
@@ -666,6 +706,8 @@ public class LevelTwoViewController: UIViewController {
                 gesture.isEnabled = true
                 
                 if(centerVase.isHidden){
+                    self.incorrectAudioPlayer?.play()
+                    
                     
                     newCenterVase.isHidden = true
                     vaseWithG.isHidden = true
@@ -733,10 +775,11 @@ public class LevelTwoViewController: UIViewController {
                 vitaminoteSequence[3] = true
                 self.vaseWithGABC.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 1, animations: {
+                UIImageView.animate(withDuration: 0.5, animations: {
                     self.vaseWithGABC.isHidden = false
                     self.vaseWithGABC.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
+                        self.correctAudioPlayer?.play()
                         self.vaseWithGAB.isHidden = true
                         self.centerVase.isHidden = true
                     })
@@ -753,6 +796,7 @@ public class LevelTwoViewController: UIViewController {
                 gesture.isEnabled = true
                 
                 if(centerVase.isHidden){
+                    self.incorrectAudioPlayer?.play()
                     
                     newCenterVase.isHidden = true
                     vaseWithG.isHidden = true
@@ -820,10 +864,11 @@ public class LevelTwoViewController: UIViewController {
                 vitaminoteSequence[4] = true
                 self.vaseWithGABCD.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 1, animations: {
+                UIImageView.animate(withDuration: 0.5, animations: {
                     self.vaseWithGABCD.isHidden = false
                     self.vaseWithGABCD.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
+                        self.correctAudioPlayer?.play()
                         self.vaseWithGABC.isHidden = true
                         self.centerVase.isHidden = true
                     })
@@ -840,6 +885,7 @@ public class LevelTwoViewController: UIViewController {
                 gesture.isEnabled = true
                 
                 if(centerVase.isHidden){
+                    self.incorrectAudioPlayer?.play()
                     
                     newCenterVase.isHidden = true
                     // vaseWithRound1Vitaminote.isHidden = true
@@ -901,10 +947,11 @@ public class LevelTwoViewController: UIViewController {
                 
                 self.vaseWithGABCDE.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 1, animations: {
+                UIImageView.animate(withDuration: 0.5, animations: {
                     self.vaseWithGABCDE.isHidden = false
                     self.vaseWithGABCDE.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
+                        self.correctAudioPlayer?.play()
                         self.vaseWithGABCD.isHidden = true
                         self.centerVase.isHidden = true
                     })
@@ -921,6 +968,7 @@ public class LevelTwoViewController: UIViewController {
                 gesture.isEnabled = true
                 
                 if(centerVase.isHidden){
+                    self.incorrectAudioPlayer?.play()
                     
                     newCenterVase.isHidden = true
                     vaseWithG.isHidden = true
@@ -993,10 +1041,11 @@ public class LevelTwoViewController: UIViewController {
                 vitaminoteSequence[6] = true
                 self.vaseWithGABCDEFSharp.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 1, animations: {
+                UIImageView.animate(withDuration: 0.5, animations: {
                     self.vaseWithGABCDEFSharp.isHidden = false
                     self.vaseWithGABCDEFSharp.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
+                        self.clappingAudioPlayer?.play()
                         self.vaseWithGABCDE.isHidden = true
                         self.centerVase.isHidden = true
                     })
@@ -1042,7 +1091,7 @@ public class LevelTwoViewController: UIViewController {
                 gesture.isEnabled = true
                 
                 if(centerVase.isHidden){
-                    
+                    self.incorrectAudioPlayer?.play()
                     newCenterVase.isHidden = true
                     vaseWithG.isHidden = true
                     vaseWithGA.isHidden = true
@@ -1115,6 +1164,8 @@ public class LevelTwoViewController: UIViewController {
                 
                 
             else if(!newCenterVase.isHidden){
+                self.incorrectAudioPlayer?.play()
+                
                 newCenterVase.isHidden = true
                 vaseWithG.isHidden = true
                 vaseWithGA.isHidden = true
@@ -1146,7 +1197,7 @@ public class LevelTwoViewController: UIViewController {
             }else{
                 // vaseWithRound1Vitaminote.isHidden = true
                 faliedVase.isHidden = false
-                
+                self.incorrectAudioPlayer?.play()
                 poupUpMan.isHidden = true
                 poupUpOneWoman.isHidden = true
                 poupUpTwoWoman.isHidden = true
@@ -1215,7 +1266,7 @@ public class LevelTwoViewController: UIViewController {
             else if(!newCenterVase.isHidden){
                 newCenterVase.isHidden = true
                 faliedVase.isHidden = false
-                
+                self.incorrectAudioPlayer?.play()
                 doVitaminote.isUserInteractionEnabled = false
                 reVitaminote.isUserInteractionEnabled = false
                 miVitaminote.isUserInteractionEnabled = false
@@ -1239,7 +1290,7 @@ public class LevelTwoViewController: UIViewController {
             else{
                 // vaseWithRound1Vitaminote.isHidden = true
                 faliedVase.isHidden = false
-                
+                self.incorrectAudioPlayer?.play()
                 poupUpMan.isHidden = true
                 poupUpOneWoman.isHidden = true
                 poupUpTwoWoman.isHidden = true
