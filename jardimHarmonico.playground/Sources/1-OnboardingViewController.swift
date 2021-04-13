@@ -36,7 +36,7 @@ public class OnboardingViewController: UIViewController {
     //IBActions
     @IBAction func touchedButton() {
         print("Apertou botão da OnboardingViewController para ir para a LeveOne")
-        let novaViewController = LevelOneViewController(screenType: .mac , isPortrait: true)
+        let novaViewController = LevelTwoViewController(screenType: .mac , isPortrait: true)
         // navigationController?.popViewController(animated: true)
         navigationController?.pushViewController(novaViewController, animated: true)
         //coloca em cima da onboard a tela level 1

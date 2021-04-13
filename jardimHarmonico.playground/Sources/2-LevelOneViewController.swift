@@ -3,6 +3,7 @@ import PlaygroundSupport
 
 
 public class LevelOneViewController: UIViewController {
+    
     //Buttons and Labels
     let buttonToNext = UIButton()
     let buttonToReset = UIButton()
@@ -239,7 +240,6 @@ public class LevelOneViewController: UIViewController {
             let panSolSharpVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSolSharpVitaminote))
             solSharpVitaminote.addGestureRecognizer(panSolSharpVitaminote)
         } //gestures
-        
         
         
         if(true){
@@ -492,7 +492,7 @@ public class LevelOneViewController: UIViewController {
                 doVitaminote.isHidden = true
                 vaseWithC.isHidden = false
                 centerVase.isHidden = true
-                vaseWithC.startAnimating()
+                
                 
             }
             else{
@@ -652,7 +652,7 @@ public class LevelOneViewController: UIViewController {
                 vaseWithCD.isHidden = true
                 centerVase.isHidden = true
                 vaseWithCDE.isHidden = false
-                vaseWithCDE.startAnimating()
+                
                 
             }
             else{
@@ -934,7 +934,6 @@ public class LevelOneViewController: UIViewController {
         }
     }
     
-    
     @objc func handlePanSiVitaminote(_ gesture: UIPanGestureRecognizer) {
         // explicacao sobre 1,2 no GesturePlayground de Ale
         // 1
@@ -1027,12 +1026,12 @@ public class LevelOneViewController: UIViewController {
 //
 //                    siVitaminote.isHidden = true
 //                    //esses dois abaixo continuam mostrando
-//                    //faSharpVitaminote.isHidden = true
-//                   // solSharpVitaminote.isHidden = true
+                    faSharpVitaminote.isHidden = true
+                    solSharpVitaminote.isHidden = true
 //
-//                    circleNotes.isHidden = false
+                    circleNotes.isHidden = false
 //
-//                    poupUpNextLevel.isHidden = false
+                    poupUpNextLevel.isHidden = false
 //                    poupUpTwoWoman.isHidden = true
 //                    poupUpOneWoman.isHidden = true // pode criar outro pop falando q recomecou, ver colocar som para cada vitaminota, e quando rodar o round, errar.. etc..
 //
