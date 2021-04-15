@@ -50,7 +50,7 @@ public class OnboardingViewController: UIViewController {
 
     //IBActions
     @IBAction func touchedButton() {
-        print("Apertou botão da OnboardingViewController para ir para a LeveOne")
+//        print("Apertou botão da OnboardingViewController para ir para a LeveOne")
         
         self.audioPlayer?.play()
             

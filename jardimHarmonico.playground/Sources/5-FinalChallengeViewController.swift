@@ -2,7 +2,7 @@ import UIKit
 import PlaygroundSupport
 
 
-public class FinalChallengeViewController: UIViewController {
+public class FinalViewController: UIViewController {
     
     public override func loadView() {  ///Carega/Cria a view
         
@@ -13,7 +13,7 @@ public class FinalChallengeViewController: UIViewController {
         
         let label = UILabel()
         label.frame = CGRect(x: 150, y: 200, width: 200, height: 20)
-        label.text = "Hello World to FinalChalenge!"
+        label.text = "Congrats!"
         label.textColor = .black
         
         

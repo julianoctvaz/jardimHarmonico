@@ -8,7 +8,7 @@ public class LevelTwoViewController: UIViewController {
     private var buttonAudioPlayer: AVAudioPlayer?
     private var correctAudioPlayer: AVAudioPlayer?
     private var incorrectAudioPlayer: AVAudioPlayer?
-    private var clappingAudioPlayer: AVAudioPlayer?
+    private var clappingAudioPlayer:AVAudioPlayer?
     
     //Buttons and Labels
     let buttonToNext = UIButton()
@@ -60,7 +60,7 @@ public class LevelTwoViewController: UIViewController {
     
     var vitaminoteSequence = Array(repeating: false, count:7)//array bool de validacao
     var round1VitamineSequence = true
-//    var round2VitamineSequence = true
+    //    var round2VitamineSequence = true
     
     
     public override func loadView() { ///Carega/Cria a view
@@ -87,8 +87,8 @@ public class LevelTwoViewController: UIViewController {
             clappingAudioPlayer?.prepareToPlay()
         }
         catch {
-            print("erro ao importar as musicas")
-            print(error)
+            // print("erro ao importar as musicas")
+            // print(error)
         }
         
         if(true){
@@ -224,7 +224,7 @@ public class LevelTwoViewController: UIViewController {
             reVitaminote.addGestureRecognizer(panReVitaminote)
             
             miVitaminote.image = UIImage(named: "vitaminas/miVitaminota")
-           miVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
+            miVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
             miVitaminote.isUserInteractionEnabled = true
             let panMiVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanMiVitaminote))
             miVitaminote.addGestureRecognizer(panMiVitaminote)
@@ -236,7 +236,7 @@ public class LevelTwoViewController: UIViewController {
             faVitaminote.addGestureRecognizer(panFaVitaminote)
             
             solVitaminote.image = UIImage(named: "vitaminas/solVitaminota")
-           solVitaminote.frame = CGRect(x: 186, y: 774, width: 62, height: 62)
+            solVitaminote.frame = CGRect(x: 186, y: 774, width: 62, height: 62)
             solVitaminote.isUserInteractionEnabled = true
             let panSolVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSolVitaminote))
             solVitaminote.addGestureRecognizer(panSolVitaminote)
@@ -253,13 +253,13 @@ public class LevelTwoViewController: UIViewController {
             let panSiVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSiVitaminote))
             siVitaminote.addGestureRecognizer(panSiVitaminote)
             
-            faSharpVitaminote.image = UIImage(named: "vitaminas/faSustenidoVitaminota")
+            faSharpVitaminote.image = UIImage(named: "vitaminas/faSharpVitaminota")
             faSharpVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
             faSharpVitaminote.isUserInteractionEnabled = true
             let panFaSharpVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanFaSharpVitaminote))
             faSharpVitaminote.addGestureRecognizer(panFaSharpVitaminote)
             
-            solSharpVitaminote.image = UIImage(named: "vitaminas/solSustenidoVitaminota")
+            solSharpVitaminote.image = UIImage(named: "vitaminas/solSharpVitaminota")
             solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
             solSharpVitaminote.isUserInteractionEnabled = true
             let panSolSharpVitaminote = UIPanGestureRecognizer(target: self, action: #selector(handlePanSolSharpVitaminote))
@@ -295,8 +295,8 @@ public class LevelTwoViewController: UIViewController {
             view.addSubview(vaseWithGABCD)
             view.addSubview(vaseWithGABCDE)
             view.addSubview(vaseWithGABCDEFSharp)
-//            view.addSubview(vaseWithRound1Vitaminote)
-//            view.addSubview(vaseWithGABCDEFSharp)
+            //            view.addSubview(vaseWithRound1Vitaminote)
+            //            view.addSubview(vaseWithGABCDEFSharp)
             view.addSubview(faliedVase)
             //Butons
             view.addSubview(buttonToReset)
@@ -335,38 +335,38 @@ public class LevelTwoViewController: UIViewController {
     
     ///IBActions fuctions
     @IBAction func touchedButtonReset() {
-        //print(navigationController?.viewControllers)
+        //// print(navigationController?.viewControllers)
         self.buttonAudioPlayer?.play()
         let novaViewController = LevelTwoViewController(screenType: .mac , isPortrait: true)
         navigationController?.pushViewController(novaViewController, animated: false)
-        // print(navigationController?.viewControllers)
+        // // print(navigationController?.viewControllers)
         //coloca em cima da onboard a tela level 1
         navigationController?.navigationBar.isHidden = true
-        print("Apertou botão reset lvl 2")
+        // print("Apertou botão reset lvl 2")
         
     }
     
     @IBAction func touchedButtonNextLevel() {
         self.buttonAudioPlayer?.play()
-        print("Apertou botão da LVL2 para ir para a lv3")
+        // print("Apertou botão da LVL2 para ir para a lv3")
         
         let novaViewController = LevelThreeViewController(screenType: .mac , isPortrait: true)
         //  navigationController?.popViewController( animated: true)
         navigationController?.pushViewController(novaViewController, animated: true)
-        //print(navigationController?.viewControllers)
+        //// print(navigationController?.viewControllers)
         //coloca em cima da onboard a tela level 1
         navigationController?.navigationBar.isHidden = true
         
-        print("Apertou botão proxima Fase")
+        // print("Apertou botão proxima Fase")
     }
     
     @IBAction func touchedButtonToBackToOnboarding() {
         self.buttonAudioPlayer?.play()
-        print("Apertou botão para voltar a OnboardingViewController ")
+        // print("Apertou botão para voltar a OnboardingViewController ")
         let novaViewController = OnboardingViewController(screenType: .mac , isPortrait: true)
         navigationController?.popViewController( animated: true)
         navigationController?.pushViewController(novaViewController, animated: true)
-        //print(navigationController?.viewControllers)
+        //// print(navigationController?.viewControllers)
         //coloca em cima da onboard a tela level 1
         navigationController?.navigationBar.isHidden = true
     }
@@ -377,7 +377,7 @@ public class LevelTwoViewController: UIViewController {
     //erro cabuloso aqui nessas duas funcoes, penso em fazer um dispatch_async com um balao falando que nao pode ate passar de lvl
     
     /*  @objc func handlePanSeedRe(_ gesture: UIPanGestureRecognizer){
-     print("Tapped on Image Seed Re")
+     // print("Tapped on Image Seed Re")
      // explicacao sobre 1,2 no GesturePlayground de Ale
      // 1
      let translation = gesture.translation(in: view)
@@ -431,36 +431,36 @@ public class LevelTwoViewController: UIViewController {
             
             self.newCenterVase.alpha = 0.0
             
-            UIImageView.animate(withDuration: 0.5, animations: {
+            UIImageView.animate(withDuration: 0.3, animations: {
                 self.newCenterVase.isHidden = false
                 self.newCenterVase.alpha = 1.0
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                     self.correctAudioPlayer?.play()
                     self.centerVase.isHidden = true
                 })
                 
             })
             
-            print("Semente foi colocada no vaso")
+            // print("Semente foi colocada no vaso")
             seedSol.isHidden = true
-   
+            
             poupUpMan.isHidden = true
             poupUpOneWoman.isHidden = false
             //faça x coisa se estiver dentro do vaso
             
-            print(newCenterVase.isHidden)
-            print(vaseWithGABCDEFSharp.isHidden)
-//            print(vaseWithRound1Vitaminote.isHidden)
+            // print(newCenterVase.isHidden)
+            // print(vaseWithGABCDEFSharp.isHidden)
+            //            // print(vaseWithRound1Vitaminote.isHidden)
             
         }
-            
+        
         else if(gesture.state == .ended){
             if (!centerVaseRect.contains(gestureView.frame)){
                 seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
             }
         }
         
-        //print("Semente do Dó foi tocada!")
+        //// print("Semente do Dó foi tocada!")
     }
     
     @objc func handlePanSolVitaminote(_ gesture: UIPanGestureRecognizer) {
@@ -486,31 +486,31 @@ public class LevelTwoViewController: UIViewController {
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
         
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
-            print("A vitamina foi colocada no vaso")
+            // print("A vitamina foi colocada no vaso")
             
             if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
-               solVitaminote.frame = CGRect(x: 186, y: 774, width: 62, height: 62)
+                solVitaminote.frame = CGRect(x: 186, y: 774, width: 62, height: 62)
             }
-                
+            
             else if(!vitaminoteSequence[0] ){//valida a sequencia
                 //  if(vitaminoteSequence[0] == true){//valida a sequencia
                 vitaminoteSequence[0] = true
                 
                 self.vaseWithG.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 0.5, animations: {
+                UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithG.isHidden = false
                     self.vaseWithG.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
-                        self.correctAudioPlayer?.play()
+                    self.correctAudioPlayer?.play()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.newCenterVase.isHidden = true
                         self.centerVase.isHidden = true
                     })
                 })
-                print(vitaminoteSequence)
+                // print(vitaminoteSequence)
                 //gesture.reset() // ver o que essa funcao faz
                 solVitaminote.isHidden = true
-
+                
                 
             }
             else{
@@ -557,7 +557,7 @@ public class LevelTwoViewController: UIViewController {
         }
         else if(gesture.state == .ended){
             if (!centerVaseRect.contains(gestureView.frame)){
-               solVitaminote.frame = CGRect(x: 186, y: 774, width: 62, height: 62)
+                solVitaminote.frame = CGRect(x: 186, y: 774, width: 62, height: 62)
             }
         }
     }
@@ -585,31 +585,31 @@ public class LevelTwoViewController: UIViewController {
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
         
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
-            // print("A vitamina foi colocada no vaso")
+            // // print("A vitamina foi colocada no vaso")
             
             if(vitaminoteSequence[0] == true && vitaminoteSequence[1] == false){//valida a sequencia
                 vitaminoteSequence[1] = true
                 self.vaseWithGA.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 0.5, animations: {
+                UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithGA.isHidden = false
                     self.vaseWithGA.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
-                        self.correctAudioPlayer?.play()
+                    self.correctAudioPlayer?.play()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.vaseWithG.isHidden = true
                         self.centerVase.isHidden = true
                     })
                     
                 })
                 
-                print(vitaminoteSequence)
+                // print(vitaminoteSequence)
                 //gesture.reset() // ver o que essa funcao faz
                 laVitaminote.isHidden = true
-
+                
                 
             }else{
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
-               laVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
+                laVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
                 
                 if(centerVase.isHidden){
@@ -648,7 +648,7 @@ public class LevelTwoViewController: UIViewController {
         }
         else if(gesture.state == .ended){
             if (!centerVaseRect.contains(gestureView.frame)){
-               laVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
+                laVitaminote.frame = CGRect(x: 124, y: 669, width: 62, height: 62)
             }
             
         }
@@ -676,25 +676,25 @@ public class LevelTwoViewController: UIViewController {
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
         
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
-            // print("A vitamina foi colocada no vaso")
+            // // print("A vitamina foi colocada no vaso")
             
             if(vitaminoteSequence[1] == true && vitaminoteSequence[2] == false){//valida a sequencia
                 vitaminoteSequence[2] = true
                 
                 self.vaseWithGAB.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 0.5, animations: {
+                UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithGAB.isHidden = false
                     self.vaseWithGAB.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
-                        self.correctAudioPlayer?.play()
+                    self.correctAudioPlayer?.play()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.vaseWithGA.isHidden = true
                         self.centerVase.isHidden = true
                     })
                     
                 })
                 
-                print(vitaminoteSequence)
+                // print(vitaminoteSequence)
                 //gesture.reset() // ver o que essa funcao faz
                 siVitaminote.isHidden = true
                 
@@ -702,7 +702,7 @@ public class LevelTwoViewController: UIViewController {
             }
             else{
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
-               siVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
+                siVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
                 gesture.isEnabled = true
                 
                 if(centerVase.isHidden){
@@ -741,7 +741,7 @@ public class LevelTwoViewController: UIViewController {
         }
         else if(gesture.state == .ended){
             if (!centerVaseRect.contains(gestureView.frame)){
-               siVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
+                siVitaminote.frame = CGRect(x: 250, y: 669, width: 62, height: 62)
             }
             
         }
@@ -769,26 +769,26 @@ public class LevelTwoViewController: UIViewController {
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
         
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
-            // print("A vitamina foi colocada no vaso")
+            // // print("A vitamina foi colocada no vaso")
             
             if(vitaminoteSequence[2] == true && vitaminoteSequence[3] == false){//valida a sequencia
                 vitaminoteSequence[3] = true
                 self.vaseWithGABC.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 0.5, animations: {
+                UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithGABC.isHidden = false
                     self.vaseWithGABC.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
-                        self.correctAudioPlayer?.play()
+                    self.correctAudioPlayer?.play()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.vaseWithGAB.isHidden = true
                         self.centerVase.isHidden = true
                     })
                     
                 })
-                print(vitaminoteSequence)
+                // print(vitaminoteSequence)
                 //gesture.reset() // ver o que essa funcao faz
                 doVitaminote.isHidden = true
-         
+                
                 
             }else{
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
@@ -858,26 +858,26 @@ public class LevelTwoViewController: UIViewController {
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
         
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
-            // print("A vitamina foi colocada no vaso")
+            // // print("A vitamina foi colocada no vaso")
             
             if(vitaminoteSequence[3] == true && vitaminoteSequence[4] == false){//valida a sequencia
                 vitaminoteSequence[4] = true
                 self.vaseWithGABCD.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 0.5, animations: {
+                UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithGABCD.isHidden = false
                     self.vaseWithGABCD.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
-                        self.correctAudioPlayer?.play()
+                    self.correctAudioPlayer?.play()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.vaseWithGABC.isHidden = true
                         self.centerVase.isHidden = true
                     })
                 })
                 
-                print(vitaminoteSequence)
+                // print(vitaminoteSequence)
                 //gesture.reset() // ver o que essa funcao faz
                 reVitaminote.isHidden = true
-       
+                
                 
             } else{
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
@@ -888,7 +888,13 @@ public class LevelTwoViewController: UIViewController {
                     self.incorrectAudioPlayer?.play()
                     
                     newCenterVase.isHidden = true
-                    // vaseWithRound1Vitaminote.isHidden = true
+                    vaseWithG.isHidden = true
+                    vaseWithGA.isHidden = true
+                    vaseWithGAB.isHidden = true
+                    vaseWithGABC.isHidden = true
+                    vaseWithGABCD.isHidden = true
+                    vaseWithGABCDE.isHidden = true
+                    vaseWithGABCDEFSharp.isHidden = true
                     faliedVase.isHidden = false
                     
                     poupUpMan.isHidden = true
@@ -940,31 +946,31 @@ public class LevelTwoViewController: UIViewController {
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
         
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
-            // print("A vitamina foi colocada no vaso")
+            // // print("A vitamina foi colocada no vaso")
             
             if(vitaminoteSequence[4] == true && vitaminoteSequence[5] == false){//valida a sequencia
                 vitaminoteSequence[5] = true
                 
                 self.vaseWithGABCDE.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 0.5, animations: {
+                UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithGABCDE.isHidden = false
                     self.vaseWithGABCDE.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
-                        self.correctAudioPlayer?.play()
+                    self.correctAudioPlayer?.play()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.vaseWithGABCD.isHidden = true
                         self.centerVase.isHidden = true
                     })
                 })
                 
-                print(vitaminoteSequence)
+                // print(vitaminoteSequence)
                 //gesture.reset() // ver o que essa funcao faz
                 miVitaminote.isHidden = true
                 
             }
             else{
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
-               miVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
+                miVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
                 gesture.isEnabled = true
                 
                 if(centerVase.isHidden){
@@ -1001,7 +1007,7 @@ public class LevelTwoViewController: UIViewController {
         }
         else if(gesture.state == .ended){
             if (!centerVaseRect.contains(gestureView.frame)){
-               miVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
+                miVitaminote.frame = CGRect(x: 124, y: 774, width: 62, height: 62)
             }
             
         }
@@ -1030,28 +1036,28 @@ public class LevelTwoViewController: UIViewController {
         
         
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
-            // print("A vitamina foi colocada no vaso")
+            // // print("A vitamina foi colocada no vaso")
             
             if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
-              faSharpVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
+                faSharpVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
             }
-                
-                
+            
+            
             else if(vitaminoteSequence[5] == true && vitaminoteSequence[6] == false){//valida a sequencia
                 vitaminoteSequence[6] = true
                 self.vaseWithGABCDEFSharp.alpha = 0.0
                 
-                UIImageView.animate(withDuration: 0.5, animations: {
+                UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithGABCDEFSharp.isHidden = false
                     self.vaseWithGABCDEFSharp.alpha = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
-                        self.clappingAudioPlayer?.play()
+                    self.correctAudioPlayer?.play()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.vaseWithGABCDE.isHidden = true
                         self.centerVase.isHidden = true
                     })
                 })
                 
-                print(vitaminoteSequence)
+                // print(vitaminoteSequence)
                 faSharpVitaminote.isHidden = true
                 //gesture.reset() // ver o que essa funcao faz
                 
@@ -1060,34 +1066,34 @@ public class LevelTwoViewController: UIViewController {
                 poupUpTwoWoman.isHidden = false
                 newCenterVase.isHidden = true
                 
-//                vaseWithRound1Vitaminote.isHidden = false
+                //                vaseWithRound1Vitaminote.isHidden = false
                 
-                print(newCenterVase.isHidden)
-                print(vaseWithGABCDEFSharp.isHidden)
-//                print(vaseWithRound1Vitaminote.isHidden)
-                print(round1VitamineSequence)
-               
-       
-                    //essasaqui sao as que ficam sobrando
-                    faVitaminote.isHidden = true
-                    solSharpVitaminote.isHidden = true
-//
-                    circleNotes.isHidden = false
-//
-                    poupUpNextLevel.isHidden = false
-                    poupUpTwoWoman.isHidden = true
-//                    poupUpOneWoman.isHidden = true // pode criar outro pop falando q recomecou, ver colocar som para cada vitaminota, e quando rodar o round, errar.. etc..
-//
-                    buttonToNext.isEnabled = true
-                    buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
-                    poupUpCongratsLevelOne.isHidden = false
-
+                // print(newCenterVase.isHidden)
+                // print(vaseWithGABCDEFSharp.isHidden)
+                //                // print(vaseWithRound1Vitaminote.isHidden)
+                // print(round1VitamineSequence)
+                
+                
+                //essasaqui sao as que ficam sobrando
+                faVitaminote.isHidden = true
+                solSharpVitaminote.isHidden = true
+                //
+                circleNotes.isHidden = false
+                //
+                poupUpNextLevel.isHidden = false
+                poupUpTwoWoman.isHidden = true
+                //                    poupUpOneWoman.isHidden = true // pode criar outro pop falando q recomecou, ver colocar som para cada vitaminota, e quando rodar o round, errar.. etc..
+                //
+                buttonToNext.isEnabled = true
+                buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
+                poupUpCongratsLevelOne.isHidden = false
+                
             }
             else{
                 
                 
                 gesture.isEnabled = false//pode tentar fazer um hidden relocalizar e dps deshidden
-              faSharpVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
+                faSharpVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
                 gesture.isEnabled = true
                 
                 if(centerVase.isHidden){
@@ -1124,10 +1130,10 @@ public class LevelTwoViewController: UIViewController {
             }
         }
         else if(gesture.state == .ended){
-            print("entrou aqui na condicional que eu qeuria")
+            // print("entrou aqui na condicional que eu qeuria")
             if (!centerVaseRect.contains(gestureView.frame)){
-                print("entrou aqui na condicional que eu qeuria 2")
-              faSharpVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
+                // print("entrou aqui na condicional que eu qeuria 2")
+                faSharpVitaminote.frame = CGRect(x: 186, y: 722, width: 62, height: 62)
             }
             
         }
@@ -1153,16 +1159,16 @@ public class LevelTwoViewController: UIViewController {
         
         // if(isSeedOntheVase(gestureView))
         let centerVaseRect = CGRect(x: 830, y: 370, width: 200, height: 200)
-    
+        
         
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
-            // print("A vitamina foi colocada no vaso")
+            // // print("A vitamina foi colocada no vaso")
             
             if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
                 faVitaminote.frame = CGRect(x: 124, y: 722, width: 62, height: 62)
             }
-                
-                
+            
+            
             else if(!newCenterVase.isHidden){
                 self.incorrectAudioPlayer?.play()
                 
@@ -1197,6 +1203,12 @@ public class LevelTwoViewController: UIViewController {
             }else{
                 // vaseWithRound1Vitaminote.isHidden = true
                 faliedVase.isHidden = false
+                vaseWithG.isHidden = true
+                vaseWithGA.isHidden = true
+                vaseWithGAB.isHidden = true
+                vaseWithGABC.isHidden = true
+                vaseWithGABCD.isHidden = true
+                vaseWithGABCDE.isHidden = true
                 self.incorrectAudioPlayer?.play()
                 poupUpMan.isHidden = true
                 poupUpOneWoman.isHidden = true
@@ -1254,17 +1266,25 @@ public class LevelTwoViewController: UIViewController {
         //        gesture.isEnabled = true
         
         if centerVaseRect.contains(gestureView.frame) && gesture.state == .ended {
-            // print("A vitamina foi colocada no vaso")
+            // // print("A vitamina foi colocada no vaso")
             
             if(!centerVase.isHidden) { //se tiver o vaso so com terra tiver a mostra nao faca nada
                 solSharpVitaminote.frame = CGRect(x: 250, y: 774, width: 62, height: 62)
+                
             }
-                
-                
-                
-                
+            
+            
+            
+            
             else if(!newCenterVase.isHidden){
                 newCenterVase.isHidden = true
+                vaseWithG.isHidden = true
+                vaseWithGA.isHidden = true
+                vaseWithGAB.isHidden = true
+                vaseWithGABC.isHidden = true
+                vaseWithGABCD.isHidden = true
+                vaseWithGABCDE.isHidden = true
+                vaseWithGABCDEFSharp.isHidden = true
                 faliedVase.isHidden = false
                 self.incorrectAudioPlayer?.play()
                 doVitaminote.isUserInteractionEnabled = false
@@ -1290,6 +1310,12 @@ public class LevelTwoViewController: UIViewController {
             else{
                 // vaseWithRound1Vitaminote.isHidden = true
                 faliedVase.isHidden = false
+                vaseWithG.isHidden = true
+                vaseWithGA.isHidden = true
+                vaseWithGAB.isHidden = true
+                vaseWithGABC.isHidden = true
+                vaseWithGABCD.isHidden = true
+                vaseWithGABCDE.isHidden = true
                 self.incorrectAudioPlayer?.play()
                 poupUpMan.isHidden = true
                 poupUpOneWoman.isHidden = true
@@ -1323,3 +1349,4 @@ public class LevelTwoViewController: UIViewController {
         }
     }
 }//end class level 2
+
