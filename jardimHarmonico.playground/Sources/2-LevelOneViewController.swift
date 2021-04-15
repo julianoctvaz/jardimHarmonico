@@ -7,9 +7,18 @@ public class LevelOneViewController: UIViewController {
     
     //audio
     private var buttonAudioPlayer: AVAudioPlayer?
-    private var correctAudioPlayer: AVAudioPlayer?
+//    private var correctAudioPlayer: AVAudioPlayer?
     private var incorrectAudioPlayer: AVAudioPlayer?
     private var clappingAudioPlayer: AVAudioPlayer?
+    private var bAudioPlayer: AVAudioPlayer?
+    private var aAudioPlayer: AVAudioPlayer?
+    private var gAudioPlayer: AVAudioPlayer?
+    private var fAudioPlayer: AVAudioPlayer?
+    private var eAudioPlayer: AVAudioPlayer?
+    private var dAudioPlayer: AVAudioPlayer?
+    private var cAudioPlayer: AVAudioPlayer?
+    private var cSharpAudioPlayer: AVAudioPlayer?
+    private var fSharpAudioPlayer: AVAudioPlayer?
     
     
     //Buttons and Labels
@@ -72,12 +81,12 @@ public class LevelOneViewController: UIViewController {
         //audios
         do {
             buttonAudioPlayer = AVAudioPlayer()
-            buttonAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/button", ofType: "mp3")!))
+            buttonAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/correct", ofType: "wav")!))
             buttonAudioPlayer?.prepareToPlay()
             
-            correctAudioPlayer = AVAudioPlayer()
-            correctAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/correct", ofType: "wav")!))
-            correctAudioPlayer?.prepareToPlay()
+//            correctAudioPlayer = AVAudioPlayer()
+//            correctAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/correct", ofType: "wav")!))
+//            correctAudioPlayer?.prepareToPlay()
             
             incorrectAudioPlayer = AVAudioPlayer()
             incorrectAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/incorrect", ofType: "wav")!))
@@ -86,6 +95,43 @@ public class LevelOneViewController: UIViewController {
             clappingAudioPlayer = AVAudioPlayer()
             clappingAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/clapping", ofType: "wav")!))
             clappingAudioPlayer?.prepareToPlay()
+            
+            cAudioPlayer = AVAudioPlayer()
+            cAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/C", ofType: "wav")!))
+            cAudioPlayer?.prepareToPlay()
+            
+            dAudioPlayer = AVAudioPlayer()
+            dAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/D", ofType: "wav")!))
+            dAudioPlayer?.prepareToPlay()
+            
+            eAudioPlayer = AVAudioPlayer()
+            eAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/E", ofType: "wav")!))
+            eAudioPlayer?.prepareToPlay()
+            
+            fAudioPlayer = AVAudioPlayer()
+            fAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/F", ofType: "wav")!))
+            fAudioPlayer?.prepareToPlay()
+            
+            gAudioPlayer = AVAudioPlayer()
+            gAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/G", ofType: "wav")!))
+            gAudioPlayer?.prepareToPlay()
+            
+            aAudioPlayer = AVAudioPlayer()
+            aAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/A", ofType: "wav")!))
+            aAudioPlayer?.prepareToPlay()
+            
+            bAudioPlayer = AVAudioPlayer()
+            bAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/B", ofType: "wav")!))
+            bAudioPlayer?.prepareToPlay()
+            
+            cSharpAudioPlayer = AVAudioPlayer()
+            cSharpAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/C#", ofType: "wav")!))
+            cSharpAudioPlayer?.prepareToPlay()
+            
+            fSharpAudioPlayer = AVAudioPlayer()
+            fSharpAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/F#", ofType: "wav")!))
+            fSharpAudioPlayer?.prepareToPlay()
+            
         }
         catch {
             // print("erro ao importar as musicas")
@@ -471,7 +517,7 @@ public class LevelOneViewController: UIViewController {
             UIImageView.animate(withDuration: 0.3, animations: {
                 self.newCenterVase.isHidden = false
                 self.newCenterVase.alpha = 1.0
-                self.correctAudioPlayer?.play()
+                self.buttonAudioPlayer?.play()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                     
                     self.centerVase.isHidden = true
@@ -541,7 +587,7 @@ public class LevelOneViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithC.isHidden = false
                     self.vaseWithC.alpha = 1.0
-                    self.correctAudioPlayer?.play()
+                    self.cAudioPlayer?.play()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         
                         self.newCenterVase.isHidden = true
@@ -636,7 +682,7 @@ public class LevelOneViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithCD.isHidden = false
                     self.vaseWithCD.alpha = 1.0
-                    self.correctAudioPlayer?.play()
+                    self.dAudioPlayer?.play()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         
                         self.vaseWithC.isHidden = true
@@ -730,7 +776,7 @@ public class LevelOneViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithCDE.isHidden = false
                     self.vaseWithCDE.alpha = 1.0
-                    self.correctAudioPlayer?.play()
+                    self.eAudioPlayer?.play()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         
                         self.vaseWithCD.isHidden = true
@@ -826,7 +872,7 @@ public class LevelOneViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithCDEF.isHidden = false
                     self.vaseWithCDEF.alpha = 1.0
-                    self.correctAudioPlayer?.play()
+                    self.fAudioPlayer?.play()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         
                         self.vaseWithCDE.isHidden = true
@@ -916,7 +962,7 @@ public class LevelOneViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithCDEFG.isHidden = false
                     self.vaseWithCDEFG.alpha = 1.0
-                    self.correctAudioPlayer?.play()
+                    self.gAudioPlayer?.play()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         
                         self.vaseWithCDEF.isHidden = true
@@ -1006,7 +1052,7 @@ public class LevelOneViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithCDEFGA.isHidden = false
                     self.vaseWithCDEFGA.alpha = 1.0
-                    self.correctAudioPlayer?.play()
+                    self.aAudioPlayer?.play()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         
                         self.vaseWithCDEFG.isHidden = true
@@ -1101,9 +1147,9 @@ public class LevelOneViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaseWithCDEFGAB.isHidden = false
                     self.vaseWithCDEFGAB.alpha = 1.0
-                    self.clappingAudioPlayer?.play()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
-                        
+                    self.bAudioPlayer?.play()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6, execute: {
+                        self.clappingAudioPlayer?.play()
                         self.vaseWithCDEFGA.isHidden = true
                         self.centerVase.isHidden = true
                     })

@@ -6,9 +6,19 @@ public class LevelThreeViewController: UIViewController {
     
     //audio
     private var buttonAudioPlayer: AVAudioPlayer?
-    private var correctAudioPlayer: AVAudioPlayer?
+//    private var correctAudioPlayer: AVAudioPlayer?
     private var incorrectAudioPlayer: AVAudioPlayer?
     private var clappingAudioPlayer:AVAudioPlayer?
+    private var bAudioPlayer: AVAudioPlayer?
+    private var aAudioPlayer: AVAudioPlayer?
+    private var gAudioPlayer: AVAudioPlayer?
+    private var fAudioPlayer: AVAudioPlayer?
+    private var eAudioPlayer: AVAudioPlayer?
+    private var dAudioPlayer: AVAudioPlayer?
+    private var cAudioPlayer: AVAudioPlayer?
+    private var cSharpAudioPlayer: AVAudioPlayer?
+    private var fSharpAudioPlayer: AVAudioPlayer?
+    
     
     //Buttons and Labels
     let buttonToNext = UIButton()
@@ -71,13 +81,13 @@ public class LevelThreeViewController: UIViewController {
         //audios
         do {
             buttonAudioPlayer = AVAudioPlayer()
-            buttonAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/button", ofType: "mp3")!))
+            buttonAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/correct", ofType: "wav")!))
             buttonAudioPlayer?.prepareToPlay()
             
-            correctAudioPlayer = AVAudioPlayer()
-            correctAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/correct", ofType: "wav")!))
-            correctAudioPlayer?.prepareToPlay()
-            
+//            correctAudioPlayer = AVAudioPlayer()
+//            correctAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/correct", ofType: "wav")!))
+//            correctAudioPlayer?.prepareToPlay()
+//            
             incorrectAudioPlayer = AVAudioPlayer()
             incorrectAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/incorrect", ofType: "wav")!))
             incorrectAudioPlayer?.prepareToPlay()
@@ -85,6 +95,42 @@ public class LevelThreeViewController: UIViewController {
             clappingAudioPlayer = AVAudioPlayer()
             clappingAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/clapping", ofType: "wav")!))
             clappingAudioPlayer?.prepareToPlay()
+            
+            cAudioPlayer = AVAudioPlayer()
+            cAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/C", ofType: "wav")!))
+            cAudioPlayer?.prepareToPlay()
+            
+            dAudioPlayer = AVAudioPlayer()
+            dAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/D", ofType: "wav")!))
+            dAudioPlayer?.prepareToPlay()
+            
+            eAudioPlayer = AVAudioPlayer()
+            eAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/E", ofType: "wav")!))
+            eAudioPlayer?.prepareToPlay()
+            
+            fAudioPlayer = AVAudioPlayer()
+            fAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/F", ofType: "wav")!))
+            fAudioPlayer?.prepareToPlay()
+            
+            gAudioPlayer = AVAudioPlayer()
+            gAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/G", ofType: "wav")!))
+            gAudioPlayer?.prepareToPlay()
+            
+            aAudioPlayer = AVAudioPlayer()
+            aAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/A", ofType: "wav")!))
+            aAudioPlayer?.prepareToPlay()
+            
+            bAudioPlayer = AVAudioPlayer()
+            bAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/B", ofType: "wav")!))
+            bAudioPlayer?.prepareToPlay()
+            
+            cSharpAudioPlayer = AVAudioPlayer()
+            cSharpAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/C#", ofType: "wav")!))
+            cSharpAudioPlayer?.prepareToPlay()
+            
+            fSharpAudioPlayer = AVAudioPlayer()
+            fSharpAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "sounds/F#", ofType: "wav")!))
+            fSharpAudioPlayer?.prepareToPlay()
         }
         catch {
             // print("erro ao importar as musicas")
@@ -274,8 +320,8 @@ public class LevelThreeViewController: UIViewController {
             
             buttonToOnboarding.addTarget(self, action: #selector(touchedButtonToBackToOnboarding), for: .touchUpInside)
             
-            buttonToNext.addTarget(self, action: #selector(touchedButtonNextLevel), for: .touchUpInside)
-            buttonToNext.isEnabled = false
+//            buttonToNext.addTarget(self, action: #selector(touchedButtonNextLevel), for: .touchUpInside)
+//            buttonToNext.isEnabled = false
         }//targets
         
         
@@ -347,19 +393,19 @@ public class LevelThreeViewController: UIViewController {
         
     }
     
-    @IBAction func touchedButtonNextLevel() {
-        self.buttonAudioPlayer?.play()
-        // print("Apertou botão da LVL2 para ir para a lv3")
-        
-        let novaViewController = FinalViewController(screenType: .mac , isPortrait: true)
-        //  navigationController?.popViewController( animated: true)
-        navigationController?.pushViewController(novaViewController, animated: true)
-        //// print(navigationController?.viewControllers)
-        //coloca em cima da onboard a tela level 1
-        navigationController?.navigationBar.isHidden = true
-        
-        // print("Apertou botão proxima Fase")
-    }
+//    @IBAction func touchedButtonNextLevel() {
+//        self.buttonAudioPlayer?.play()
+//        // print("Apertou botão da LVL2 para ir para a lv3")
+//
+//        let novaViewController = FinalViewController(screenType: .mac , isPortrait: true)
+//        //  navigationController?.popViewController( animated: true)
+//        navigationController?.pushViewController(novaViewController, animated: true)
+//        //// print(navigationController?.viewControllers)
+//        //coloca em cima da onboard a tela level 1
+//        navigationController?.navigationBar.isHidden = true
+//
+//        // print("Apertou botão proxima Fase")
+//    }
     
     @IBAction func touchedButtonToBackToOnboarding() {
         self.buttonAudioPlayer?.play()
@@ -435,8 +481,9 @@ public class LevelThreeViewController: UIViewController {
             UIImageView.animate(withDuration: 0.3, animations: {
                 self.newCenterVase.isHidden = false
                 self.newCenterVase.alpha = 1.0
+                self.buttonAudioPlayer?.play()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
-                    self.correctAudioPlayer?.play()
+                  
                     self.centerVase.isHidden = true
                 })
                 
@@ -502,7 +549,7 @@ public class LevelThreeViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaaseWithD.isHidden = false
                     self.vaaseWithD.alpha = 1.0
-                    self.correctAudioPlayer?.play()
+                    self.dAudioPlayer?.play()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.newCenterVase.isHidden = true
                         self.centerVase.isHidden = true
@@ -595,7 +642,7 @@ public class LevelThreeViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaaseWithDE.isHidden = false
                     self.vaaseWithDE.alpha = 1.0
-                    self.correctAudioPlayer?.play()
+                    self.eAudioPlayer?.play()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.vaaseWithD.isHidden = true
                         self.centerVase.isHidden = true
@@ -687,7 +734,7 @@ public class LevelThreeViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaaseWithDEFSharp.isHidden = false
                     self.vaaseWithDEFSharp.alpha = 1.0
-                    self.correctAudioPlayer?.play()
+                    self.fSharpAudioPlayer?.play()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.vaaseWithDE.isHidden = true
                         self.centerVase.isHidden = true
@@ -779,7 +826,7 @@ public class LevelThreeViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaaseWithDEFSharpG.isHidden = false
                     self.vaaseWithDEFSharpG.alpha = 1.0
-                    self.correctAudioPlayer?.play()
+                    self.gAudioPlayer?.play()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.vaaseWithDEFSharp.isHidden = true
                         self.centerVase.isHidden = true
@@ -868,7 +915,7 @@ public class LevelThreeViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaaseWithDEFSharpGA.isHidden = false
                     self.vaaseWithDEFSharpGA.alpha = 1.0
-                    self.correctAudioPlayer?.play()
+                    self.aAudioPlayer?.play()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.vaaseWithDEFSharpG.isHidden = true
                         self.centerVase.isHidden = true
@@ -957,7 +1004,7 @@ public class LevelThreeViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaaseWithDEFSharpGAB.isHidden = false
                     self.vaaseWithDEFSharpGAB.alpha = 1.0
-                    self.correctAudioPlayer?.play()
+                    self.bAudioPlayer?.play()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                         self.vaaseWithDEFSharpGA.isHidden = true
                         self.centerVase.isHidden = true
@@ -1051,8 +1098,9 @@ public class LevelThreeViewController: UIViewController {
                 UIImageView.animate(withDuration: 0.3, animations: {
                     self.vaaseWithDEFSharpGABCsharp.isHidden = false
                     self.vaaseWithDEFSharpGABCsharp.alpha = 1.0
-                    self.correctAudioPlayer?.play()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
+                    self.cSharpAudioPlayer?.play()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
+                        self.clappingAudioPlayer?.play()
                         self.vaaseWithDEFSharpGAB.isHidden = true
                         self.centerVase.isHidden = true
                     })

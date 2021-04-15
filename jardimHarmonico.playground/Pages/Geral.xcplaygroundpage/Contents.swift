@@ -6,20 +6,20 @@ import PlaygroundSupport
  ---
  */
 //:Welcome to playground game!
-//:This is my Harmonic Garden. Here, our mission is grown up plants with notes and musical scales!
+//:This is my Harmonic Garden. Here, our *mission* is grown up plants with notes and musical scales!
 //:Notes, scales, chrords, combinations, melodies, all of it, create a lof of hamonic compostion sounds!
 //:At this case, we will beginning with a couple of scales from major scale.
-//:More especifically, three scales of it.  Oftenly, the major scale has a central importance to begginers.
-//:Now, I recommend you to read the Instructions page below!
+//:More especifically, **three ** scales of it.  Oftenly, the major scale has a central importance to begginers.
+//:Now, I recommend you to read the page **About Scale And Notes** below!
 /*:
  ---
  */
-//: [About Scale And Notes ](AboutScaleAndNotes)
-//: [/ References](References)
+//: [Scale and Notes ](AboutScaleAndNotes)
+//: [/ References and Credits](References)
 /*:
  ---
  */
-//: Are you ready? Execute it!
+//: Are you ready? **Execute it!**
 /// Present the view controller (vc) in the Live View window
 let onboardingViewController = OnboardingViewController()
 let levelOneViewController = LevelOneViewController()

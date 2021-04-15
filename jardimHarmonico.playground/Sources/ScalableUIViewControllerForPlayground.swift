@@ -1,6 +1,6 @@
 import UIKit
 
-///@alnp contributions on github to Scalable UIViewController for Playground Books
+///@alnp contributions on github to Scalable UIViewController for Playground 
 
 public enum ScreenType {
     case iphone11ProMax

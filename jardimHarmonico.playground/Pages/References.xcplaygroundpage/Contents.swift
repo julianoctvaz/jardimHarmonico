@@ -4,28 +4,31 @@
  ## References
  ---
  */
-//: I like fisrtly to thank Apple Developer Academy - UFPE, Recife, Brazil for support.
+//: I like fisrtly to thank Apple Developer Academy - UFPE, Recife, Brazil for support this project.
 //: Apple for this amazing event for our community.
-
+/*:
+For all third open source content, thank you all:
+*/
 /*: Sounds:
- https://freesound.org/people/RICHERlandTV/sounds/216089/
- https://freesound.org/people/Bertrof/sounds/351563/
- https://freesound.org/home/login/?next=/people/JomelleJager/sounds/252681/
+ [RICHERlandTV](https://freesound.org/people/RICHERlandTV/sounds/216089/)
+ [Bertrof](https://freesound.org/people/Bertrof/sounds/351563/)
+ [JomelleJager](https://freesound.org/home/login/?next=/people/JomelleJager/sounds/252681/)
+ [digifishmusic](https://freesound.org/people/digifishmusic/sounds/94809/)
  */
-
 /*:
- Text:
- https://en.wikipedia.org/wiki/Major_scale
- https://en.wikipedia.org/wiki/Sharp_(music)
+ Informations about Music Theory:
+ [Major Scale Wikipedia](https://en.wikipedia.org/wiki/Major_scale)
+ [Sharp(music) Wikipedia](https://en.wikipedia.org/wiki/Sharp_(music))
  */
-
 /*:
- Image:
- https://pixabay.com/illustrations/man-businessman-success-happy-1600959/(graphicmama-team-2641041)
- https://pixabay.com/illustrations/woman-funny-presentation-present-1602365/(graphicmama-team-2641041)
+ Images:
+ [graphicmama-team-2641041](https://pixabay.com/illustrations/man-businessman-success-happy-1600959/)
+ [graphicmama-team-2641041](https://pixabay.com/illustrations/woman-funny-presentation-present-1602365/)
  */
-//: Code:
-/*:
- [About Scales and Notes ](AboutScaleAndNotes)
- [/ Home Page](Geral)
+/*: Code:
+[Scalable UIViewController for Playground by @alnp](https://github.com/alnp)
  */
+ 
+//: [Scales and Notes ](AboutScaleAndNotes)
+//: [/ Home Page](Geral)
+ 

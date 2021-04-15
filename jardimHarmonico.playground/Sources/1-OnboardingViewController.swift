@@ -51,9 +51,9 @@ public class OnboardingViewController: UIViewController {
     //IBActions
     @IBAction func touchedButton() {
 //        print("Apertou botão da OnboardingViewController para ir para a LeveOne")
-        
+
         self.audioPlayer?.play()
-            
+
         let novaViewController = LevelOneViewController(screenType: .mac , isPortrait: true)
         // navigationController?.popViewController(animated: true)
         navigationController?.pushViewController(novaViewController, animated: true)
