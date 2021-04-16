@@ -1,7 +1,7 @@
 /*:
  ---
  # Harmonic Garden
- ## References
+ ## References and Credits
  ---
  */
 //: I like fisrtly to thank Apple Developer Academy - UFPE, Recife, Brazil for support this project.
