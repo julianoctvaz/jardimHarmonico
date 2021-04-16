@@ -50,16 +50,14 @@ public class OnboardingViewController: UIViewController {
 
     //IBActions
     @IBAction func touchedButton() {
-//        print("Apertou botão da OnboardingViewController para ir para a LeveOne")
+//        print("Apertou botão da OnboardingViewController para ir para a LeveOne"
 
-        self.audioPlayer?.play()
-
-        let novaViewController = LevelOneViewController(screenType: .mac , isPortrait: true)
+        let novaViewController = LevelThreeViewController(screenType: .mac , isPortrait: true)
         // navigationController?.popViewController(animated: true)
         navigationController?.pushViewController(novaViewController, animated: true)
         //coloca em cima da onboard a tela level 1
         navigationController?.navigationBar.isHidden = true
-
+        self.audioPlayer?.play()
     }
     //aqui pode ter outros buttons(IBActions) para validar se passou do lvl1 e quiser voltar ja ir para o lvl 2 ao inves de ter de voltar pro comeco
 

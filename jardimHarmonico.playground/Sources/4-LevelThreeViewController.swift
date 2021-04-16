@@ -145,7 +145,7 @@ public class LevelThreeViewController: UIViewController {
             buttonToOnboarding.frame = CGRect(x: 1200, y: 740, width: 250, height: 100)
             buttonToOnboarding.setImage(UIImage(named: "buttons/onboardingButton"), for: .normal)
             
-            buttonToNext.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
+//            buttonToNext.frame = CGRect(x: 1200, y: 820, width: 250, height: 100)
             buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButton"), for: .normal)
             buttonToNext.isEnabled = true }// buttons
         
@@ -238,7 +238,7 @@ public class LevelThreeViewController: UIViewController {
             poupUpTryAgain.frame = CGRect(x: 235, y: 22, width: 191, height: 203) //ver aqui as dimensoes e posicao
             poupUpTryAgain.isHidden = true
             
-            poupUpNextLevel.image = UIImage(named: "poupUp/falaProximaFase")
+//            poupUpNextLevel.image = UIImage(named: "poupUp/falaProximaFase")
             poupUpNextLevel.frame = CGRect(x: 377, y: 599, width: 197, height: 155) //ver aqui as dimensoes e posicao
             poupUpNextLevel.isHidden = true
         }//several frames and UIImagensView
@@ -362,7 +362,7 @@ public class LevelThreeViewController: UIViewController {
             view.addSubview(poupUpTwoWoman)
             view.addSubview(poupUpCongratsLevelOne)
             view.addSubview(poupUpTryAgain)
-            view.addSubview(poupUpNextLevel)
+//            view.addSubview(poupUpNextLevel)
             //VitamiNotes
             view.addSubview(doVitaminote)
             view.addSubview(reVitaminote)
@@ -1135,8 +1135,8 @@ public class LevelThreeViewController: UIViewController {
                 poupUpTwoWoman.isHidden = true
                 //                    poupUpOneWoman.isHidden = true // pode criar outro pop falando q recomecou, ver colocar som para cada vitaminota, e quando rodar o round, errar.. etc..
                 //
-                buttonToNext.isEnabled = true
-                buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
+//                buttonToNext.isEnabled = true
+//                buttonToNext.setImage(UIImage(named: "buttons/proximaFaseButtonVerde"), for: .normal)
                 poupUpCongratsLevelOne.isHidden = false
                 
             }
