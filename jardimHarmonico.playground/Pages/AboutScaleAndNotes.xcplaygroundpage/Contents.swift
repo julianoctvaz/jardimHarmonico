@@ -9,7 +9,7 @@
 //: In music theory, a scale is any set of musical notes ordered by fundamental frequency or pitch.
 //: A scale ordered by increasing pitch is an ascending scale, and a scale ordered by decreasing pitch is a descending scale.
 //: Here we will just learn scales **ordered by ascending pitch**.
-//: A measure of the width of each scale step provides a method to classify scales. ts explained in  **onboarding** when you execute the game, so, lets play the  **playground**!
+//: A measure of the width of each scale step provides a method to classify scales. ts explained in  **onboarding** when you execute the game, so, lets back to Home Page and play the  **playground**!
 /*:
  ---
  */
