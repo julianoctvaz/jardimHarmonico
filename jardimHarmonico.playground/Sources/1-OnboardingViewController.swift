@@ -47,6 +47,10 @@ public class OnboardingViewController: UIViewController {
         self.view = view
 
     }
+    
+    public override func viewDidLoad() {
+        navigationController?.navigationBar.isHidden = true
+    }
 
     //IBActions
     @IBAction func touchedButton() {
