@@ -5,7 +5,7 @@ import PlaygroundSupport
 /*:
  ---
  */
-//:Welcome to playground game!
+//:Welcome to my playground game!
 //:This is my Harmonic Garden. Here, our *mission* is grown up plants with notes and musical scales!
 //:Notes, scales, chords, combinations, melodies, all of it, create a lof of harmonic composition sounds!
 //:At this case, we will begin with a couple of scales from major scale.
@@ -15,7 +15,8 @@ import PlaygroundSupport
  ---
  */
 //: [Scale and Notes ](AboutScaleAndNotes)
-//: [/ References and Credits](References)
+//: [/ References and Credits ](References)
+//: [/ About me](AboutMe)
 /*:
  ---
  */

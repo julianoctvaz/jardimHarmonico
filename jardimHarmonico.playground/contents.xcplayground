@@ -4,5 +4,6 @@
         <page name='Geral'/>
         <page name='AboutScaleAndNotes'/>
         <page name='References'/>
+        <page name='AboutMe'/>
     </pages>
 </playground>

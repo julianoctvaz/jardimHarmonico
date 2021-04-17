@@ -7,7 +7,7 @@
 //: I like fisrtly to thank Apple Developer Academy - UFPE, Recife, Brazil for support this project.
 //: Apple for this amazing event for our community.
 /*:
-For all third open source content, thank you all:
+For all third open source content, thank you all for make this real:
 */
 /*: Sounds:
  [RICHERlandTV](https://freesound.org/people/RICHERlandTV/sounds/216089/)
@@ -30,5 +30,6 @@ For all third open source content, thank you all:
  */
  
 //: [Scales and Notes ](AboutScaleAndNotes)
-//: [/ Home Page](Geral)
+//: [/ Home Page ](Geral)
+//: [/ About me](AboutMe)
  

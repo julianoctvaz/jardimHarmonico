@@ -176,11 +176,11 @@ public class LevelOneViewController: UIViewController {
             
             seedRe.image = UIImage(named: "sementes/sementeReCinza")
             seedRe.frame = CGRect(x: 136, y: 450, width: 57, height: 77)
-            //seedRe.isUserInteractionEnabled = false
+            seedRe.isUserInteractionEnabled = false
             
             seedSol.image = UIImage(named: "sementes/sementeSolCinza")
             seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
-            //seedSol.isUserInteractionEnabled = false
+            seedSol.isUserInteractionEnabled = false
             
             centerVase.image = UIImage(named: "vasos/vasoComTerra")
             centerVase.frame = CGRect(x: 860, y: 397, width: 100, height: 95)
@@ -251,11 +251,11 @@ public class LevelOneViewController: UIViewController {
             let panSeedDo = UIPanGestureRecognizer(target: self, action: #selector(handlePanSeedDo))
             seedDo.addGestureRecognizer(panSeedDo)
             
-            seedRe.isUserInteractionEnabled = true
+//            seedRe.isUserInteractionEnabled = true
             let panSeedRe = UITapGestureRecognizer(target: self, action: #selector(handlePanSeedRe))
             seedRe.addGestureRecognizer(panSeedRe)
             
-            seedSol.isUserInteractionEnabled = true
+//            seedSol.isUserInteractionEnabled = true
             let panSeedSol = UITapGestureRecognizer(target: self, action: #selector(handlePanSeedSol))
             seedSol.addGestureRecognizer(panSeedSol)
             

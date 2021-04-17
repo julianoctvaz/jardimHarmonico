@@ -172,11 +172,11 @@ public class LevelTwoViewController: UIViewController {
             
             seedRe.image = UIImage(named: "sementes/sementeReCinza")
             seedRe.frame = CGRect(x: 136, y: 450, width: 57, height: 77)
-            //seedRe.isUserInteractionEnabled = false
+            seedRe.isUserInteractionEnabled = false
             
             seedSol.image = UIImage(named: "sementes/sementeSolVerde")
             seedSol.frame = CGRect(x: 216, y: 450, width: 57, height: 77)
-            // seedSol.isUserInteractionEnabled = false
+             seedSol.isUserInteractionEnabled = false
             
             centerVase.image = UIImage(named: "vasos/vasoComTerra")
             centerVase.frame = CGRect(x: 860, y: 397, width: 100, height: 95)
